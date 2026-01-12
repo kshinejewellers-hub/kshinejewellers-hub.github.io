@@ -1,0 +1,23 @@
+BEGIN:VCARD
+VERSION:3.0
+N:JEWELLERS;K-SHINE;;;
+FN:K-SHINE JEWELLERS
+ORG:K-SHINE JEWELLERS
+TITLE:GOLD • DIAMOND • SILVER JEWELLERY
+
+TEL;TYPE=CELL:+919622212879
+
+ADR;TYPE=WORK:;;K-SHINE JEWELLERS GANDHI NAGAR JAMMU;Jammu;Jammu and Kashmir;180004;India
+ADR;TYPE=WORK:;;K-SHINE JEWELLERS JANIPUR JAMMU;Jammu;Jammu and Kashmir;180007;India
+
+URL:https://kshinejewellers.com/
+URL:https://www.instagram.com/kshine_jewellers
+URL:https://www.facebook.com/kshinejewelers
+URL:https://www.facebook.com/groups/1233168123948595
+URL:https://youtube.com/@k-shinejewellers1365
+URL:https://wa.me/919622212879
+URL:https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS
+URL:https://maps.app.goo.gl/DAF2cTd81weVF29N8
+URL:https://maps.app.goo.gl/d3bKbByUosgEnWJV8
+
+END:VCARD
