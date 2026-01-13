@@ -2,132 +2,226 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K-Shine Jewellers</title>
+<title>K-SHINE JEWELLERS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-:root{
-  --gold:#9b7b3f;
-  --dark:#2b2b2b;
-  --bg:#faf8f3;
-  --card:#ffffff;
-}
-
-*{
-  box-sizing:border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-}
-
 body{
   margin:0;
-  background:var(--bg);
-  color:var(--dark);
-}
-
-.container{
-  max-width:420px;
-  margin:auto;
-  padding:18px;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),
+    url('bannerimage.png') center/cover fixed no-repeat;
 }
 
 .card{
-  background:var(--card);
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  max-width:420px;
+  margin:20px auto 90px;
+  background:#ffffff;
+  border-radius:26px;
+  box-shadow:0 25px 55px rgba(0,0,0,.35);
   overflow:hidden;
 }
 
-.header{
-  background:linear-gradient(135deg,#b08a3e,#8d6b2f);
-  color:#fff;
-  padding:22px;
+/* BANNER */
+.banner{
+  height:210px;
+  background:url('bannerimage.png') center/cover no-repeat;
+  position:relative;
+}
+
+/* DP */
+.dp{
+  position:absolute;
+  bottom:-50px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+.dp img{
+  width:105px;
+  height:105px;
+  border-radius:50%;
+  border:6px solid #fff;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+/* CONTENT */
+.content{
+  padding:70px 20px 30px;
   text-align:center;
 }
 
-.header h1{
-  margin:0;
-  font-size:24px;
+/* BRAND */
+.brand{
+  font-size:26px;
+  font-weight:900;
+  color:#b8962e;
+  letter-spacing:1px;
+}
+.tag{
+  color:#7a5a12;
+  font-size:14px;
+  margin:8px 0 18px;
+}
+
+/* BUTTONS */
+.btn{
+  display:block;
+  background:linear-gradient(135deg,#2e7d32,#43a047);
+  color:#fff;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
+  margin-bottom:20px;
+  border:2px solid #1b5e20;
+}
+
+/* RATINGS */
+.ratings{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+}
+.rate{
+  flex:1;
+  border:2px solid #d4af37;
+  border-radius:14px;
+  padding:12px;
+  background:#fff8dc;
+  font-size:14px;
+}
+.rate strong{
+  display:block;
+  margin-top:4px;
+}
+
+/* CONTACT */
+.contact a{
+  display:block;
+  padding:14px;
+  border-bottom:1px solid #eee;
+  text-decoration:none;
+  color:#333;
+  font-weight:700;
+}
+
+/* HEADINGS */
+.section{
+  margin:25px 0 10px;
+  font-weight:900;
+  color:#b8962e;
   letter-spacing:1px;
 }
 
-.header p{
-  margin-top:6px;
+/* SOCIAL GRID */
+.social{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.social a{
+  padding:14px;
+  border-radius:14px;
+  background:#fff;
+  border:2px solid #e0c36f;
+  text-decoration:none;
+  color:#333;
+  font-weight:800;
+}
+
+/* ADDRESS */
+.address{
+  background:#fff8dc;
+  border:2px solid #d4af37;
+  border-radius:14px;
+  padding:14px;
+  margin-top:15px;
   font-size:14px;
-  opacity:.9;
 }
 
-.btn-primary{
-  display:block;
-  background:#1e7e34;
-  color:#fff;
-  text-align:center;
-  padding:14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  margin:18px;
+/* QR */
+.qr{
+  margin-top:25px;
+  padding:18px;
+  background:#000;
+  color:#d4af37;
+  border-radius:16px;
+  font-weight:900;
 }
 
-.list a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:14px 18px;
-  text-decoration:none;
-  color:var(--dark);
-  border-top:1px solid #eee;
-}
-
-.list a:hover{
-  background:#f6f4ef;
-}
-
-.icon{
-  width:28px;
-  text-align:center;
-  font-size:18px;
-  color:var(--gold);
-}
-
-.footer{
-  text-align:center;
-  padding:14px;
-  font-size:13px;
-  color:#777;
+/* FLOATING SAVE */
+.floating{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:420px;
+  width:90%;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-  <div class="card">
 
-    <div class="header">
-      <h1>K-SHINE JEWELLERS</h1>
-      <p>Gold • Diamond • Silver Jewellery</p>
-    </div>
+<div class="card">
 
-    <!-- Save Contact -->
-    <a class="btn-primary" href="contact.vcf">💾 Save Contact</a>
-
-    <div class="list">
-      <a href="tel:+919622212879"><span class="icon">📞</span>+91 96222 12879</a>
-      <a href="https://wa.me/919622212879"><span class="icon">💬</span>Chat on WhatsApp</a>
-      <a href="https://www.instagram.com/kshine_jewellers"><span class="icon">📸</span>Instagram</a>
-      <a href="https://www.facebook.com/kshinejewelers"><span class="icon">👍</span>Facebook Page</a>
-      <a href="https://www.facebook.com/groups/1233168123948595"><span class="icon">👥</span>Facebook Group</a>
-      <a href="https://youtube.com/@k-shinejewellers1365"><span class="icon">▶️</span>YouTube</a>
-      <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"><span class="icon">🟢</span>Join WhatsApp Group</a>
-      <a href="https://maps.app.goo.gl/DAF2cTd81weVF29N8"><span class="icon">📍</span>Gandhi Nagar Showroom</a>
-      <a href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8"><span class="icon">📍</span>Janipur Showroom</a>
-      <a href="https://kshinejewellers.com"><span class="icon">🌐</span>Official Website</a>
-    </div>
-
-    <div class="footer">
-      Trusted Jewellery Since Years
-    </div>
-
+<div class="banner">
+  <div class="dp">
+    <img src="dpimage.png" alt="K-Shine Jewellers">
   </div>
 </div>
+
+<div class="content">
+
+<div class="brand">K-SHINE JEWELLERS</div>
+<div class="tag">Your Trusted Jewellery Brand For Gold, Diamond & Silver Jewellery In Jammu</div>
+
+<div class="ratings">
+  <div class="rate">⭐⭐⭐⭐⭐<br><strong>4.9 Gandhi Nagar</strong><br>1200+ Reviews</div>
+  <div class="rate">⭐⭐⭐⭐⭐<br><strong>4.8 Janipur</strong><br>980+ Reviews</div>
+</div>
+
+<div class="contact">
+  <a href="tel:+919622212879">📞 +91 96222 12879</a>
+  <a href="https://wa.me/919622212879">💬 WhatsApp Us</a>
+</div>
+
+<div class="section">JOIN SOCIAL MEDIA</div>
+
+<div class="social">
+  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">🟢 Join WhatsApp Group</a>
+  <a href="https://www.instagram.com/kshine_jewellers">📸 Instagram</a>
+  <a href="https://www.facebook.com/kshinejewelers">👍 Facebook Page</a>
+  <a href="https://youtube.com/@k-shinejewellers1365">▶️ YouTube</a>
+</div>
+
+<div class="section">OUR SHOWROOMS</div>
+
+<div class="address">
+<strong>Gandhi Nagar Branch</strong><br>
+27-B Auqaf Market, Gandhi Nagar<br>
+Opp SBI Bank, Jammu – 180004
+</div>
+
+<div class="address">
+<strong>Janipur Branch</strong><br>
+Disco Road, Near Dreamland School<br>
+Janipur, Jammu – 180007
+</div>
+
+<div class="section">OFFICIAL WEBSITE</div>
+<a class="btn" href="https://kshinejewellers.com/">🌐 Visit Website</a>
+
+<div class="qr">📷 Scan / Share Digital Business Card</div>
+
+</div>
+</div>
+
+<div class="floating">
+  <a class="btn" href="contact.vcf">💾 Save Contact</a>
+</div>
+
 </body>
 </html>
