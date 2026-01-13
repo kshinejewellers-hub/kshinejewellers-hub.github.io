@@ -6,172 +6,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-@font-face {
-  font-family: 'ErasITC';
-  src: url('eras-itc-regular.ttf') format('truetype');
+@font-face{
+  font-family:'ErasITC';
+  src:url('eras-itc-regular.ttf') format('truetype');
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
   margin:0;
-  font-family:'ErasITC', Arial, sans-serif;
-  background: linear-gradient(
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.35)
-  ), url('bannerimage.jpg') no-repeat center/cover;
-  min-height:100vh;
+  font-family:'ErasITC',Arial,sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('bannerimage.jpg') center/cover fixed;
 }
 
+/* MAIN CARD */
 .card{
-  max-width:420px;
-  margin:30px auto;
-  background:rgba(255,255,255,.95);
-  border-radius:22px;
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
-  overflow:hidden;
-}
-
-.cover img{
-  width:100%;
-  display:block;
-}
-
-.dp{
-  text-align:center;
-  margin-top:-55px;
-}
-
-.dp img{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  border:5px solid #fff;
+  max-width:430px;
+  margin:30px auto 140px;
   background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.55);
 }
 
+/* COVER */
+.cover img{width:100%;display:block}
+
+/* DP */
+.dp{text-align:center;margin-top:-60px}
+.dp img{
+  width:130px;height:130px;border-radius:50%;
+  border:5px solid #fff;
+  box-shadow:0 14px 40px rgba(0,0,0,.45)
+}
+
+/* BRAND */
 h1{
   text-align:center;
-  margin:10px 0 5px;
+  margin:14px 0 6px;
   letter-spacing:3px;
-  font-weight:700;
 }
-
 .tagline{
   text-align:center;
   color:#b8962e;
   font-size:14px;
+  padding:0 14px;
 }
 
-.btn-main{
-  display:block;
-  margin:18px auto;
-  width:85%;
-  padding:14px;
-  border-radius:30px;
-  text-align:center;
-  background:linear-gradient(135deg,#0f6b3f,#2fa86b);
-  color:#fff;
+/* LANGUAGE */
+.lang{text-align:center;margin:12px}
+.lang span{
+  cursor:pointer;
+  margin:0 10px;
   font-weight:700;
+  color:#b8962e;
+}
+
+/* BUTTONS */
+.main-btn{
+  display:block;
+  width:86%;
+  margin:20px auto;
+  padding:16px;
+  border-radius:40px;
+  text-align:center;
+  color:#fff;
   text-decoration:none;
-  box-shadow:0 8px 18px rgba(0,0,0,.3);
+  font-weight:700;
+  background:linear-gradient(135deg,#0a5a35,#3cc083);
+  border:2px solid #d6b45c;
+  box-shadow:0 12px 28px rgba(0,0,0,.35);
 }
 
+/* SECTIONS */
 .section{
-  padding:18px;
+  padding:22px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
 }
-
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
 .section h3{
   text-align:center;
   color:#b8962e;
   letter-spacing:2px;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
-/* Ratings */
-.ratings{
-  display:flex;
-  gap:12px;
-}
-
-.rate-box{
+/* RATINGS */
+.ratings{display:flex;gap:12px}
+.rate{
   flex:1;
-  border:2px solid #d2b04c;
-  border-radius:14px;
-  padding:12px;
+  border:2px solid #d6b45c;
+  border-radius:20px;
+  padding:14px;
+  background:#fff7e2;
   text-align:center;
-  font-weight:600;
+  font-weight:700;
 }
 
-/* Slider */
-.slider{
+/* GOOGLE REVIEWS */
+.review-box{
+  border:2px solid #d6b45c;
+  border-radius:20px;
   overflow:hidden;
-  margin-top:10px;
 }
 
-.slider-track{
-  display:flex;
-  width:200%;
-  animation: slide 18s linear infinite;
-}
-
-.slider-track img{
-  width:180px;
-  height:260px;
-  margin-right:14px;
-  border-radius:18px;
-  object-fit:cover;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-@keyframes slide{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
-}
-
-/* Social */
+/* SOCIAL */
 .social{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:14px;
 }
-
 .social a{
-  border:2px solid #d2b04c;
-  border-radius:14px;
+  border:2px solid #d6b45c;
+  border-radius:20px;
   padding:14px;
-  text-align:center;
   text-decoration:none;
   color:#000;
-  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+}
+.social img{width:26px}
+
+/* GALLERY */
+.gallery{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+}
+.gallery img{
+  width:180px;
+  border-radius:18px;
+  cursor:pointer;
+  box-shadow:0 14px 30px rgba(0,0,0,.4)
 }
 
-/* Address */
-.addr{
-  border:2px solid #d2b04c;
-  border-radius:14px;
-  padding:12px;
-  margin-bottom:10px;
-  font-size:14px;
+/* FULLSCREEN VIEWER */
+.viewer{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
+.viewer img{max-width:90%}
 
-/* Floating button */
+/* FLOATING SAVE */
 .floating{
   position:fixed;
   bottom:18px;
   left:50%;
   transform:translateX(-50%);
-  width:85%;
-  background:#0f6b3f;
+  width:86%;
+  padding:16px;
+  background:#0a5a35;
   color:#fff;
   text-align:center;
-  padding:14px;
-  border-radius:30px;
+  border-radius:40px;
   font-weight:700;
   text-decoration:none;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  border:2px solid #d6b45c;
+  box-shadow:0 14px 30px rgba(0,0,0,.45);
 }
 </style>
 </head>
@@ -180,22 +185,99 @@ h1{
 
 <div class="card">
 
-<div class="cover">
-  <img src="bannerimage.jpg">
-</div>
-
-<div class="dp">
-  <img src="dpimage.png">
-</div>
+<div class="cover"><img src="bannerimage.jpg"></div>
+<div class="dp"><img src="dpimage.png"></div>
 
 <h1>K-SHINE JEWELLERS</h1>
-<div class="tagline">
+<div class="tagline" id="tag">
 Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
 </div>
 
-<a class="btn-main" href="contact.vcf">💾 Save Contact</a>
+<div class="lang">
+<span onclick="langEN()">English</span> | 
+<span onclick="langHI()">हिंदी</span>
+</div>
+
+<a class="main-btn" href="contact.vcf">💾 Save Contact</a>
 
 <div class="section">
-  <div class="ratings">
-    <div class="rate-box">★★★★★<br>Gandhi Nagar<br>1000+ Reviews</div>
-    <div class="rate-box">★★★★★<br>Janipur<br
+<h3>CUSTOMER RATINGS</h3>
+<div class="ratings">
+  <div class="rate">★★★★★<br>Gandhi Nagar<br>1000+ Reviews</div>
+  <div class="rate">★★★★★<br>Janipur<br>1200+ Reviews</div>
+</div>
+</div>
+
+<div class="section">
+<h3>GOOGLE REVIEWS</h3>
+<div class="review-box">
+<iframe
+  src="https://www.google.com/maps?q=K-Shine+Jewellers+Jammu&output=embed"
+  width="100%" height="260" style="border:0;" loading="lazy">
+</iframe>
+</div>
+</div>
+
+<div class="section">
+<h3>JOIN SOCIAL MEDIA</h3>
+<div class="social">
+  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">
+    <img src="icons/whatsapp.svg"> Join WhatsApp Group
+  </a>
+  <a href="https://www.instagram.com/kshine_jewellers">
+    <img src="icons/instagram.svg"> Instagram
+  </a>
+  <a href="https://www.facebook.com/kshinejewelers">
+    <img src="icons/facebook.svg"> Facebook Page
+  </a>
+  <a href="https://youtube.com/@k-shinejewellers1365">
+    <img src="icons/youtube.svg"> YouTube
+  </a>
+</div>
+</div>
+
+<div class="section">
+<h3>MODEL COLLECTION</h3>
+<div class="gallery">
+<img src="gallery/model1.jpg" onclick="openImg(this.src)">
+<img src="gallery/model2.jpg" onclick="openImg(this.src)">
+<img src="gallery/model3.jpg" onclick="openImg(this.src)">
+<img src="gallery/model4.jpg" onclick="openImg(this.src)">
+</div>
+</div>
+
+</div>
+
+<a class="floating" href="contact.vcf">💾 Save Contact</a>
+
+<div class="viewer" onclick="this.style.display='none'">
+<img id="big">
+</div>
+
+<script>
+function openImg(src){
+ document.querySelector('.viewer').style.display='flex';
+ document.getElementById('big').src=src;
+}
+
+function langHI(){
+ document.getElementById('tag').innerText =
+ 'जम्मू में सोने, हीरे और चांदी के लिए आपका भरोसेमंद ज्वैलरी ब्रांड';
+}
+function langEN(){
+ document.getElementById('tag').innerText =
+ 'Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu';
+}
+
+/* Scroll reveal */
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('show')}
+ })
+},{threshold:.15});
+sections.forEach(s=>observer.observe(s));
+</script>
+
+</body>
+</html>
