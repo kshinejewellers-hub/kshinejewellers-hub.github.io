@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-SHINE JEWELLERS | Jewellery Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:linear-gradient(180deg,#f6f1e6,#efe6cf);
+}
+
+/* HEADER */
+.header{
+  background:url('bannerimage.png') center/cover no-repeat;
+  padding:40px 20px;
+  text-align:center;
+  color:#fff;
+}
+.header h1{
+  margin:0;
+  font-size:28px;
+  font-weight:900;
+  text-shadow:0 4px 10px rgba(0,0,0,.6);
+}
+.header p{
+  margin-top:8px;
+  font-size:15px;
+}
+
+/* BACK BUTTON */
+.back{
+  display:inline-block;
+  margin:18px auto;
+  padding:12px 18px;
+  background:#000;
+  color:#d4af37;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:700;
+}
+
+/* GALLERY WRAPPER */
+.wrapper{
+  max-width:430px;
+  margin:20px auto 40px;
+  padding:0 16px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  color:#8a6a12;
+  margin-bottom:16px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+/* IMAGE CARD */
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid #d4af37;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+.card img{
+  width:100%;
+  display:block;
+}
+.card span{
+  display:block;
+  padding:10px;
+  text-align:center;
+  font-weight:700;
+  color:#6b5a2c;
+}
+
+/* FOOTER NOTE */
+.note{
+  text-align:center;
+  margin-top:25px;
+  font-size:14px;
+  color:#6b5a2c;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Jewellery Collection</h1>
+  <p>Discover Elegance & Craftsmanship</p>
+</div>
+
+<div style="text-align:center;">
+  <a class="back" href="index.html">← Back to Digital Card</a>
+</div>
+
+<!-- GALLERY -->
+<div class="wrapper">
+
+  <div class="section-title">Our Signature Designs</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="gallery1.jpg" alt="Gold Jewellery">
+      <span>Gold Collection</span>
+    </div>
+
+    <div class="card">
+      <img src="gallery2.jpg" alt="Diamond Jewellery">
+      <span>Diamond Collection</span>
+    </div>
+
+    <div class="card">
+      <img src="gallery3.jpg" alt="Bridal Jewellery">
+      <span>Bridal Sets</span>
+    </div>
+
+    <div class="card">
+      <img src="gallery4.jpg" alt="Silver Jewellery">
+      <span>Silver Jewellery</span>
+    </div>
+
+  </div>
+
+  <div class="note">
+    Visit our showroom to explore more exclusive designs ✨
+  </div>
+
+</div>
+
+</body>
+</html>
 
