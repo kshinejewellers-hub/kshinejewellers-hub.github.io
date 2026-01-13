@@ -2,99 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-SHINE JEWELLERS | Luxury Digital Card</title>
+<title>K-SHINE JEWELLERS | Premium Digital Card</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ERAS DEMI ITC FONT -->
 <style>
-*{box-sizing:border-box}
-:root{
-  --gold:#d4af37;
-  --gold-dark:#8a6b1f;
-  --bg-light:#fff7df;
-  --bg-dark:#0f0f0f;
-  --card-light:#ffffff;
-  --card-dark:#1a1a1a;
-  --text-light:#333;
-  --text-dark:#f5f5f5;
+@font-face {
+  font-family: 'ErasDemiITC';
+  src: url('eras-demi-itc.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* RESET */
+*{box-sizing:border-box}
+
+/* COLORS */
+:root{
+  --gold:#d4af37;
+  --gold-dark:#9c7a1e;
+  --blue1:#0f3c5c;
+  --blue2:#1e6fa1;
+}
+
+/* BODY */
 body{
   margin:0;
   font-family:'Segoe UI',Arial,sans-serif;
   background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    linear-gradient(rgba(255,248,235,.92),rgba(255,248,235,.92)),
     url('bannerimage.png') center/cover fixed no-repeat;
-  color:var(--text-light);
-  transition:.3s;
+  color:#2c2c2c;
 }
 
-.dark body{color:var(--text-dark)}
-
+/* CARD */
 .card{
   max-width:440px;
-  margin:30px auto 120px;
-  background:var(--card-light);
-  border-radius:28px;
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  margin:28px auto 130px;
+  background:#ffffff;
+  border-radius:26px;
+  box-shadow:0 25px 60px rgba(0,0,0,.4);
   overflow:hidden;
-  transition:.3s;
 }
-.dark .card{background:var(--card-dark)}
 
-.banner img{width:100%;display:block}
+/* BANNER */
+.banner img{
+  width:100%;
+  display:block;
+}
 
+/* LOGO */
 .logo{
-  margin-top:-65px;
+  margin-top:-60px;
   text-align:center;
 }
 .logo img{
-  width:135px;height:135px;
+  width:130px;
+  height:130px;
   border-radius:50%;
-  border:6px solid #fff;
+  border:5px solid #fff;
   background:#fff;
-  box-shadow:0 12px 30px rgba(0,0,0,.4);
 }
 
-h1{
+/* BRAND NAME */
+.brand{
   text-align:center;
   margin:14px 10px 6px;
-  font-size:26px;
-  background:linear-gradient(135deg,#d4af37,#fff1a8,#b8962e);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-weight:900;
+  font-family:'ErasDemiITC', serif;
+  font-size:28px;
+  letter-spacing:1.2px;
+  color:var(--gold-dark);
 }
+
+/* TAGLINE */
 .tagline{
   text-align:center;
-  color:var(--gold-dark);
   font-size:14px;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
-.btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin:14px 20px;
-  padding:16px;
-  font-weight:900;
-  font-size:17px;
+/* SAVE CONTACT */
+.save-btn{
+  display:block;
+  margin:12px 40px;
+  padding:12px;
+  text-align:center;
+  font-weight:800;
+  font-size:15px;
   color:#fff;
   text-decoration:none;
-  border-radius:22px;
-  background:linear-gradient(135deg,#1b5e20,#43a047);
+  border-radius:18px;
+  background:linear-gradient(135deg,#1e6fa1,#3fa9c9);
   border:2px solid var(--gold);
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
-}
-.btn:active{transform:scale(.95)}
-
-.icon{
-  width:22px;
-  height:22px;
-  fill:var(--gold);
 }
 
+/* SECTION */
+.section{
+  text-align:center;
+  font-weight:800;
+  margin:26px 0 12px;
+  color:var(--gold-dark);
+}
+
+/* RATINGS */
 .ratings{
   display:flex;
   gap:12px;
@@ -102,33 +112,29 @@ h1{
 }
 .rating-box{
   flex:1;
-  background:linear-gradient(135deg,#fff7d6,#f1d27a);
-  border:2px solid var(--gold);
+  background:linear-gradient(135deg,var(--blue1),var(--blue2));
   border-radius:18px;
   padding:14px;
+  color:#fff;
   text-align:center;
-  font-weight:900;
+  font-weight:800;
+  border:2px solid var(--gold);
 }
+.stars{color:var(--gold);font-size:16px}
 
-.section{
-  text-align:center;
-  font-weight:900;
-  color:var(--gold-dark);
-  margin:28px 0 14px;
-  letter-spacing:1px;
-}
-
+/* LINKS */
 .link{
   display:flex;
   align-items:center;
-  gap:14px;
-  padding:16px 20px;
-  border-top:1px solid #eee;
-  color:inherit;
+  gap:12px;
+  padding:14px 20px;
+  border-top:1px solid #e5e5e5;
   text-decoration:none;
-  font-weight:800;
+  color:#2c2c2c;
+  font-weight:700;
 }
 
+/* SOCIAL */
 .social-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -138,58 +144,54 @@ h1{
 .social-btn{
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:10px;
-  background:linear-gradient(135deg,#fff,#fff7df);
+  padding:14px;
+  border-radius:16px;
   border:2px solid var(--gold);
-  border-radius:18px;
-  padding:16px;
-  font-weight:900;
   text-decoration:none;
-  color:#333;
+  color:#2c2c2c;
+  font-weight:800;
 }
-.dark .social-btn{background:#111;color:#f5f5f5}
+.social-btn img{
+  width:22px;
+  height:22px;
+}
 
-.slider{
+/* MODEL GALLERY */
+.gallery{
   display:flex;
   gap:14px;
   overflow-x:auto;
-  padding:16px 20px;
+  padding:14px 20px;
 }
-.slider img{
+.gallery img{
   width:170px;
   border-radius:18px;
   box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
+/* ADDRESS */
 .address{
-  background:var(--bg-light);
-  border-radius:18px;
+  background:#fdf6e3;
+  border-radius:16px;
   margin:12px 20px;
-  padding:16px;
-  font-weight:800;
+  padding:14px;
+  font-weight:700;
   border:2px solid var(--gold);
 }
-.dark .address{background:#111}
 
+/* QR */
 .qr{
   text-align:center;
   margin:20px;
 }
 .qr img{
-  border-radius:18px;
   background:#fff;
-  padding:12px;
+  padding:10px;
+  border-radius:16px;
 }
 
-.toggle{
-  text-align:center;
-  font-weight:900;
-  color:var(--gold-dark);
-  cursor:pointer;
-  margin:10px;
-}
-
+/* FLOAT */
 .float-save{
   position:fixed;
   bottom:18px;
@@ -197,55 +199,67 @@ h1{
   transform:translateX(-50%);
   width:92%;
   max-width:440px;
-  z-index:99;
 }
 </style>
-
-<script>
-function toggleDark(){
-  document.documentElement.classList.toggle('dark');
-}
-</script>
 </head>
 
 <body>
 
 <div class="card">
 
-  <div class="banner"><img src="bannerimage.png"></div>
+  <div class="banner">
+    <img src="bannerimage.png" alt="K-Shine Banner">
+  </div>
 
-  <div class="logo"><img src="dpimage.png"></div>
+  <div class="logo">
+    <img src="dpimage.png" alt="K-Shine Logo">
+  </div>
 
-  <h1>K-SHINE JEWELLERS</h1>
+  <div class="brand">K-SHINE JEWELLERS</div>
+
   <div class="tagline">
     Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
   </div>
 
-  <div class="toggle" onclick="toggleDark()">🌙 Toggle Luxury Night Mode</div>
+  <a class="save-btn" href="contact.vcf">Save Contact</a>
 
-  <a class="btn" href="contact.vcf">
-    💾 Save Contact
-  </a>
-
+  <div class="section">CUSTOMER RATINGS</div>
   <div class="ratings">
-    <div class="rating-box">⭐⭐⭐⭐⭐<br>4.9 Gandhi Nagar<br>1000+ Reviews</div>
-    <div class="rating-box">⭐⭐⭐⭐⭐<br>5.0 Janipur<br>1260+ Reviews</div>
+    <div class="rating-box">
+      <div class="stars">★★★★★</div>
+      Gandhi Nagar<br>
+      4.9 Rating<br>
+      1000+ Reviews
+    </div>
+    <div class="rating-box">
+      <div class="stars">★★★★★</div>
+      Janipur<br>
+      4.9 Rating<br>
+      1261 Reviews
+    </div>
   </div>
 
   <a class="link" href="tel:+919622212879">📞 +91 96222 12879</a>
   <a class="link" href="https://wa.me/919622212879">💬 WhatsApp Us</a>
 
   <div class="section">JOIN SOCIAL MEDIA</div>
-
   <div class="social-grid">
-    <a class="social-btn" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">WhatsApp Group</a>
-    <a class="social-btn" href="https://www.instagram.com/kshine_jewellers">Instagram</a>
-    <a class="social-btn" href="https://www.facebook.com/kshinejewelers">Facebook Page</a>
-    <a class="social-btn" href="https://youtube.com/@k-shinejewellers1365">YouTube</a>
+    <a class="social-btn" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">
+      <img src="icons/whatsapp.svg"> Join WhatsApp Group
+    </a>
+    <a class="social-btn" href="https://www.instagram.com/kshine_jewellers">
+      <img src="icons/instagram.svg"> Instagram
+    </a>
+    <a class="social-btn" href="https://www.facebook.com/kshinejewelers">
+      <img src="icons/facebook.svg"> Facebook Page
+    </a>
+    <a class="social-btn" href="https://youtube.com/@k-shinejewellers1365">
+      <img src="icons/youtube.svg"> YouTube
+    </a>
   </div>
 
-  <div class="section">INSTAGRAM HIGHLIGHTS</div>
-  <div class="slider">
+  <div class="section">MODEL COLLECTION</div>
+  <div class="gallery">
     <img src="model1.png">
     <img src="model2.png">
     <img src="model3.png">
@@ -253,12 +267,14 @@ function toggleDark(){
 
   <div class="section">OUR SHOWROOMS</div>
   <div class="address">
-    📍 Gandhi Nagar<br>
-    27-B Auqaf Market, Opp SBI Bank<br>Jammu – 180004
+    <b>Gandhi Nagar</b><br>
+    27-B Auqaf Market, Opp SBI Bank<br>
+    Jammu – 180004
   </div>
   <div class="address">
-    📍 Janipur<br>
-    Disco Road, Near Dreamland School<br>Jammu – 180007
+    <b>Janipur</b><br>
+    Disco Road, Near Dreamland School<br>
+    Jammu – 180007
   </div>
 
   <div class="section">SCAN DIGITAL CARD</div>
@@ -269,7 +285,7 @@ function toggleDark(){
 </div>
 
 <div class="float-save">
-  <a class="btn" href="contact.vcf">💾 Save Contact</a>
+  <a class="save-btn" href="contact.vcf">Save Contact</a>
 </div>
 
 </body>
