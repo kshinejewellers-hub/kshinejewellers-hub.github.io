@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-SHINE JEWELLERS</title>
+<title>KSHINE JEWELLERS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -12,30 +12,33 @@
 }
 
 :root{
+  --gold-dark:#b8901f;
   --gold:#d4af37;
+  --gold-light:#fff1b8;
   --soft-gold:#fff8e1;
   --blue:#1e5ad6;
+  --green:#6ccf91;
 }
 
-/* ===== BACKGROUND ===== */
+/* Background */
 body{
   margin:0;
   font-family:'Segoe UI',Arial,sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 .overlay{
-  background:rgba(0,0,0,.35);
+  background:rgba(0,0,0,.38);
   min-height:100vh;
-  padding-bottom:140px;
+  padding-bottom:170px;
 }
 
-/* ===== CARD ===== */
+/* Card */
 .wrapper{
   max-width:430px;
   margin:20px auto;
   background:#fff;
   border-radius:28px;
-  box-shadow:0 30px 70px rgba(0,0,0,.45);
+  box-shadow:0 35px 80px rgba(0,0,0,.5);
   overflow:hidden;
 }
 
@@ -55,11 +58,11 @@ body{
   justify-content:center;
 }
 .dp img{
-  width:115px;
-  height:115px;
+  width:118px;
+  height:118px;
   border-radius:50%;
   border:6px solid #fff;
-  box-shadow:0 12px 30px rgba(0,0,0,.45);
+  box-shadow:0 14px 35px rgba(0,0,0,.45);
 }
 
 /* Content */
@@ -71,9 +74,9 @@ body{
 /* Brand */
 .brand{
   font-family:'ErasDemi';
-  font-size:28px;
-  letter-spacing:1px;
-  background:linear-gradient(120deg,#b8962e,#fff3b0,#d4af37);
+  font-size:30px;
+  letter-spacing:1.2px;
+  background:linear-gradient(120deg,#9a7615,#e6c96f,#b8901f);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
@@ -83,28 +86,28 @@ body{
   display:flex;
   justify-content:center;
   gap:10px;
-  margin:12px 0 18px;
+  margin:14px 0 18px;
 }
 .toggle-bar button{
   background:#000;
   color:var(--gold);
   border:2px solid var(--gold);
-  border-radius:20px;
-  padding:6px 14px;
+  border-radius:22px;
+  padding:7px 16px;
   font-weight:800;
 }
 
 /* Tagline */
 .tag{
-  font-size:15px;
+  font-size:15.5px;
   font-style:italic;
-  font-weight:300;
+  font-weight:600;
   color:#6b5a2c;
-  margin:12px 0 26px;
-  animation:fadeUp 1.2s ease forwards;
+  margin:14px 0 26px;
+  animation:tagMove 1.4s ease forwards;
 }
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(10px);}
+@keyframes tagMove{
+  from{opacity:0;transform:translateY(14px);}
   to{opacity:1;transform:translateY(0);}
 }
 
@@ -123,7 +126,7 @@ body{
   font-weight:900;
   text-decoration:none;
   color:#000;
-  box-shadow:0 12px 26px rgba(0,0,0,.22);
+  box-shadow:0 14px 30px rgba(0,0,0,.22);
 }
 .rate small{
   display:block;
@@ -132,29 +135,30 @@ body{
   color:#6b5a2c;
 }
 
-/* Call + WhatsApp */
+/* Call / WhatsApp */
 .action-row{
   display:flex;
   gap:12px;
-  margin:20px 0;
+  margin:22px 0;
 }
 .action-row a{
   flex:1;
-  padding:14px;
-  border-radius:16px;
-  background:var(--blue);
-  color:#fff;
+  padding:15px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#7ee2a8,#52b97f);
+  color:#003b20;
+  border:2px solid var(--gold);
   text-decoration:none;
-  font-weight:800;
+  font-weight:900;
 }
 
 /* Website */
 .website-btn{
   display:block;
   margin-bottom:24px;
-  padding:14px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#d4af37,#fff3b0);
+  padding:15px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#d4af37,#fff1b8);
   color:#000;
   font-weight:900;
   text-decoration:none;
@@ -195,22 +199,25 @@ body{
 
 /* QR */
 .qr{
-  margin-top:30px;
-  padding:22px;
+  margin-top:32px;
+  padding:24px;
   background:#000;
-  border-radius:22px;
+  border-radius:24px;
+  border:3px solid var(--gold);
+  box-shadow:0 0 25px rgba(212,175,55,.55);
   text-align:center;
 }
 .qr img{
   width:180px;
   height:180px;
   background:#fff;
-  border-radius:12px;
+  border-radius:14px;
 }
 .qr-text{
-  margin-top:10px;
-  font-size:13px;
-  color:#e6c96f;
+  margin-top:12px;
+  font-family:'ErasDemi';
+  font-size:14px;
+  color:var(--gold-light);
 }
 
 /* Floating buttons */
@@ -227,18 +234,19 @@ body{
   z-index:999;
 }
 .float-btn{
-  padding:16px 18px;
-  border-radius:18px;
+  padding:20px 28px;
+  border-radius:22px;
   font-weight:900;
   text-decoration:none;
   display:block;
 }
 .save{
-  background:var(--blue);
-  color:#fff;
+  background:linear-gradient(135deg,#d4af37,#fff1b8);
+  color:#000;
+  border:2px solid #b8901f;
 }
 .site{
-  background:linear-gradient(135deg,#d4af37,#fff3b0);
+  background:linear-gradient(135deg,#d4af37,#fff1b8);
   color:#000;
 }
 </style>
@@ -255,7 +263,7 @@ body{
 
 <div class="content">
 
-<div class="brand">K-SHINE JEWELLERS</div>
+<div class="brand">KSHINE JEWELLERS</div>
 
 <div class="toggle-bar">
   <button>EN</button>
@@ -305,7 +313,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 
 <div class="qr">
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://kshinejewellers-hub.github.io">
-  <div class="qr-text">Scan to join K-Shine Jewellers digitally</div>
+  <div class="qr-text">Scan to join Kshine Jewellers digitally</div>
 </div>
 
 </div>
@@ -316,7 +324,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 </div>
 
 <div class="float-right">
-  <a class="float-btn save" href="contact.vcf">💾 Save</a>
+  <a class="float-btn save" href="contact.vcf">💾 Save Contact</a>
 </div>
 
 </div>
