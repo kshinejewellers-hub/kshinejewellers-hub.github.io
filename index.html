@@ -15,109 +15,98 @@
 
 body{
   margin:0;
-  font-family:'ErasITC',Arial,sans-serif;
+  font-family:'ErasITC', Arial, sans-serif;
   background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
     url('bannerimage.jpg') center/cover fixed;
 }
 
-/* MAIN CARD */
+/* Main Card */
 .card{
   max-width:430px;
-  margin:30px auto 140px;
-  background:#fff;
-  border-radius:28px;
+  margin:30px auto 130px;
+  background:rgba(255,255,255,.97);
+  border-radius:26px;
+  box-shadow:0 35px 80px rgba(0,0,0,.45);
   overflow:hidden;
-  box-shadow:0 40px 90px rgba(0,0,0,.55);
 }
 
-/* COVER */
-.cover img{width:100%;display:block}
+/* Cover */
+.cover img{width:100%;display:block;}
 
 /* DP */
-.dp{text-align:center;margin-top:-60px}
+.dp{text-align:center;margin-top:-60px;}
 .dp img{
-  width:130px;height:130px;border-radius:50%;
+  width:125px;height:125px;border-radius:50%;
   border:5px solid #fff;
-  box-shadow:0 14px 40px rgba(0,0,0,.45)
+  box-shadow:0 12px 30px rgba(0,0,0,.4);
 }
 
-/* BRAND */
+/* Headings */
 h1{
   text-align:center;
-  margin:14px 0 6px;
   letter-spacing:3px;
+  margin:12px 0 6px;
 }
 .tagline{
   text-align:center;
   color:#b8962e;
   font-size:14px;
-  padding:0 14px;
+  padding:0 12px;
 }
 
-/* LANGUAGE */
-.lang{text-align:center;margin:12px}
-.lang span{
-  cursor:pointer;
-  margin:0 10px;
-  font-weight:700;
-  color:#b8962e;
-}
-
-/* BUTTONS */
-.main-btn{
-  display:block;
-  width:86%;
-  margin:20px auto;
-  padding:16px;
-  border-radius:40px;
-  text-align:center;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  background:linear-gradient(135deg,#0a5a35,#3cc083);
+/* Buttons */
+.btn-main{
+  display:block;width:85%;margin:20px auto;
+  padding:16px;border-radius:36px;
+  text-align:center;text-decoration:none;
+  color:#fff;font-weight:700;
+  background:linear-gradient(135deg,#0b5f38,#38b47b);
   border:2px solid #d6b45c;
   box-shadow:0 12px 28px rgba(0,0,0,.35);
 }
 
-/* SECTIONS */
-.section{
-  padding:22px;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
-}
-.section.show{
-  opacity:1;
-  transform:translateY(0);
-}
+/* Sections */
+.section{padding:20px;}
 .section h3{
   text-align:center;
   color:#b8962e;
   letter-spacing:2px;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
-/* RATINGS */
-.ratings{display:flex;gap:12px}
+/* Ratings */
+.ratings{display:flex;gap:12px;}
 .rate{
   flex:1;
   border:2px solid #d6b45c;
-  border-radius:20px;
+  border-radius:18px;
   padding:14px;
-  background:#fff7e2;
   text-align:center;
   font-weight:700;
+  background:#fff8e4;
 }
 
-/* GOOGLE REVIEWS */
-.review-box{
-  border:2px solid #d6b45c;
-  border-radius:20px;
-  overflow:hidden;
+/* Slider */
+.slider{overflow:hidden;}
+.track{
+  display:flex;
+  width:calc(200%);
+  animation:scroll 22s linear infinite;
+}
+.track img{
+  width:180px;height:260px;
+  margin-right:16px;
+  border-radius:18px;
+  object-fit:cover;
+  box-shadow:0 12px 28px rgba(0,0,0,.4);
+}
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
-/* SOCIAL */
+/* Social */
 .social{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -125,54 +114,47 @@ h1{
 }
 .social a{
   border:2px solid #d6b45c;
-  border-radius:20px;
-  padding:14px;
-  text-decoration:none;
-  color:#000;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:700;
-}
-.social img{width:26px}
-
-/* GALLERY */
-.gallery{
-  display:flex;
-  gap:14px;
-  overflow-x:auto;
-}
-.gallery img{
-  width:180px;
   border-radius:18px;
-  cursor:pointer;
-  box-shadow:0 14px 30px rgba(0,0,0,.4)
+  padding:14px;
+  text-align:center;
+  text-decoration:none;
+  font-weight:700;
+  color:#000;
+  background:#fff;
+  transition:.2s;
+}
+.social a:hover{background:#fff2c2;}
+
+/* Address */
+.addr{
+  border:2px solid #d6b45c;
+  border-radius:18px;
+  padding:14px;
+  margin-bottom:12px;
+  font-size:14px;
+  background:#fffaf0;
 }
 
-/* FULLSCREEN VIEWER */
-.viewer{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.95);
-  justify-content:center;
-  align-items:center;
-  z-index:999;
+/* QR */
+.qr{text-align:center;}
+.qr img{
+  width:180px;
+  margin-top:10px;
+  border:2px solid #d6b45c;
+  border-radius:14px;
 }
-.viewer img{max-width:90%}
 
-/* FLOATING SAVE */
+/* Floating Save */
 .floating{
   position:fixed;
-  bottom:18px;
-  left:50%;
+  bottom:18px;left:50%;
   transform:translateX(-50%);
-  width:86%;
+  width:85%;
   padding:16px;
-  background:#0a5a35;
+  border-radius:36px;
+  background:#0b5f38;
   color:#fff;
   text-align:center;
-  border-radius:40px;
   font-weight:700;
   text-decoration:none;
   border:2px solid #d6b45c;
@@ -186,19 +168,15 @@ h1{
 <div class="card">
 
 <div class="cover"><img src="bannerimage.jpg"></div>
+
 <div class="dp"><img src="dpimage.png"></div>
 
 <h1>K-SHINE JEWELLERS</h1>
-<div class="tagline" id="tag">
+<div class="tagline">
 Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
 </div>
 
-<div class="lang">
-<span onclick="langEN()">English</span> | 
-<span onclick="langHI()">हिंदी</span>
-</div>
-
-<a class="main-btn" href="contact.vcf">💾 Save Contact</a>
+<a class="btn-main" href="contact.vcf">💾 Save Contact</a>
 
 <div class="section">
 <h3>CUSTOMER RATINGS</h3>
@@ -209,75 +187,56 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
 </div>
 
 <div class="section">
-<h3>GOOGLE REVIEWS</h3>
-<div class="review-box">
-<iframe
-  src="https://www.google.com/maps?q=K-Shine+Jewellers+Jammu&output=embed"
-  width="100%" height="260" style="border:0;" loading="lazy">
-</iframe>
+<h3>MODEL COLLECTION</h3>
+<div class="slider">
+  <div class="track">
+    <img src="model1.jpg">
+    <img src="model2.jpg">
+    <img src="model3.jpg">
+    <img src="model4.jpg">
+    <img src="model1.jpg">
+    <img src="model2.jpg">
+    <img src="model3.jpg">
+    <img src="model4.jpg">
+  </div>
 </div>
 </div>
 
 <div class="section">
 <h3>JOIN SOCIAL MEDIA</h3>
 <div class="social">
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">
-    <img src="icons/whatsapp.svg"> Join WhatsApp Group
-  </a>
-  <a href="https://www.instagram.com/kshine_jewellers">
-    <img src="icons/instagram.svg"> Instagram
-  </a>
-  <a href="https://www.facebook.com/kshinejewelers">
-    <img src="icons/facebook.svg"> Facebook Page
-  </a>
-  <a href="https://youtube.com/@k-shinejewellers1365">
-    <img src="icons/youtube.svg"> YouTube
-  </a>
+  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">Join WhatsApp Group</a>
+  <a href="https://www.instagram.com/kshine_jewellers">Instagram</a>
+  <a href="https://www.facebook.com/kshinejewelers">Facebook Page</a>
+  <a href="https://youtube.com/@k-shinejewellers1365">YouTube</a>
 </div>
 </div>
 
 <div class="section">
-<h3>MODEL COLLECTION</h3>
-<div class="gallery">
-<img src="gallery/model1.jpg" onclick="openImg(this.src)">
-<img src="gallery/model2.jpg" onclick="openImg(this.src)">
-<img src="gallery/model3.jpg" onclick="openImg(this.src)">
-<img src="gallery/model4.jpg" onclick="openImg(this.src)">
+<h3>OUR SHOWROOMS</h3>
+<div class="addr">
+<b>Gandhi Nagar</b><br>
+27-B Auqaf Market, Opp SBI Bank<br>
+Jammu – 180004<br>
+<a href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">📍 Open in Maps</a>
 </div>
+
+<div class="addr">
+<b>Janipur</b><br>
+Disco Road, Near Dreamland School<br>
+Jammu – 180007<br>
+<a href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8">📍 Open in Maps</a>
+</div>
+</div>
+
+<div class="section qr">
+<h3>SCAN DIGITAL CARD</h3>
+<img src="qrcode.png">
 </div>
 
 </div>
 
 <a class="floating" href="contact.vcf">💾 Save Contact</a>
-
-<div class="viewer" onclick="this.style.display='none'">
-<img id="big">
-</div>
-
-<script>
-function openImg(src){
- document.querySelector('.viewer').style.display='flex';
- document.getElementById('big').src=src;
-}
-
-function langHI(){
- document.getElementById('tag').innerText =
- 'जम्मू में सोने, हीरे और चांदी के लिए आपका भरोसेमंद ज्वैलरी ब्रांड';
-}
-function langEN(){
- document.getElementById('tag').innerText =
- 'Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu';
-}
-
-/* Scroll reveal */
-const sections=document.querySelectorAll('.section');
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('show')}
- })
-},{threshold:.15});
-sections.forEach(s=>observer.observe(s));
-</script>
 
 </body>
 </html>
