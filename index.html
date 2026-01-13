@@ -2,132 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-Shine Jewellers</title>
+<title>K-Shine Jewellers | Digital Card</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:#f7f5f2;
-  color:#333;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f1ec;
 }
 
-/* COVER IMAGE */
-.cover{
-  width:100%;
-  height:220px;
-  background:url('cover.jpg') center/cover no-repeat;
-}
-
-/* PROFILE CARD */
 .card{
-  max-width:380px;
-  margin:-70px auto 20px;
-  background:#fff;
+  max-width:420px;
+  margin:20px auto;
+  background:#ffffff;
   border-radius:18px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.banner img{
+  width:100%;
+  display:block;
+}
+
+.profile{
   text-align:center;
-  position:relative;
+  padding:15px;
 }
 
-/* NAME BEHIND DP */
-.name-bg{
-  position:absolute;
-  top:55px;
-  left:0;
-  right:0;
-  font-size:42px;
-  font-weight:700;
-  color:#c9a24d;
-  opacity:0.15;
-  z-index:0;
-}
-
-/* DP IMAGE */
-.dp{
-  width:110px;
-  height:110px;
+.profile img{
+  width:100px;
+  height:100px;
   border-radius:50%;
-  border:4px solid #c9a24d;
-  object-fit:cover;
+  border:4px solid #fff;
+  margin-top:-60px;
   background:#fff;
-  position:relative;
-  z-index:1;
 }
 
-h1{
-  margin:15px 0 5px;
+.profile h1{
+  margin:10px 0 4px;
   font-size:22px;
 }
 
-.subtitle{
-  color:#c9a24d;
-  font-weight:500;
+.profile p{
+  margin:0;
+  color:#b18b2e;
   font-size:14px;
 }
 
-/* BUTTONS */
-.btn{
+.btn-save{
   display:block;
-  margin:12px 0;
-  padding:14px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  background:#c9a24d;
-  color:#fff;
-}
-
-.btn.green{
+  margin:15px;
   background:#2e7d32;
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  padding:14px;
+  border-radius:10px;
+  font-size:16px;
 }
 
-/* LIST */
 .list a{
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:14px;
-  border-bottom:1px solid #eee;
+  gap:10px;
+  padding:14px 18px;
   text-decoration:none;
   color:#333;
+  border-top:1px solid #eee;
 }
 
-.list img{
-  width:22px;
-  height:22px;
+.list a:hover{
+  background:#f7f7f7;
+}
+
+.footer{
+  text-align:center;
+  padding:15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="cover"></div>
-
 <div class="card">
-  <div class="name-bg">K-SHINE</div>
 
-  <img src="logo.png" class="dp" alt="K-Shine Jewellers">
+  <!-- BANNER IMAGE -->
+  <div class="banner">
+    <img src="bannerimage.png" alt="K-Shine Jewellers Banner">
+  </div>
 
-  <h1>K-SHINE JEWELLERS</h1>
-  <div class="subtitle">Gold • Diamond • Silver Jewellery</div>
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="dpimage.png" alt="K-Shine Logo">
+    <h1>K-SHINE JEWELLERS</h1>
+    <p>Gold • Diamond • Silver Jewellery</p>
+  </div>
 
-  <a class="btn green" href="contact.vcf">💾 Save Contact</a>
+  <!-- SAVE CONTACT -->
+  <a class="btn-save" href="contact.vcf">💾 Save Contact</a>
 
+  <!-- LINKS -->
   <div class="list">
     <a href="tel:+919622212879">📞 +91 96222 12879</a>
     <a href="https://wa.me/919622212879">💬 Chat on WhatsApp</a>
-    <a href="https://www.instagram.com/kshine_jewellers">📸 Instagram</a>
+    <a href="https://www.instagram.com/kshine_jewellers">📷 Instagram</a>
     <a href="https://www.facebook.com/kshinejewelers">👍 Facebook Page</a>
-    <a href="https://www.facebook.com/groups/1233168123948595">👥 Facebook Group</a>
+    <a href="https://www.facebook.com/groups/1233168123948595/">👥 Facebook Group</a>
     <a href="https://youtube.com/@k-shinejewellers1365">▶ YouTube</a>
     <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">🟢 Join WhatsApp Group</a>
     <a href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">📍 Gandhi Nagar Showroom</a>
     <a href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8">📍 Janipur Showroom</a>
-    <a href="https://kshinejewellers.com">🌐 Official Website</a>
+    <a href="https://kshinejewellers.com/">🌐 Official Website</a>
   </div>
+
+  <div class="footer">
+    © K-Shine Jewellers
+  </div>
+
 </div>
 
 </body>
