@@ -6,23 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-@font-face {
-  font-family: 'ErasDemi';
-  src: url('eras-demi-itc.ttf');
+@font-face{
+  font-family:'ErasDemi';
+  src:url('eras-demi-itc.ttf');
 }
 
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: url('bgimage.jpg') center/cover fixed no-repeat;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
+/* background overlay */
 .overlay{
-  background: rgba(255,255,255,0.88);
+  background:rgba(255,255,255,0.9);
   min-height:100vh;
-  padding-bottom:110px;
+  padding-bottom:120px;
 }
 
+/* main card */
 .wrapper{
   max-width:430px;
   margin:20px auto;
@@ -32,14 +34,14 @@ body{
   overflow:hidden;
 }
 
-/* Banner */
+/* banner */
 .banner{
   height:230px;
   background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
 
-/* DP */
+/* dp */
 .dp{
   position:absolute;
   bottom:-55px;
@@ -55,17 +57,35 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 
-/* Content */
+/* content */
 .content{
   padding:75px 20px 30px;
   text-align:center;
 }
 
+/* brand shimmer */
 .brand{
   font-family:'ErasDemi';
   font-size:28px;
-  color:#b8962e;
   letter-spacing:1px;
+  background:linear-gradient(
+    120deg,
+    #b8962e,
+    #fff3b0,
+    #d4af37,
+    #fff3b0,
+    #b8962e
+  );
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:goldShimmer 4s linear infinite;
+  text-shadow:0 2px 8px rgba(212,175,55,.45);
+}
+
+@keyframes goldShimmer{
+  0%{background-position:0% center;}
+  100%{background-position:300% center;}
 }
 
 .tag{
@@ -74,7 +94,7 @@ body{
   margin:10px 0 22px;
 }
 
-/* Ratings */
+/* ratings */
 .ratings{
   display:flex;
   gap:12px;
@@ -82,15 +102,15 @@ body{
 }
 .rate{
   flex:1;
-  background:#fff8e1;
+  background:linear-gradient(145deg,#fff7dc,#f1e0b0);
   border:2px solid #d4af37;
-  border-radius:16px;
+  border-radius:18px;
   padding:14px;
-  font-weight:800;
-  box-shadow:0 8px 18px rgba(0,0,0,.15);
+  font-weight:900;
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
 }
 
-/* Info */
+/* info links */
 .info a{
   display:block;
   padding:14px;
@@ -100,7 +120,7 @@ body{
   font-weight:700;
 }
 
-/* Headings */
+/* section heading */
 .heading{
   margin:26px 0 14px;
   font-size:18px;
@@ -108,28 +128,27 @@ body{
   color:#8a6a12;
 }
 
-/* Social */
+/* social grid */
 .social{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
 }
 .social a{
-  padding:14px;
-  border-radius:16px;
+  padding:16px;
+  border-radius:18px;
   border:2px solid #d4af37;
   background:#fff;
   font-weight:800;
   text-decoration:none;
   color:#333;
-  box-shadow:0 6px 14px rgba(0,0,0,.12);
-  transition:.2s;
+  box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
 .social a:active{
   transform:scale(.97);
 }
 
-/* Address */
+/* address */
 .address{
   margin-top:26px;
   background:#fff8e1;
@@ -140,7 +159,7 @@ body{
   font-size:14px;
 }
 
-/* QR */
+/* qr section */
 .qr{
   margin-top:22px;
   padding:18px;
@@ -151,7 +170,7 @@ body{
   text-align:center;
 }
 
-/* Floating Save */
+/* floating save contact */
 .floating{
   position:fixed;
   bottom:14px;
@@ -190,7 +209,9 @@ body{
 <div class="content">
 
 <div class="brand">K-SHINE JEWELLERS</div>
-<div class="tag">Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.</div>
+<div class="tag">
+Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
+</div>
 
 <div class="ratings">
   <div class="rate">★★★★★ 4.9<br>Gandhi Nagar<br>1000+ Reviews</div>
