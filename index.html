@@ -8,78 +8,114 @@
 <style>
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f4f1ec;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#f4f3ef;
 }
 
 .card{
   max-width:420px;
-  margin:20px auto;
-  background:#ffffff;
-  border-radius:18px;
+  margin:25px auto;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-.banner img{
-  width:100%;
-  display:block;
+.banner{
+  height:190px;
+  background:url('bannerimage.png') center/cover no-repeat;
+  position:relative;
 }
 
-.profile{
-  text-align:center;
-  padding:15px;
+.logo{
+  position:absolute;
+  bottom:-45px;
+  left:50%;
+  transform:translateX(-50%);
 }
 
-.profile img{
-  width:100px;
-  height:100px;
+.logo img{
+  width:90px;
+  height:90px;
   border-radius:50%;
   border:4px solid #fff;
-  margin-top:-60px;
   background:#fff;
 }
 
-.profile h1{
-  margin:10px 0 4px;
-  font-size:22px;
-}
-
-.profile p{
-  margin:0;
-  color:#b18b2e;
-  font-size:14px;
-}
-
-.btn-save{
-  display:block;
-  margin:15px;
-  background:#2e7d32;
-  color:#fff;
-  text-decoration:none;
+.content{
+  padding:65px 20px 25px;
   text-align:center;
+}
+
+h1{
+  margin:6px 0;
+  font-size:22px;
+  letter-spacing:.5px;
+}
+
+.tagline{
+  color:#b08d3c;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.save{
+  display:block;
+  background:linear-gradient(135deg,#2e7d32,#43a047);
+  color:#fff;
   padding:14px;
   border-radius:10px;
-  font-size:16px;
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.rating{
+  font-size:14px;
+  margin-bottom:18px;
 }
 
 .list a{
   display:flex;
   align-items:center;
-  gap:10px;
-  padding:14px 18px;
+  padding:14px 10px;
+  border-top:1px solid #eee;
   text-decoration:none;
   color:#333;
-  border-top:1px solid #eee;
+  font-size:15px;
 }
 
-.list a:hover{
-  background:#f7f7f7;
+.list a:hover{background:#faf7f2;}
+
+.icon{
+  width:26px;
+  margin-right:12px;
+  fill:#b08d3c;
 }
 
-.footer{
-  text-align:center;
-  padding:15px;
+.lang{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px 0;
+}
+
+.lang button{
+  border:none;
+  background:#eee;
+  padding:6px 12px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.qr{
+  margin-top:18px;
+  padding:12px;
+  background:#111;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  display:block;
 }
 </style>
 </head>
@@ -88,40 +124,31 @@ body{
 
 <div class="card">
 
-  <!-- BANNER IMAGE -->
   <div class="banner">
-    <img src="bannerimage.png" alt="K-Shine Jewellers Banner">
+    <div class="logo">
+      <img src="dpimage.png">
+    </div>
   </div>
 
-  <!-- PROFILE -->
-  <div class="profile">
-    <img src="dpimage.png" alt="K-Shine Logo">
-    <h1>K-SHINE JEWELLERS</h1>
-    <p>Gold • Diamond • Silver Jewellery</p>
-  </div>
+  <div class="content">
 
-  <!-- SAVE CONTACT -->
-  <a class="btn-save" href="contact.vcf">💾 Save Contact</a>
+    <h1 id="name">K-SHINE JEWELLERS</h1>
+    <div class="tagline" id="tag">Gold • Diamond • Silver Jewellery</div>
 
-  <!-- LINKS -->
-  <div class="list">
-    <a href="tel:+919622212879">📞 +91 96222 12879</a>
-    <a href="https://wa.me/919622212879">💬 Chat on WhatsApp</a>
-    <a href="https://www.instagram.com/kshine_jewellers">📷 Instagram</a>
-    <a href="https://www.facebook.com/kshinejewelers">👍 Facebook Page</a>
-    <a href="https://www.facebook.com/groups/1233168123948595/">👥 Facebook Group</a>
-    <a href="https://youtube.com/@k-shinejewellers1365">▶ YouTube</a>
-    <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">🟢 Join WhatsApp Group</a>
-    <a href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">📍 Gandhi Nagar Showroom</a>
-    <a href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8">📍 Janipur Showroom</a>
-    <a href="https://kshinejewellers.com/">🌐 Official Website</a>
-  </div>
+    <a class="save" href="contact.vcf">💾 Save Contact</a>
 
-  <div class="footer">
-    © K-Shine Jewellers
-  </div>
+    <!-- GOOGLE RATING -->
+    <div class="rating">
+      ⭐⭐⭐⭐⭐ <b>4.8</b> (1,200+ Reviews)
+    </div>
 
-</div>
+    <!-- LANGUAGE SWITCH -->
+    <div class="lang">
+      <button onclick="en()">English</button>
+      <button onclick="hi()">हिंदी</button>
+    </div>
 
-</body>
-</html>
+    <div class="list">
+
+      <a href="tel:+919622212879">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.8-.4 1.2-.2 1 .4 2 .6 3.1.6.7 0 1.3.6 1.3 1.3V21c0 .7-.
