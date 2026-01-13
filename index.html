@@ -7,35 +7,42 @@
 
 <style>
 *{box-sizing:border-box}
+:root{
+  --gold:#d4af37;
+  --gold-dark:#8a6b1f;
+  --bg-light:#fff7df;
+  --bg-dark:#0f0f0f;
+  --card-light:#ffffff;
+  --card-dark:#1a1a1a;
+  --text-light:#333;
+  --text-dark:#f5f5f5;
+}
+
 body{
   margin:0;
   font-family:'Segoe UI',Arial,sans-serif;
   background:
     linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
     url('bannerimage.png') center/cover fixed no-repeat;
-  color:#fff;
+  color:var(--text-light);
+  transition:.3s;
 }
 
-/* MAIN CARD */
+.dark body{color:var(--text-dark)}
+
 .card{
   max-width:440px;
   margin:30px auto 120px;
-  background:rgba(255,255,255,.96);
-  color:#333;
+  background:var(--card-light);
   border-radius:28px;
   box-shadow:0 25px 60px rgba(0,0,0,.45);
   overflow:hidden;
-  animation:fadeUp .8s ease;
+  transition:.3s;
 }
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:none}
-}
+.dark .card{background:var(--card-dark)}
 
-/* BANNER */
 .banner img{width:100%;display:block}
 
-/* LOGO */
 .logo{
   margin-top:-65px;
   text-align:center;
@@ -48,7 +55,6 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,.4);
 }
 
-/* BRAND */
 h1{
   text-align:center;
   margin:14px 10px 6px;
@@ -60,30 +66,35 @@ h1{
 }
 .tagline{
   text-align:center;
-  color:#7a5a12;
+  color:var(--gold-dark);
   font-size:14px;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 
-/* BUTTON */
 .btn{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   margin:14px 20px;
   padding:16px;
-  text-align:center;
   font-weight:900;
   font-size:17px;
   color:#fff;
   text-decoration:none;
   border-radius:22px;
   background:linear-gradient(135deg,#1b5e20,#43a047);
-  border:2px solid #d4af37;
+  border:2px solid var(--gold);
   box-shadow:0 12px 28px rgba(0,0,0,.35);
-  transition:.25s;
 }
 .btn:active{transform:scale(.95)}
 
-/* RATINGS */
+.icon{
+  width:22px;
+  height:22px;
+  fill:var(--gold);
+}
+
 .ratings{
   display:flex;
   gap:12px;
@@ -92,38 +103,32 @@ h1{
 .rating-box{
   flex:1;
   background:linear-gradient(135deg,#fff7d6,#f1d27a);
-  border:2px solid #d4af37;
+  border:2px solid var(--gold);
   border-radius:18px;
   padding:14px;
   text-align:center;
   font-weight:900;
-  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
-.rating-box span{color:#8a6b1f}
 
-/* SECTION */
 .section{
   text-align:center;
   font-weight:900;
-  color:#8a6b1f;
+  color:var(--gold-dark);
   margin:28px 0 14px;
   letter-spacing:1px;
 }
 
-/* LINKS */
 .link{
   display:flex;
   align-items:center;
   gap:14px;
   padding:16px 20px;
   border-top:1px solid #eee;
-  color:#333;
+  color:inherit;
   text-decoration:none;
   font-weight:800;
 }
-.link:hover{background:#fff6dc}
 
-/* SOCIAL GRID */
 .social-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -131,20 +136,20 @@ h1{
   padding:14px 20px;
 }
 .social-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   background:linear-gradient(135deg,#fff,#fff7df);
-  border:2px solid #d4af37;
+  border:2px solid var(--gold);
   border-radius:18px;
   padding:16px;
-  text-align:center;
   font-weight:900;
   text-decoration:none;
   color:#333;
-  box-shadow:0 8px 20px rgba(0,0,0,.2);
-  transition:.25s;
 }
-.social-btn:active{transform:scale(.95)}
+.dark .social-btn{background:#111;color:#f5f5f5}
 
-/* MODEL GALLERY */
 .slider{
   display:flex;
   gap:14px;
@@ -157,17 +162,16 @@ h1{
   box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-/* ADDRESS */
 .address{
-  background:#fff7df;
+  background:var(--bg-light);
   border-radius:18px;
   margin:12px 20px;
   padding:16px;
   font-weight:800;
-  border:2px solid #d4af37;
+  border:2px solid var(--gold);
 }
+.dark .address{background:#111}
 
-/* QR */
 .qr{
   text-align:center;
   margin:20px;
@@ -178,7 +182,14 @@ h1{
   padding:12px;
 }
 
-/* FLOAT SAVE */
+.toggle{
+  text-align:center;
+  font-weight:900;
+  color:var(--gold-dark);
+  cursor:pointer;
+  margin:10px;
+}
+
 .float-save{
   position:fixed;
   bottom:18px;
@@ -189,54 +200,51 @@ h1{
   z-index:99;
 }
 </style>
+
+<script>
+function toggleDark(){
+  document.documentElement.classList.toggle('dark');
+}
+</script>
 </head>
 
 <body>
 
 <div class="card">
 
-  <div class="banner">
-    <img src="bannerimage.png" alt="K-Shine Banner">
-  </div>
+  <div class="banner"><img src="bannerimage.png"></div>
 
-  <div class="logo">
-    <img src="dpimage.png" alt="K-Shine Logo">
-  </div>
+  <div class="logo"><img src="dpimage.png"></div>
 
   <h1>K-SHINE JEWELLERS</h1>
   <div class="tagline">
     Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
   </div>
 
-  <a class="btn" href="contact.vcf">💾 Save Contact</a>
+  <div class="toggle" onclick="toggleDark()">🌙 Toggle Luxury Night Mode</div>
+
+  <a class="btn" href="contact.vcf">
+    💾 Save Contact
+  </a>
 
   <div class="ratings">
-    <div class="rating-box" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
-      ⭐⭐⭐⭐⭐<br>
-      <span>4.9 Gandhi Nagar</span><br>
-      1,200+ Reviews
-    </div>
-    <div class="rating-box" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
-      ⭐⭐⭐⭐⭐<br>
-      <span>4.8 Janipur</span><br>
-      980+ Reviews
-    </div>
+    <div class="rating-box">⭐⭐⭐⭐⭐<br>4.9 Gandhi Nagar<br>1200+ Reviews</div>
+    <div class="rating-box">⭐⭐⭐⭐⭐<br>4.8 Janipur<br>980+ Reviews</div>
   </div>
 
   <a class="link" href="tel:+919622212879">📞 +91 96222 12879</a>
   <a class="link" href="https://wa.me/919622212879">💬 WhatsApp Us</a>
 
   <div class="section">JOIN SOCIAL MEDIA</div>
+
   <div class="social-grid">
-    <a class="social-btn" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">Join WhatsApp Group</a>
+    <a class="social-btn" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">WhatsApp Group</a>
     <a class="social-btn" href="https://www.instagram.com/kshine_jewellers">Instagram</a>
-    <a class="social-btn" href="https://www.facebook.com/groups/1233168123948595/">Facebook Group</a>
     <a class="social-btn" href="https://www.facebook.com/kshinejewelers">Facebook Page</a>
     <a class="social-btn" href="https://youtube.com/@k-shinejewellers1365">YouTube</a>
-    <a class="social-btn" href="https://kshinejewellers.com">Official Website</a>
   </div>
 
-  <div class="section">MODEL COLLECTION</div>
+  <div class="section">INSTAGRAM HIGHLIGHTS</div>
   <div class="slider">
     <img src="model1.png">
     <img src="model2.png">
@@ -245,11 +253,11 @@ h1{
 
   <div class="section">OUR SHOWROOMS</div>
   <div class="address">
-    📍 <b>Gandhi Nagar</b><br>
+    📍 Gandhi Nagar<br>
     27-B Auqaf Market, Opp SBI Bank<br>Jammu – 180004
   </div>
   <div class="address">
-    📍 <b>Janipur</b><br>
+    📍 Janipur<br>
     Disco Road, Near Dreamland School<br>Jammu – 180007
   </div>
 
