@@ -2,203 +2,176 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-SHINE JEWELLERS | Premium Digital Card</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-SHINE JEWELLERS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ERAS DEMI ITC FONT -->
 <style>
 @font-face {
-  font-family: 'ErasDemiITC';
-  src: url('eras-demi-itc.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ErasITC';
+  src: url('eras-itc-regular.ttf') format('truetype');
 }
 
-/* RESET */
-*{box-sizing:border-box}
-
-/* COLORS */
-:root{
-  --gold:#d4af37;
-  --gold-dark:#9c7a1e;
-  --blue1:#0f3c5c;
-  --blue2:#1e6fa1;
+*{
+  box-sizing:border-box;
 }
 
-/* BODY */
 body{
   margin:0;
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:
-    linear-gradient(rgba(255,248,235,.92),rgba(255,248,235,.92)),
-    url('bannerimage.png') center/cover fixed no-repeat;
-  color:#2c2c2c;
+  font-family:'ErasITC', Arial, sans-serif;
+  background: linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.35)
+  ), url('bannerimage.jpg') no-repeat center/cover;
+  min-height:100vh;
 }
 
-/* CARD */
 .card{
-  max-width:440px;
-  margin:28px auto 130px;
-  background:#ffffff;
-  border-radius:26px;
-  box-shadow:0 25px 60px rgba(0,0,0,.4);
+  max-width:420px;
+  margin:30px auto;
+  background:rgba(255,255,255,.95);
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
   overflow:hidden;
 }
 
-/* BANNER */
-.banner img{
+.cover img{
   width:100%;
   display:block;
 }
 
-/* LOGO */
-.logo{
-  margin-top:-60px;
+.dp{
   text-align:center;
+  margin-top:-55px;
 }
-.logo img{
-  width:130px;
-  height:130px;
+
+.dp img{
+  width:110px;
+  height:110px;
   border-radius:50%;
   border:5px solid #fff;
   background:#fff;
 }
 
-/* BRAND NAME */
-.brand{
+h1{
   text-align:center;
-  margin:14px 10px 6px;
-  font-family:'ErasDemiITC', serif;
-  font-size:28px;
-  letter-spacing:1.2px;
-  color:var(--gold-dark);
+  margin:10px 0 5px;
+  letter-spacing:3px;
+  font-weight:700;
 }
 
-/* TAGLINE */
 .tagline{
   text-align:center;
+  color:#b8962e;
   font-size:14px;
-  margin-bottom:16px;
 }
 
-/* SAVE CONTACT */
-.save-btn{
+.btn-main{
   display:block;
-  margin:12px 40px;
-  padding:12px;
+  margin:18px auto;
+  width:85%;
+  padding:14px;
+  border-radius:30px;
   text-align:center;
-  font-weight:800;
-  font-size:15px;
+  background:linear-gradient(135deg,#0f6b3f,#2fa86b);
   color:#fff;
+  font-weight:700;
   text-decoration:none;
-  border-radius:18px;
-  background:linear-gradient(135deg,#1e6fa1,#3fa9c9);
-  border:2px solid var(--gold);
+  box-shadow:0 8px 18px rgba(0,0,0,.3);
 }
 
-/* SECTION */
 .section{
-  text-align:center;
-  font-weight:800;
-  margin:26px 0 12px;
-  color:var(--gold-dark);
+  padding:18px;
 }
 
-/* RATINGS */
+.section h3{
+  text-align:center;
+  color:#b8962e;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+/* Ratings */
 .ratings{
   display:flex;
   gap:12px;
-  padding:12px 20px;
 }
-.rating-box{
+
+.rate-box{
   flex:1;
-  background:linear-gradient(135deg,var(--blue1),var(--blue2));
-  border-radius:18px;
-  padding:14px;
-  color:#fff;
+  border:2px solid #d2b04c;
+  border-radius:14px;
+  padding:12px;
   text-align:center;
-  font-weight:800;
-  border:2px solid var(--gold);
+  font-weight:600;
 }
-.stars{color:var(--gold);font-size:16px}
 
-/* LINKS */
-.link{
+/* Slider */
+.slider{
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.slider-track{
   display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px 20px;
-  border-top:1px solid #e5e5e5;
-  text-decoration:none;
-  color:#2c2c2c;
-  font-weight:700;
+  width:200%;
+  animation: slide 18s linear infinite;
 }
 
-/* SOCIAL */
-.social-grid{
+.slider-track img{
+  width:180px;
+  height:260px;
+  margin-right:14px;
+  border-radius:18px;
+  object-fit:cover;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+@keyframes slide{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* Social */
+.social{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  padding:14px 20px;
+  gap:12px;
 }
-.social-btn{
-  display:flex;
-  align-items:center;
-  gap:10px;
+
+.social a{
+  border:2px solid #d2b04c;
+  border-radius:14px;
   padding:14px;
-  border-radius:16px;
-  border:2px solid var(--gold);
-  text-decoration:none;
-  color:#2c2c2c;
-  font-weight:800;
-}
-.social-btn img{
-  width:22px;
-  height:22px;
-}
-
-/* MODEL GALLERY */
-.gallery{
-  display:flex;
-  gap:14px;
-  overflow-x:auto;
-  padding:14px 20px;
-}
-.gallery img{
-  width:170px;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-
-/* ADDRESS */
-.address{
-  background:#fdf6e3;
-  border-radius:16px;
-  margin:12px 20px;
-  padding:14px;
-  font-weight:700;
-  border:2px solid var(--gold);
-}
-
-/* QR */
-.qr{
   text-align:center;
-  margin:20px;
-}
-.qr img{
-  background:#fff;
-  padding:10px;
-  border-radius:16px;
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
 }
 
-/* FLOAT */
-.float-save{
+/* Address */
+.addr{
+  border:2px solid #d2b04c;
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+/* Floating button */
+.floating{
   position:fixed;
   bottom:18px;
   left:50%;
   transform:translateX(-50%);
-  width:92%;
-  max-width:440px;
+  width:85%;
+  background:#0f6b3f;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 </style>
 </head>
@@ -207,86 +180,22 @@ body{
 
 <div class="card">
 
-  <div class="banner">
-    <img src="bannerimage.png" alt="K-Shine Banner">
-  </div>
+<div class="cover">
+  <img src="bannerimage.jpg">
+</div>
 
-  <div class="logo">
-    <img src="dpimage.png" alt="K-Shine Logo">
-  </div>
+<div class="dp">
+  <img src="dpimage.png">
+</div>
 
-  <div class="brand">K-SHINE JEWELLERS</div>
+<h1>K-SHINE JEWELLERS</h1>
+<div class="tagline">
+Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
+</div>
 
-  <div class="tagline">
-    Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
-  </div>
+<a class="btn-main" href="contact.vcf">💾 Save Contact</a>
 
-  <a class="save-btn" href="contact.vcf">Save Contact</a>
-
-  <div class="section">CUSTOMER RATINGS</div>
+<div class="section">
   <div class="ratings">
-    <div class="rating-box">
-      <div class="stars">★★★★★</div>
-      Gandhi Nagar<br>
-      4.9 Rating<br>
-      1000+ Reviews
-    </div>
-    <div class="rating-box">
-      <div class="stars">★★★★★</div>
-      Janipur<br>
-      4.9 Rating<br>
-      1261 Reviews
-    </div>
-  </div>
-
-  <a class="link" href="tel:+919622212879">📞 +91 96222 12879</a>
-  <a class="link" href="https://wa.me/919622212879">💬 WhatsApp Us</a>
-
-  <div class="section">JOIN SOCIAL MEDIA</div>
-  <div class="social-grid">
-    <a class="social-btn" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">
-      <img src="icons/whatsapp.svg"> Join WhatsApp Group
-    </a>
-    <a class="social-btn" href="https://www.instagram.com/kshine_jewellers">
-      <img src="icons/instagram.svg"> Instagram
-    </a>
-    <a class="social-btn" href="https://www.facebook.com/kshinejewelers">
-      <img src="icons/facebook.svg"> Facebook Page
-    </a>
-    <a class="social-btn" href="https://youtube.com/@k-shinejewellers1365">
-      <img src="icons/youtube.svg"> YouTube
-    </a>
-  </div>
-
-  <div class="section">MODEL COLLECTION</div>
-  <div class="gallery">
-    <img src="model1.png">
-    <img src="model2.png">
-    <img src="model3.png">
-  </div>
-
-  <div class="section">OUR SHOWROOMS</div>
-  <div class="address">
-    <b>Gandhi Nagar</b><br>
-    27-B Auqaf Market, Opp SBI Bank<br>
-    Jammu – 180004
-  </div>
-  <div class="address">
-    <b>Janipur</b><br>
-    Disco Road, Near Dreamland School<br>
-    Jammu – 180007
-  </div>
-
-  <div class="section">SCAN DIGITAL CARD</div>
-  <div class="qr">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://kshinejewellers-hub.github.io">
-  </div>
-
-</div>
-
-<div class="float-save">
-  <a class="save-btn" href="contact.vcf">Save Contact</a>
-</div>
-
-</body>
-</html>
+    <div class="rate-box">★★★★★<br>Gandhi Nagar<br>1000+ Reviews</div>
+    <div class="rate-box">★★★★★<br>Janipur<br
