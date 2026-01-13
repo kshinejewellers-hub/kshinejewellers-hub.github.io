@@ -17,14 +17,12 @@ body{
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
-/* background overlay */
 .overlay{
   background:rgba(255,255,255,0.9);
   min-height:100vh;
   padding-bottom:120px;
 }
 
-/* main card */
 .wrapper{
   max-width:430px;
   margin:20px auto;
@@ -34,14 +32,14 @@ body{
   overflow:hidden;
 }
 
-/* banner */
+/* Banner */
 .banner{
   height:230px;
   background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
 
-/* dp */
+/* DP */
 .dp{
   position:absolute;
   bottom:-55px;
@@ -57,25 +55,18 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 
-/* content */
+/* Content */
 .content{
   padding:75px 20px 30px;
   text-align:center;
 }
 
-/* brand shimmer */
+/* Brand shimmer */
 .brand{
   font-family:'ErasDemi';
   font-size:28px;
   letter-spacing:1px;
-  background:linear-gradient(
-    120deg,
-    #b8962e,
-    #fff3b0,
-    #d4af37,
-    #fff3b0,
-    #b8962e
-  );
+  background:linear-gradient(120deg,#b8962e,#fff3b0,#d4af37,#fff3b0,#b8962e);
   background-size:300% auto;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -88,13 +79,28 @@ body{
   100%{background-position:300% center;}
 }
 
+/* Language toggle */
+.lang-switch{
+  margin:12px auto 18px;
+}
+.lang-switch button{
+  background:#000;
+  color:#d4af37;
+  border:2px solid #d4af37;
+  border-radius:20px;
+  padding:6px 14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* Tagline */
 .tag{
   font-size:14px;
   color:#6b5a2c;
   margin:10px 0 22px;
 }
 
-/* ratings */
+/* Ratings */
 .ratings{
   display:flex;
   gap:12px;
@@ -110,7 +116,7 @@ body{
   box-shadow:0 10px 22px rgba(0,0,0,.18);
 }
 
-/* info links */
+/* Info */
 .info a{
   display:block;
   padding:14px;
@@ -120,7 +126,7 @@ body{
   font-weight:700;
 }
 
-/* section heading */
+/* Heading */
 .heading{
   margin:26px 0 14px;
   font-size:18px;
@@ -128,7 +134,7 @@ body{
   color:#8a6a12;
 }
 
-/* social grid */
+/* Social */
 .social{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -144,11 +150,8 @@ body{
   color:#333;
   box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
-.social a:active{
-  transform:scale(.97);
-}
 
-/* address */
+/* Address */
 .address{
   margin-top:26px;
   background:#fff8e1;
@@ -159,7 +162,7 @@ body{
   font-size:14px;
 }
 
-/* qr section */
+/* QR */
 .qr{
   margin-top:22px;
   padding:18px;
@@ -170,7 +173,7 @@ body{
   text-align:center;
 }
 
-/* floating save contact */
+/* Floating Save */
 .floating{
   position:fixed;
   bottom:14px;
@@ -209,7 +212,13 @@ body{
 <div class="content">
 
 <div class="brand">K-SHINE JEWELLERS</div>
-<div class="tag">
+
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('hi')">हिंदी</button>
+</div>
+
+<div id="tagline" class="tag">
 Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
 </div>
 
@@ -219,12 +228,12 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
 </div>
 
 <div class="info">
-  <a href="tel:+919622212879">📞 +91 96222 12879</a>
-  <a href="https://wa.me/919622212879">💬 WhatsApp Us</a>
-  <a href="https://kshinejewellers.com">🌐 Official Website</a>
+  <a href="tel:+919622212879" id="callText">📞 Call Us</a>
+  <a href="https://wa.me/919622212879" id="waText">💬 WhatsApp Us</a>
+  <a href="https://kshinejewellers.com" id="webText">🌐 Official Website</a>
 </div>
 
-<div class="heading">JOIN SOCIAL MEDIA</div>
+<div class="heading" id="socialHead">JOIN SOCIAL MEDIA</div>
 
 <div class="social">
   <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">🟢 Join WhatsApp Group</a>
@@ -233,17 +242,16 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
   <a href="https://youtube.com/@k-shinejewellers1365">▶️ YouTube</a>
 </div>
 
-<div class="address">
+<div class="address" id="addressText">
 <strong>📍 Gandhi Nagar Branch</strong><br>
 27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
 📞 9419362775<br><br>
-
 <strong>📍 Janipur Branch</strong><br>
 Disco Road, Near Dreamland School, Jammu – 180007<br>
 📞 9622212879
 </div>
 
-<div class="qr">
+<div class="qr" id="qrText">
 📷 Scan / Share Digital Card<br>
 <small>Scan to join K-Shine Jewellers digitally</small>
 </div>
@@ -252,9 +260,27 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 </div>
 
 <div class="floating">
-  <a href="contact.vcf">💾 Save Contact</a>
+  <a href="contact.vcf" id="saveText">💾 Save Contact</a>
 </div>
 
 </div>
+
+<script>
+function setLang(lang){
+  if(lang==='hi'){
+    document.getElementById('tagline').innerText =
+    'जम्मू में सोने, हीरे और चांदी के आभूषणों के लिए आपका विश्वसनीय ज्वेलरी ब्रांड।';
+    document.getElementById('callText').innerText='📞 कॉल करें';
+    document.getElementById('waText').innerText='💬 व्हाट्सएप करें';
+    document.getElementById('webText').innerText='🌐 आधिकारिक वेबसाइट';
+    document.getElementById('socialHead').innerText='सोशल मीडिया से जुड़ें';
+    document.getElementById('saveText').innerText='💾 कॉन्टैक्ट सेव करें';
+    document.getElementById('qrText').innerHTML='📷 स्कैन करें<br><small>K-Shine Jewellers से डिजिटल रूप से जुड़ें</small>';
+  }else{
+    location.reload();
+  }
+}
+</script>
+
 </body>
 </html>
