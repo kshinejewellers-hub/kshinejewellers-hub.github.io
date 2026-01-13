@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-Shine Jewellers | Luxury Digital Card</title>
+<title>K-SHINE JEWELLERS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body{
   margin:0;
-  font-family:"Poppins", Arial, sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url('bg-gold.jpg') center/cover no-repeat fixed;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f3f1ec;
 }
 
-.wrapper{
+.card{
   max-width:420px;
-  margin:30px auto;
-  background:rgba(255,255,255,.92);
+  margin:20px auto;
+  background:#ffffff;
   border-radius:22px;
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  box-shadow:0 20px 45px rgba(0,0,0,.25);
   overflow:hidden;
 }
 
@@ -39,47 +37,41 @@ body{
   justify-content:center;
 }
 .dp img{
-  width:100px;
-  height:100px;
+  width:95px;
+  height:95px;
   border-radius:50%;
   border:5px solid #fff;
-  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  background:#fff;
 }
 
 /* CONTENT */
 .content{
-  padding:60px 18px 26px;
+  padding:60px 18px 25px;
   text-align:center;
 }
 
-/* BRAND NAME */
+/* BRAND */
 .brand{
-  font-size:24px;
-  font-weight:700;
-  background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 1px 12px rgba(212,175,55,.6);
+  font-size:26px;
+  font-weight:800;
+  color:#b8962e;
 }
-.tagline{
-  color:#9c7c2d;
-  font-size:14px;
-  margin-bottom:16px;
+.tag{
+  color:#8a6a12;
+  margin:6px 0 18px;
 }
 
-/* SAVE CONTACT */
-.save{
+/* BUTTON */
+.btn{
   display:block;
-  background:linear-gradient(135deg,#1b5e20,#43a047);
+  background:#2e7d32;
   color:#fff;
-  padding:15px;
+  padding:14px;
   border-radius:12px;
-  font-weight:600;
   text-decoration:none;
-  margin-bottom:18px;
-  transition:.3s;
+  font-weight:700;
+  margin-bottom:20px;
 }
-.save:active{transform:scale(.97);}
 
 /* RATINGS */
 .ratings{
@@ -89,52 +81,90 @@ body{
 }
 .rate{
   flex:1;
-  background:#fff8e1;
-  border:1px solid #e6c76f;
-  border-radius:14px;
+  border:1px solid #d4af37;
+  border-radius:12px;
   padding:10px;
-  font-size:13px;
-}
-.rate strong{
-  display:block;
-  color:#8a6d00;
-}
-.stars{
-  color:#d4af37;
-  font-size:15px;
+  background:#fff9e6;
+  font-size:14px;
 }
 
-/* SECTION TITLE */
-.section{
-  margin:18px 0 10px;
-  font-weight:700;
-  letter-spacing:1px;
-  color:#7a5b00;
+/* LINKS */
+.list a{
+  display:block;
+  padding:14px;
+  border-bottom:1px solid #eee;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
 }
 
 /* SOCIAL GRID */
-.social-grid{
+.social{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:10px;
+  margin-top:15px;
 }
-.social{
+.social a{
   padding:12px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#fff,#f8f3e8);
-  border:1px solid #e2c97c;
-  font-weight:600;
-  color:#333;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #e0c36f;
   text-decoration:none;
-  transition:.25s;
-}
-.social:active{
-  background:#d4af37;
-  color:#fff;
+  color:#333;
+  font-weight:600;
 }
 
 /* QR */
 .qr{
-  margin-top:22px;
+  margin-top:20px;
   padding:14px;
-  ba
+  background:#000;
+  color:#d4af37;
+  border-radius:12px;
+  font-weight:700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="banner">
+  <div class="dp">
+    <img src="dpimage.png" alt="K-Shine Jewellers">
+  </div>
+</div>
+
+<div class="content">
+
+<div class="brand">K-SHINE JEWELLERS</div>
+<div class="tag">Gold • Diamond • Silver Jewellery</div>
+
+<a class="btn" href="contact.vcf">💾 Save Contact</a>
+
+<div class="ratings">
+  <div class="rate">⭐ 4.9<br><strong>Gandhi Nagar</strong></div>
+  <div class="rate">⭐ 4.8<br><strong>Janipur</strong></div>
+</div>
+
+<div class="list">
+  <a href="tel:+919622212879">📞 +91 96222 12879</a>
+  <a href="https://wa.me/919622212879">💬 WhatsApp Us</a>
+</div>
+
+<div class="social">
+  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">🟢 WhatsApp Group</a>
+  <a href="https://www.instagram.com/kshine_jewellers">📸 Instagram</a>
+  <a href="https://www.facebook.com/kshinejewelers">👍 Facebook Page</a>
+  <a href="https://youtube.com/@k-shinejewellers1365">▶️ YouTube</a>
+</div>
+
+<div class="qr">📷 Share / Scan Digital Card</div>
+
+</div>
+</div>
+
+</body>
+</html>
