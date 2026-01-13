@@ -6,102 +6,127 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-@font-face{
-  font-family:'ErasITC';
-  src:url('eras-itc-regular.ttf') format('truetype');
+@font-face {
+  font-family: 'ErasITC';
+  src: url('eras-itc-regular.ttf') format('truetype');
 }
 
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   font-family:'ErasITC', Arial, sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url('bannerimage.jpg') center/cover fixed;
+  background: linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.35)
+  ), url('bannerimage.jpg') no-repeat center/cover;
+  min-height:100vh;
 }
 
-/* Main Card */
 .card{
-  max-width:430px;
-  margin:30px auto 130px;
-  background:rgba(255,255,255,.97);
-  border-radius:26px;
-  box-shadow:0 35px 80px rgba(0,0,0,.45);
+  max-width:420px;
+  margin:30px auto;
+  background:rgba(255,255,255,.95);
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
   overflow:hidden;
 }
 
-/* Cover */
-.cover img{width:100%;display:block;}
-
-/* DP */
-.dp{text-align:center;margin-top:-60px;}
-.dp img{
-  width:125px;height:125px;border-radius:50%;
-  border:5px solid #fff;
-  box-shadow:0 12px 30px rgba(0,0,0,.4);
+.cover img{
+  width:100%;
+  display:block;
 }
 
-/* Headings */
+.dp{
+  text-align:center;
+  margin-top:-55px;
+}
+
+.dp img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:5px solid #fff;
+  background:#fff;
+}
+
 h1{
   text-align:center;
+  margin:10px 0 5px;
   letter-spacing:3px;
-  margin:12px 0 6px;
+  font-weight:700;
 }
+
 .tagline{
   text-align:center;
   color:#b8962e;
   font-size:14px;
-  padding:0 12px;
 }
 
-/* Buttons */
 .btn-main{
-  display:block;width:85%;margin:20px auto;
-  padding:16px;border-radius:36px;
-  text-align:center;text-decoration:none;
-  color:#fff;font-weight:700;
-  background:linear-gradient(135deg,#0b5f38,#38b47b);
-  border:2px solid #d6b45c;
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
+  display:block;
+  margin:18px auto;
+  width:85%;
+  padding:14px;
+  border-radius:30px;
+  text-align:center;
+  background:linear-gradient(135deg,#0f6b3f,#2fa86b);
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 18px rgba(0,0,0,.3);
 }
 
-/* Sections */
-.section{padding:20px;}
+.section{
+  padding:18px;
+}
+
 .section h3{
   text-align:center;
   color:#b8962e;
   letter-spacing:2px;
-  margin-bottom:16px;
+  margin-bottom:15px;
 }
 
 /* Ratings */
-.ratings{display:flex;gap:12px;}
-.rate{
+.ratings{
+  display:flex;
+  gap:12px;
+}
+
+.rate-box{
   flex:1;
-  border:2px solid #d6b45c;
-  border-radius:18px;
-  padding:14px;
+  border:2px solid #d2b04c;
+  border-radius:14px;
+  padding:12px;
   text-align:center;
-  font-weight:700;
-  background:#fff8e4;
+  font-weight:600;
 }
 
 /* Slider */
-.slider{overflow:hidden;}
-.track{
-  display:flex;
-  width:calc(200%);
-  animation:scroll 22s linear infinite;
+.slider{
+  overflow:hidden;
+  margin-top:10px;
 }
-.track img{
-  width:180px;height:260px;
-  margin-right:16px;
+
+.slider-track{
+  display:flex;
+  width:200%;
+  animation: slide 18s linear infinite;
+}
+
+.slider-track img{
+  width:180px;
+  height:260px;
+  margin-right:14px;
   border-radius:18px;
   object-fit:cover;
-  box-shadow:0 12px 28px rgba(0,0,0,.4);
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-@keyframes scroll{
+
+@keyframes slide{
   from{transform:translateX(0);}
   to{transform:translateX(-50%);}
 }
@@ -110,55 +135,43 @@ h1{
 .social{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:12px;
 }
+
 .social a{
-  border:2px solid #d6b45c;
-  border-radius:18px;
+  border:2px solid #d2b04c;
+  border-radius:14px;
   padding:14px;
   text-align:center;
   text-decoration:none;
-  font-weight:700;
   color:#000;
-  background:#fff;
-  transition:.2s;
+  font-weight:600;
 }
-.social a:hover{background:#fff2c2;}
 
 /* Address */
 .addr{
-  border:2px solid #d6b45c;
-  border-radius:18px;
-  padding:14px;
-  margin-bottom:12px;
-  font-size:14px;
-  background:#fffaf0;
-}
-
-/* QR */
-.qr{text-align:center;}
-.qr img{
-  width:180px;
-  margin-top:10px;
-  border:2px solid #d6b45c;
+  border:2px solid #d2b04c;
   border-radius:14px;
+  padding:12px;
+  margin-bottom:10px;
+  font-size:14px;
 }
 
-/* Floating Save */
+/* Floating button */
 .floating{
   position:fixed;
-  bottom:18px;left:50%;
+  bottom:18px;
+  left:50%;
   transform:translateX(-50%);
   width:85%;
-  padding:16px;
-  border-radius:36px;
-  background:#0b5f38;
+  background:#0f6b3f;
   color:#fff;
   text-align:center;
+  padding:14px;
+  border-radius:30px;
   font-weight:700;
   text-decoration:none;
-  border:2px solid #d6b45c;
-  box-shadow:0 14px 30px rgba(0,0,0,.45);
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 </style>
 </head>
@@ -167,9 +180,13 @@ h1{
 
 <div class="card">
 
-<div class="cover"><img src="bannerimage.jpg"></div>
+<div class="cover">
+  <img src="bannerimage.jpg">
+</div>
 
-<div class="dp"><img src="dpimage.png"></div>
+<div class="dp">
+  <img src="dpimage.png">
+</div>
 
 <h1>K-SHINE JEWELLERS</h1>
 <div class="tagline">
@@ -179,64 +196,6 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu
 <a class="btn-main" href="contact.vcf">💾 Save Contact</a>
 
 <div class="section">
-<h3>CUSTOMER RATINGS</h3>
-<div class="ratings">
-  <div class="rate">★★★★★<br>Gandhi Nagar<br>1000+ Reviews</div>
-  <div class="rate">★★★★★<br>Janipur<br>1200+ Reviews</div>
-</div>
-</div>
-
-<div class="section">
-<h3>MODEL COLLECTION</h3>
-<div class="slider">
-  <div class="track">
-    <img src="model1.jpg">
-    <img src="model2.jpg">
-    <img src="model3.jpg">
-    <img src="model4.jpg">
-    <img src="model1.jpg">
-    <img src="model2.jpg">
-    <img src="model3.jpg">
-    <img src="model4.jpg">
-  </div>
-</div>
-</div>
-
-<div class="section">
-<h3>JOIN SOCIAL MEDIA</h3>
-<div class="social">
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">Join WhatsApp Group</a>
-  <a href="https://www.instagram.com/kshine_jewellers">Instagram</a>
-  <a href="https://www.facebook.com/kshinejewelers">Facebook Page</a>
-  <a href="https://youtube.com/@k-shinejewellers1365">YouTube</a>
-</div>
-</div>
-
-<div class="section">
-<h3>OUR SHOWROOMS</h3>
-<div class="addr">
-<b>Gandhi Nagar</b><br>
-27-B Auqaf Market, Opp SBI Bank<br>
-Jammu – 180004<br>
-<a href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">📍 Open in Maps</a>
-</div>
-
-<div class="addr">
-<b>Janipur</b><br>
-Disco Road, Near Dreamland School<br>
-Jammu – 180007<br>
-<a href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8">📍 Open in Maps</a>
-</div>
-</div>
-
-<div class="section qr">
-<h3>SCAN DIGITAL CARD</h3>
-<img src="qrcode.png">
-</div>
-
-</div>
-
-<a class="floating" href="contact.vcf">💾 Save Contact</a>
-
-</body>
-</html>
+  <div class="ratings">
+    <div class="rate-box">★★★★★<br>Gandhi Nagar<br>1000+ Reviews</div>
+    <div class="rate-box">★★★★★<br>Janipur<br
