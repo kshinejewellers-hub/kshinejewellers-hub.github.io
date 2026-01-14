@@ -162,61 +162,78 @@ body{
 /* =================================================
  STYLE 12 – GOOGLE RATING CARDS (IMPORTANT)
 ================================================== */
+/* Style 12 – Google Rating Cards (FINAL – Horizontal Premium) */
+
+.ratings{
+  display:flex;
+  gap:14px;
+}
+
 .rate{
   flex:1;
-  background:linear-gradient(180deg,#fff6d2,#fff1b8);
-  border:2.5px solid var(--gold);
-  border-radius:16px;
-  padding:12px;
-  font-size:14px;
-  font-weight:800;
-  color:#000;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#fff6cf;
+  border:3px solid #d4af37;
+  border-radius:18px;
+  padding:14px;
   cursor:pointer;
   box-shadow:
-    inset 0 0 8px rgba(255,215,0,.35),
-    0 6px 16px rgba(0,0,0,.15);
+    inset 0 0 10px rgba(255,215,0,.35),
+    0 8px 18px rgba(0,0,0,.18);
+}
+
+/* Google Maps SVG */
+.rate img{
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+}
+
+/* Text container */
+.rate-content{
+  text-align:left;
 }
 
 /* Tap text */
-.rate .tap{
+.rate-content .tap{
   font-size:12px;
   font-weight:700;
   color:#555;
-  margin-bottom:6px;
+  margin-bottom:4px;
 }
 
-/* Stars – dual golden glossy */
-.rate .stars{
+/* Stars – dual glossy gold */
+.rate-content .stars{
   font-size:16px;
   font-weight:900;
-  background:linear-gradient(180deg,#ffd700,#c9a43b);
+  background:linear-gradient(180deg,#ffd700,#b8962e);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   text-shadow:0 1px 2px rgba(0,0,0,.35);
-  margin:4px 0;
 }
 
-/* Location name */
-.rate .place{
+/* Rating number */
+.rate-content .rating{
+  font-weight:900;
   font-size:15px;
+}
+
+/* Location */
+.rate-content .place{
+  font-size:16px;
   font-weight:900;
 }
 
 /* Reviews */
-.rate .reviews{
-  font-size:13px;
-  font-weight:700;
+.rate-content .reviews{
+  font-size:14px;
+  font-style:italic;
+  font-weight:800;
 }
 
-/* Google Maps icon */
-.rate .map-icon{
-  width:26px;
-  height:26px;
-  margin-bottom:4px;
-}
-
-
-/* =================================================
+ /* =================================================
  STYLE 13 – CALL / WHATSAPP BUTTONS
 ================================================== */
 .actions{
@@ -384,13 +401,29 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
  SECTION 5 – GOOGLE RATINGS
 ================================ -->
 <div class="ratings">
-  <div class="rate" onclick="location.href='MAPLINK'">
-    ★★★★★ 4.9<br><span>Gandhi Nagar</span><br>1000+ Reviews
+
+  <div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
+    <img src="icon-googlemaps.svg" alt="Google Maps">
+    <div class="rate-content">
+      <div class="tap">Tap to open Google Maps</div>
+      <div class="stars">★★★★★ <span class="rating">4.9</span></div>
+      <div class="place">Gandhi Nagar</div>
+      <div class="reviews">1000+ Reviews</div>
+    </div>
   </div>
-  <div class="rate" onclick="location.href='MAPLINK'">
-    ★★★★★ 5.0<br><span>Janipur</span><br>1260+ Reviews
+
+  <div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
+    <img src="icon-googlemaps.svg" alt="Google Maps">
+    <div class="rate-content">
+      <div class="tap">Tap to open Google Maps</div>
+      <div class="stars">★★★★★ <span class="rating">5.0</span></div>
+      <div class="place">Janipur</div>
+      <div class="reviews">1260+ Reviews</div>
+    </div>
   </div>
+
 </div>
+
 
 
 <!-- ===============================
