@@ -162,56 +162,76 @@ body{
 /* =================================================
  STYLE 12 – GOOGLE RATING CARDS (IMPORTANT)
 ================================================== */
-/* ⭐ Safe Premium Google Rating Card */
+/* ===============================
+STYLE 12 – GOOGLE RATING CARDS
+=============================== */
+
+.ratings{
+  display:flex;
+  gap:14px;
+  margin:14px 0;
+}
+
 .rate{
-  background:#fff5cc;
+  flex:1;
+  background:#fff6cf;
   border:3px solid #d4af37;
   border-radius:18px;
   padding:14px 10px;
   text-align:center;
+  cursor:pointer;
   box-shadow:0 10px 26px rgba(212,175,55,.35);
-  transition:all .35s ease;
+  transition:all .3s ease;
 }
 
-/* ⭐ Stars – dual gold */
-.rate .stars{
-  color:#d4af37;
+/* Tap text */
+.map-text{
+  font-size:13px;
+  color:#666;
+  margin-bottom:6px;
+}
+
+/* Stars – glossy gold */
+.stars{
   font-size:18px;
-  letter-spacing:2px;
+  letter-spacing:3px;
+  color:#d4af37;
   text-shadow:
-    0 0 6px rgba(212,175,55,.6),
-    0 0 12px rgba(255,215,0,.4);
+    0 0 6px rgba(212,175,55,.7),
+    0 0 12px rgba(255,215,0,.5);
+  margin-bottom:6px;
 }
 
-/* ⭐ Rating number */
-.rate .rating-number{
+/* Rating number */
+.rating-number{
   font-size:22px;
   font-weight:900;
   color:#b8962e;
+  margin-bottom:4px;
 }
 
-/* ⭐ Location name */
-.rate .location{
+/* Location */
+.location{
   font-size:18px;
   font-weight:900;
   color:#000;
 }
 
-/* ⭐ Reviews text */
-.rate .reviews{
+/* Reviews */
+.reviews{
   font-size:14px;
   font-style:italic;
   color:#333;
+  margin-top:2px;
 }
 
-/* ⭐ Hover glow (safe) */
+/* Hover glow */
 .rate:hover{
   box-shadow:
     0 0 0 3px rgba(212,175,55,.45),
     0 14px 30px rgba(212,175,55,.55);
   transform:translateY(-2px);
 }
-
 
 
  /* =================================================
@@ -381,13 +401,28 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
 <!-- ===============================
  SECTION 5 – GOOGLE RATINGS
 ================================ -->
-<div class="rate" onclick="location.href='MAPLINK'">
-  <div>Tap to open Google Maps</div>
-  <div class="stars">★★★★★</div>
-  <div class="rating-number">4.9</div>
-  <div class="location">Gandhi Nagar</div>
-  <div class="reviews">1000+ Reviews</div>
+<div class="ratings">
+
+  <!-- Gandhi Nagar -->
+  <div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
+    <div class="map-text">Tap to open Google Maps</div>
+    <div class="stars">★★★★★</div>
+    <div class="rating-number">4.9</div>
+    <div class="location">Gandhi Nagar</div>
+    <div class="reviews">1000+ Reviews</div>
+  </div>
+
+  <!-- Janipur -->
+  <div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
+    <div class="map-text">Tap to open Google Maps</div>
+    <div class="stars">★★★★★</div>
+    <div class="rating-number">5.0</div>
+    <div class="location">Janipur</div>
+    <div class="reviews">1260+ Reviews</div>
+  </div>
+
 </div>
+
 
 
 
