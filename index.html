@@ -6,49 +6,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-@font-face{
-  font-family:'ErasDemi';
-  src:url('eras-demi-itc.ttf');
-}
-
-:root{
-  --gold:#d4af37;
-  --gold-dark:#9a7615;
-  --gold-soft:#fff6d6;
-  --green:#7ee2a8;
-}
-
-.dark{
-  --gold-soft:#1c1c1c;
+@font-face {
+  font-family: 'ErasDemi';
+  src: url('eras-demi-itc.ttf');
 }
 
 body{
   margin:0;
-  font-family:'Segoe UI',Arial,sans-serif;
+  font-family: Arial, sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
 .overlay{
-  background:rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  background:rgba(245,240,225,.85);
   min-height:100vh;
-  padding-bottom:180px;
 }
 
 .wrapper{
   max-width:430px;
-  margin:20px auto;
+  margin:0 auto;
   background:#fff;
-  border-radius:28px;
-  box-shadow:0 35px 80px rgba(0,0,0,.45);
+  border-radius:24px;
+  box-shadow:0 25px 60px rgba(0,0,0,.3);
   overflow:hidden;
+}
+
+/* Ticker */
+.ticker{
+  background:#000;
+  color:#d4af37;
+  font-weight:700;
+  padding:8px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.ticker span{
+  display:inline-block;
+  animation:scroll 15s linear infinite;
+}
+@keyframes scroll{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
 }
 
 /* Banner */
 .banner{
-  height:230px;
+  height:220px;
   background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
+
+/* DP */
 .dp{
   position:absolute;
   bottom:-55px;
@@ -57,173 +66,152 @@ body{
   justify-content:center;
 }
 .dp img{
-  width:118px;
-  height:118px;
+  width:110px;
+  height:110px;
   border-radius:50%;
   border:6px solid #fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 
 /* Content */
 .content{
-  padding:75px 20px 30px;
+  padding:80px 18px 120px;
   text-align:center;
 }
 
+/* Brand */
 .brand{
   font-family:'ErasDemi';
-  font-size:30px;
-  letter-spacing:1.2px;
-  background:linear-gradient(120deg,#8c6a12,#e6c96f,#b8901f);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font-size:28px;
+  color:#b8962e;
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+  from{text-shadow:0 0 5px #d4af37}
+  to{text-shadow:0 0 15px #ffd700}
 }
 
-/* Toggle */
-.toggle-bar{
+.tagline{
+  font-style:italic;
+  font-weight:600;
+  margin:10px 0;
+}
+
+/* Language + Theme */
+.controls{
   display:flex;
   justify-content:center;
   gap:10px;
-  margin:14px 0;
+  margin:10px 0 20px;
 }
-.toggle-bar button{
+.control-btn{
+  padding:8px 14px;
+  border-radius:20px;
   background:#000;
-  color:var(--gold);
-  border:2px solid var(--gold);
-  border-radius:22px;
-  padding:7px 16px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-/* Tagline */
-.tag{
-  font-size:15.5px;
-  font-style:italic;
-  font-weight:600;
-  color:#6b5a2c;
-  margin:12px 0;
-}
-
-/* Rating title */
-.rating-title{
-  font-size:17px;
-  font-weight:900;
-  color:#000;
-  margin-bottom:20px;
+  color:#d4af37;
+  font-weight:700;
 }
 
 /* Ratings */
+.section-title{
+  font-weight:800;
+  margin:10px 0;
+}
 .ratings{
   display:flex;
-  gap:12px;
-  margin-bottom:26px;
+  gap:10px;
 }
 .rate{
   flex:1;
-  background:var(--gold-soft);
-  border:2px solid var(--gold);
-  border-radius:18px;
-  padding:14px;
-  font-weight:900;
-  text-decoration:none;
-  color:#000;
+  background:#fff8e1;
+  border:2px solid #d4af37;
+  border-radius:14px;
+  padding:12px;
+  font-weight:700;
 }
 
-/* Call / WhatsApp */
-.action-row{
+/* Action buttons */
+.actions{
   display:flex;
-  gap:12px;
-  margin:22px 0;
+  gap:10px;
+  margin:15px 0;
 }
-.action-row a{
+.actions a{
   flex:1;
-  padding:15px;
-  border-radius:18px;
-  background:var(--green);
-  border:2px solid var(--gold);
-  font-weight:900;
-  text-decoration:none;
-  color:#003b20;
-}
-
-/* Website */
-.website-btn{
-  display:block;
-  margin-bottom:26px;
-  padding:15px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#d4af37,#fff1b8);
-  font-weight:900;
-  text-decoration:none;
-  color:#000;
+  padding:14px;
+  border-radius:14px;
+  background:#a5d6a7;
+  font-weight:700;
 }
 
 /* Social */
-.heading{
-  font-size:18px;
-  font-weight:900;
-  color:#8a6a12;
-  margin-bottom:14px;
-}
 .social{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 .social a{
   padding:12px;
+  border:2px solid #d4af37;
   border-radius:14px;
-  border:2px solid var(--gold);
-  background:#fff;
-  font-weight:800;
-  text-decoration:none;
-  color:#333;
+  font-weight:700;
 }
 
-/* QR SECTION (RESTORED & LOCKED) */
+/* Address */
+.address{
+  margin-top:20px;
+  background:#fff8e1;
+  border:2px solid #d4af37;
+  border-radius:16px;
+  padding:14px;
+  text-align:left;
+}
+
+/* QR */
 .qr{
-  margin-top:34px;
-  padding:26px;
+  margin-top:20px;
   background:#000;
-  border-radius:26px;
-  border:4px solid var(--gold);
-  box-shadow:0 0 40px rgba(212,175,55,.85);
+  border:4px solid #d4af37;
+  border-radius:18px;
+  padding:16px;
+  color:#d4af37;
+  font-family:'ErasDemi';
+}
+
+/* Floating buttons */
+.float-save{
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#5a3b00;
+  color:#ffd700;
+  padding:18px;
+  width:90%;
+  max-width:420px;
+  border-radius:16px;
+  font-weight:900;
   text-align:center;
 }
-.qr img{
-  width:180px;
-  height:180px;
-  background:#fff;
-  border-radius:16px;
-}
-.qr-text{
-  margin-top:14px;
-  font-family:'ErasDemi';
-  font-size:14px;
-  color:#fff6d6;
-}
 
-/* Floating Save */
-.float{
+.float-web{
   position:fixed;
-  bottom:18px;
+  bottom:80px;
   right:16px;
-  z-index:999;
-}
-.float a{
-  padding:20px 28px;
-  background:linear-gradient(135deg,#d4af37,#fff1b8);
-  border-radius:22px;
-  font-weight:900;
-  text-decoration:none;
-  color:#000;
+  background:#000;
+  color:#d4af37;
+  padding:12px 14px;
+  border-radius:50%;
 }
 </style>
 </head>
 
 <body>
 <div class="overlay">
+
 <div class="wrapper">
+
+<div class="ticker"><span>916 • 22K Hallmark Gold • Silver • Diamonds • Join our group for regular updates</span></div>
 
 <div class="banner">
   <div class="dp"><img src="dpimage.png"></div>
@@ -232,18 +220,15 @@ body{
 <div class="content">
 
 <div class="brand">KSHINE JEWELLERS</div>
+<div class="tagline">Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.</div>
 
-<div class="toggle-bar">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('hi')">हिंदी</button>
-  <button onclick="toggleTheme()">🌙 / ☀️</button>
+<div class="controls">
+  <div class="control-btn" onclick="setLang('en')">EN</div>
+  <div class="control-btn" onclick="setLang('hi')">हिंदी</div>
+  <div class="control-btn" onclick="toggleTheme()">🌙</div>
 </div>
 
-<div class="tag" id="tagline">
-Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
-</div>
-
-<div class="rating-title" id="ratingTitle">5 Star Customer Ratings</div>
+<div class="section-title">5 Star Customer Ratings</div>
 
 <div class="ratings">
   <a class="rate" href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">
@@ -254,59 +239,49 @@ Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
   </a>
 </div>
 
-<div class="action-row">
-  <a href="tel:+919622212879">📞 Call Us</a>
+<div class="actions">
+  <a href="tel:+919419362775">📞 Call Us</a>
   <a href="https://wa.me/919622212879">💬 WhatsApp Us</a>
 </div>
 
-<a class="website-btn" href="https://kshinejewellers.com">🌐 Official Website</a>
+<a href="https://kshinejewellers.com">🌐 Official Website</a>
 
-<div class="heading" id="socialTitle">JOIN SOCIAL MEDIA</div>
+<div class="section-title">JOIN SOCIAL MEDIA</div>
 
 <div class="social">
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">WhatsApp Group</a>
-  <a href="https://www.instagram.com/kshine_jewellers">Instagram</a>
-  <a href="https://www.facebook.com/groups/1233168123948595">Facebook Group</a>
-  <a href="https://www.facebook.com/kshinejewelers">Facebook Page</a>
-  <a href="https://youtube.com/@k-shinejewellers1365">YouTube</a>
+  <a href="#">WhatsApp Group</a>
+  <a href="#">Instagram</a>
+  <a href="#">Facebook Group</a>
+  <a href="#">Facebook Page</a>
+  <a href="#">YouTube</a>
   <a href="https://linktr.ee/Kshinejewellers">Linktree</a>
 </div>
 
-<!-- QR SCANNER -->
+<div class="address">
+<strong>📍 Gandhi Nagar</strong><br>
+27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
+📞 9419362775<br><br>
+<strong>📍 Janipur</strong><br>
+Disco Road, Near Dreamland School, Jammu – 180007<br>
+📞 9622212879
+</div>
+
 <div class="qr">
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://kshinejewellers-hub.github.io">
-  <div class="qr-text">Scan to join Kshine Jewellers digitally</div>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://kshinejewellers-hub.github.io"><br>
+Scan to join Kshine Jewellers digitally
 </div>
 
 </div>
 </div>
 
-<div class="float">
-  <a href="contact.vcf">💾 Save Contact</a>
-</div>
+<a class="float-web" href="https://kshinejewellers.com">🌐</a>
+<a class="float-save" href="contact.vcf">💾 SAVE CONTACT</a>
+
 </div>
 
 <script>
-function setLang(lang){
-  if(lang==='hi'){
-    document.getElementById('tagline').innerText =
-    'जम्मू में गोल्ड, डायमंड और सिल्वर ज्वेलरी के लिए आपका भरोसेमंद ब्रांड।';
-    document.getElementById('ratingTitle').innerText =
-    '5 स्टार ग्राहक रेटिंग';
-    document.getElementById('socialTitle').innerText =
-    'सोशल मीडिया से जुड़ें';
-  }else{
-    document.getElementById('tagline').innerText =
-    'Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.';
-    document.getElementById('ratingTitle').innerText =
-    '5 Star Customer Ratings';
-    document.getElementById('socialTitle').innerText =
-    'JOIN SOCIAL MEDIA';
-  }
-}
-function toggleTheme(){
-  document.body.classList.toggle('dark');
-}
+function setLang(l){alert("Language switch ready — next step we localize text")}
+function toggleTheme(){document.body.classList.toggle('dark')}
 </script>
 
 </body>
