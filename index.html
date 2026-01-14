@@ -6,14 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
-/* FONT */
 @font-face{
   font-family:'ErasDemi';
   src:url('eras-demi-itc.ttf');
 }
 
-/* ROOT COLORS – COPIED FROM PREVIOUS (GREEN) VERSION */
 :root{
   --gold:#c9a43b;
   --gold-dark:#9b7c1f;
@@ -24,14 +21,12 @@
   --text:#222;
 }
 
-/* BODY */
 body{
   margin:0;
   font-family:Arial,sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
-/* WRAPPER */
 .wrapper{
   max-width:430px;
   margin:10px auto 120px;
@@ -159,6 +154,12 @@ body{
   color:var(--blue);
   font-weight:800;
 }
+.rate img{
+  width:16px;
+  height:16px;
+  display:block;
+  margin:0 auto 4px;
+}
 
 /* ACTION BUTTONS */
 .actions{
@@ -174,6 +175,12 @@ body{
   background:var(--green);
   color:#000;
 }
+.action img{
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-right:6px;
+}
 
 /* WEBSITE BUTTON */
 .website-btn{
@@ -183,6 +190,12 @@ body{
   border-radius:16px;
   font-weight:800;
   margin-bottom:14px;
+}
+.website-btn img{
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-right:6px;
 }
 
 /* SOCIAL */
@@ -202,6 +215,12 @@ body{
   border:2px solid var(--gold);
   color:var(--blue);
   font-weight:700;
+}
+.social img{
+  width:18px;
+  height:18px;
+  vertical-align:middle;
+  margin-right:6px;
 }
 
 /* ADDRESS */
@@ -252,7 +271,12 @@ body{
   border-radius:16px;
   font-weight:900;
 }
-
+.float-btn img{
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-right:6px;
+}
 </style>
 </head>
 
@@ -282,38 +306,39 @@ body{
 
 <div class="ratings">
   <div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
+    <img src="icon-googlemaps.svg">
     ★★★★★ 4.9<br><span>Gandhi Nagar</span><br>1000+ Reviews
   </div>
   <div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
+    <img src="icon-googlemaps.svg">
     ★★★★★ 5.0<br><span>Janipur</span><br>1260+ Reviews
   </div>
 </div>
 
 <div class="actions">
-  <div class="action">📞 Call Us</div>
-  <div class="action">💬 WhatsApp Us</div>
+  <div class="action"><img src="icon-phone.svg">Call Us</div>
+  <div class="action"><img src="icon-whatsapp.svg">WhatsApp Us</div>
 </div>
 
-<div class="website-btn">🌐 Official Website</div>
+<div class="website-btn"><img src="icon-website.svg">Official Website</div>
 
 <div class="heading">JOIN SOCIAL MEDIA</div>
 
 <div class="social">
-  <a>WhatsApp Group</a>
-  <a>Instagram</a>
-  <a>Facebook Group</a>
-  <a>Facebook Page</a>
-  <a>YouTube</a>
-  <a>Linktree</a>
+  <a><img src="icon-whatsappgroup.svg">WhatsApp Group</a>
+  <a><img src="icon-instagram.svg">Instagram</a>
+  <a><img src="icon-facebookgroup.svg">Facebook Group</a>
+  <a><img src="icon-facebook.svg">Facebook Page</a>
+  <a><img src="icon-youtube.svg">YouTube</a>
+  <a><img src="icon-linktree.svg">Linktree</a>
 </div>
 
 <div class="address">
 📍 <b>Gandhi Nagar Branch</b><br>
-27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
+27-B Auqaf Market, Opp SBI Bank,Gandhi Nagar Jammu – 180004<br>
 📞 9419362775<br><br>
-
 📍 <b>Janipur Branch</b><br>
-Disco Road, Near Dreamland School, Jammu – 180007<br>
+Disco Road, Near Dreamland School, Janipur Jammu – 180007<br>
 📞 9622212879
 </div>
 
@@ -326,8 +351,8 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 </div>
 
 <div class="floating">
-  <div class="float-btn">🌐 Website</div>
-  <div class="float-btn">💾 Save Contact</div>
+  <div class="float-btn"><img src="icon-website.svg">Website</div>
+  <div class="float-btn"><img src="icon-save-contact.svg">Save Contact</div>
 </div>
 
 </body>
