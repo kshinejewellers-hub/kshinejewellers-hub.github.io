@@ -327,32 +327,52 @@ STYLE 12 – GOOGLE RATING CARDS
   text-align:center;
 }
 
-/* =================================================
- STYLE 18 – FLOATING BUTTONS
-================================================== */
+/* =========================
+   STYLE 18 – FLOATING BUTTONS
+========================= */
 .floating{
   position:fixed;
-  bottom:10px;
+  bottom:12px;
   left:50%;
   transform:translateX(-50%);
+  width:92%;
+  max-width:430px;
   display:flex;
-  gap:10px;
-  width:90%;
-  max-width:420px;
+  gap:12px;
+  z-index:9999;
 }
+
 .float-btn{
   flex:1;
-  background:#5b3a00;
+  background:linear-gradient(135deg,#6b4500,#3e2600);
   color:#ffd700;
-  padding:16px;
-  border-radius:18px;
+  padding:16px 18px;
+  border-radius:20px;
+  font-family:'ErasDemi';
+  font-size:15px;
   font-weight:900;
-  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  box-shadow:
+    inset 0 0 10px rgba(255,215,150,.5),
+    0 10px 25px rgba(0,0,0,.45);
+  transition:all .3s ease;
 }
-</style>
-</head>
 
-<body>
+.float-btn img{
+  width:20px;
+  height:20px;
+}
+
+.float-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 0 14px rgba(255,215,150,.9),
+    0 14px 35px rgba(0,0,0,.6);
+}
+
 
 <!-- ===============================
  SECTION 1 – SCROLLER
@@ -480,17 +500,19 @@ Disco Road, Near Dreamland School,Janipur Jammu – 180007<br>
 </div>
 </div>
 
-<!-- ===============================
- SECTION 10 – FLOATING BUTTONS
-================================ -->
+<!-- =========================
+     SECTION 10 – FLOATING BUTTONS
+========================= -->
 <div class="floating">
-  <div class="float-btn">
-    <img src="icon-website.svg" width="18"> Website
-  </div>
-  <div class="float-btn">
-    <img src="icon-save-contact.svg" width="18"> Save Contact
-  </div>
-</div>
 
-</body>
-</html>
+  <a href="https://kshinejewellers.com/" class="float-btn">
+    <img src="icon-website.svg" alt="Website">
+    Website
+  </a>
+
+  <a href="contact.vcf" class="float-btn">
+    <img src="icon-save-contact.svg" alt="Save Contact">
+    Save Contact
+  </a>
+
+</div>
