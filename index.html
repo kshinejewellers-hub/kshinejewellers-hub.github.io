@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>KSHINE JEWELLERS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 @font-face {
   font-family: 'ErasDemi';
   src: url('eras-demi-itc.ttf');
+}
+
+:root{
+  --gold-main:#D4AF37;
+  --gold-soft:#FFF6DC;
+  --gold-dark:#9C7A1E;
+  --green-btn:#43A047;
+  --save-bg:#8B5A00;
+  --save-text:#FFD700;
 }
 
 body{
@@ -19,23 +21,23 @@ body{
 
 .overlay{
   backdrop-filter: blur(6px);
-  background:rgba(245,240,225,.85);
+  background:rgba(255,248,230,.92);
   min-height:100vh;
 }
 
 .wrapper{
   max-width:430px;
   margin:0 auto;
-  background:#fff;
+  background:#ffffff;
   border-radius:24px;
-  box-shadow:0 25px 60px rgba(0,0,0,.3);
+  box-shadow:0 25px 60px rgba(0,0,0,.28);
   overflow:hidden;
 }
 
 /* Ticker */
 .ticker{
   background:#000;
-  color:#d4af37;
+  color:var(--gold-main);
   font-weight:700;
   padding:8px;
   white-space:nowrap;
@@ -70,7 +72,7 @@ body{
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
 }
 
 /* Content */
@@ -83,18 +85,19 @@ body{
 .brand{
   font-family:'ErasDemi';
   font-size:28px;
-  color:#b8962e;
+  color:var(--gold-main);
   animation:glow 2s infinite alternate;
 }
 @keyframes glow{
-  from{text-shadow:0 0 5px #d4af37}
-  to{text-shadow:0 0 15px #ffd700}
+  from{ text-shadow:0 0 4px var(--gold-main); }
+  to{ text-shadow:0 0 14px #FFD700; }
 }
 
 .tagline{
   font-style:italic;
   font-weight:600;
   margin:10px 0;
+  color:#4b3a14;
 }
 
 /* Language + Theme */
@@ -102,20 +105,21 @@ body{
   display:flex;
   justify-content:center;
   gap:10px;
-  margin:10px 0 20px;
+  margin:12px 0 22px;
 }
 .control-btn{
   padding:8px 14px;
   border-radius:20px;
   background:#000;
-  color:#d4af37;
+  color:var(--gold-main);
   font-weight:700;
 }
 
 /* Ratings */
 .section-title{
-  font-weight:800;
-  margin:10px 0;
+  font-weight:900;
+  margin:12px 0;
+  color:#000;
 }
 .ratings{
   display:flex;
@@ -123,25 +127,40 @@ body{
 }
 .rate{
   flex:1;
-  background:#fff8e1;
-  border:2px solid #d4af37;
+  background:var(--gold-soft);
+  border:2px solid var(--gold-main);
   border-radius:14px;
   padding:12px;
   font-weight:700;
+  color:#000;
 }
 
 /* Action buttons */
 .actions{
   display:flex;
   gap:10px;
-  margin:15px 0;
+  margin:16px 0;
 }
 .actions a{
   flex:1;
   padding:14px;
   border-radius:14px;
-  background:#a5d6a7;
-  font-weight:700;
+  background:var(--green-btn);
+  font-weight:800;
+  color:#fff;
+  text-decoration:none;
+}
+
+/* Website button */
+.website-btn{
+  display:block;
+  margin:14px 0;
+  padding:14px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#E6C15A,#C9A227);
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
 }
 
 /* Social */
@@ -152,30 +171,35 @@ body{
 }
 .social a{
   padding:12px;
-  border:2px solid #d4af37;
+  border:2px solid var(--gold-main);
   border-radius:14px;
   font-weight:700;
+  color:#000;
+  background:#fff;
+  text-decoration:none;
 }
 
 /* Address */
 .address{
   margin-top:20px;
-  background:#fff8e1;
-  border:2px solid #d4af37;
+  background:var(--gold-soft);
+  border:2px solid var(--gold-main);
   border-radius:16px;
   padding:14px;
   text-align:left;
+  font-size:14px;
 }
 
 /* QR */
 .qr{
-  margin-top:20px;
+  margin-top:22px;
   background:#000;
-  border:4px solid #d4af37;
+  border:4px solid #FFD700;
   border-radius:18px;
   padding:16px;
-  color:#d4af37;
+  color:#FFD700;
   font-family:'ErasDemi';
+  box-shadow:0 0 18px rgba(255,215,0,.6);
 }
 
 /* Floating buttons */
@@ -184,105 +208,24 @@ body{
   bottom:12px;
   left:50%;
   transform:translateX(-50%);
-  background:#5a3b00;
-  color:#ffd700;
-  padding:18px;
+  background:var(--save-bg);
+  color:var(--save-text);
+  padding:20px;
   width:90%;
   max-width:420px;
-  border-radius:16px;
+  border-radius:18px;
   font-weight:900;
   text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 .float-web{
   position:fixed;
-  bottom:80px;
+  bottom:86px;
   right:16px;
   background:#000;
-  color:#d4af37;
-  padding:12px 14px;
+  color:var(--gold-main);
+  padding:14px 16px;
   border-radius:50%;
 }
 </style>
-</head>
-
-<body>
-<div class="overlay">
-
-<div class="wrapper">
-
-<div class="ticker"><span>916 • 22K Hallmark Gold • Silver • Diamonds • Join our group for regular updates</span></div>
-
-<div class="banner">
-  <div class="dp"><img src="dpimage.png"></div>
-</div>
-
-<div class="content">
-
-<div class="brand">KSHINE JEWELLERS</div>
-<div class="tagline">Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.</div>
-
-<div class="controls">
-  <div class="control-btn" onclick="setLang('en')">EN</div>
-  <div class="control-btn" onclick="setLang('hi')">हिंदी</div>
-  <div class="control-btn" onclick="toggleTheme()">🌙</div>
-</div>
-
-<div class="section-title">5 Star Customer Ratings</div>
-
-<div class="ratings">
-  <a class="rate" href="https://maps.app.goo.gl/DAF2cTd81weVF29N8">
-    ★★★★★ 4.9<br>Gandhi Nagar<br>1000+ Reviews
-  </a>
-  <a class="rate" href="https://maps.app.goo.gl/d3bKbByUosgEnWJV8">
-    ★★★★★ 5.0<br>Janipur<br>1260+ Reviews
-  </a>
-</div>
-
-<div class="actions">
-  <a href="tel:+919419362775">📞 Call Us</a>
-  <a href="https://wa.me/919622212879">💬 WhatsApp Us</a>
-</div>
-
-<a href="https://kshinejewellers.com">🌐 Official Website</a>
-
-<div class="section-title">JOIN SOCIAL MEDIA</div>
-
-<div class="social">
-  <a href="#">WhatsApp Group</a>
-  <a href="#">Instagram</a>
-  <a href="#">Facebook Group</a>
-  <a href="#">Facebook Page</a>
-  <a href="#">YouTube</a>
-  <a href="https://linktr.ee/Kshinejewellers">Linktree</a>
-</div>
-
-<div class="address">
-<strong>📍 Gandhi Nagar</strong><br>
-27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-📞 9419362775<br><br>
-<strong>📍 Janipur</strong><br>
-Disco Road, Near Dreamland School, Jammu – 180007<br>
-📞 9622212879
-</div>
-
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://kshinejewellers-hub.github.io"><br>
-Scan to join Kshine Jewellers digitally
-</div>
-
-</div>
-</div>
-
-<a class="float-web" href="https://kshinejewellers.com">🌐</a>
-<a class="float-save" href="contact.vcf">💾 SAVE CONTACT</a>
-
-</div>
-
-<script>
-function setLang(l){alert("Language switch ready — next step we localize text")}
-function toggleTheme(){document.body.classList.toggle('dark')}
-</script>
-
-</body>
-</html>
