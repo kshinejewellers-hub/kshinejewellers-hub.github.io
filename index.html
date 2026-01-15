@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>KSHINE JEWELLERS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- =================================================
- STYLE 1 – FONT (DO NOT CHANGE PATH)
+<!-- ==================================================
+STYLE 1 – FONT
 ================================================== -->
 <style>
-@font-face{
-  font-family:'ErasDemi';
-  src:url('eras-demi-itc.ttf');
+@font-face {
+  font-family: 'ErasDemi';
+  src: url('eras-demi-itc.ttf');
 }
 
-/* =================================================
- STYLE 2 – COLOR SYSTEM (SAFE TO TUNE COLORS ONLY)
+/* ==================================================
+STYLE 2 – COLOUR SYSTEM
 ================================================== */
 :root{
   --gold:#d4af37;
-  --gold-dark:#9b7c1f;
+  --gold-dark:#9c7a19;
   --gold-light:#fff3c4;
-  --green:#7fd7a3;
-  --green-dark:#3aa76d;
-  --blue:#1a73e8;
+  --green:#8fd19e;
+  --green-dark:#5cbf7a;
   --text:#222;
 }
 
-/* =================================================
- STYLE 3 – BODY & BACKGROUND
+/* ==================================================
+STYLE 3 – BODY & BACKGROUND
 ================================================== */
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family: Arial, sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
-/* =================================================
- STYLE 4 – MAIN WRAPPER
+/* ==================================================
+STYLE 4 – MAIN WRAPPER
 ================================================== */
 .wrapper{
   max-width:430px;
-  margin:12px auto 140px;
+  margin:10px auto 120px;
   background:#fff;
-  border-radius:26px;
-  box-shadow:0 25px 70px rgba(0,0,0,.35);
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
   overflow:hidden;
 }
 
-/* =================================================
- STYLE 5 – TOP SCROLLER
+/* ==================================================
+STYLE 5 – TOP SCROLLER
 ================================================== */
 .scroller{
   background:#000;
   color:#ffd700;
   font-size:13px;
-  font-style:italic;
   padding:6px 0;
-  overflow:hidden;
   white-space:nowrap;
+  overflow:hidden;
 }
 .scroller span{
   display:inline-block;
   padding-left:100%;
-  animation:scroll 13s linear infinite;
+  animation:scroll 15s linear infinite;
 }
 @keyframes scroll{
   0%{transform:translateX(0);}
   100%{transform:translateX(-100%);}
 }
 
-/* =================================================
- STYLE 6 – BANNER & DP
+/* ==================================================
+STYLE 6 – BANNER & DP
 ================================================== */
 .banner{
-  height:235px;
+  height:230px;
   background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
@@ -86,39 +85,33 @@ body{
   justify-content:center;
 }
 .dp img{
-  width:112px;
-  height:112px;
+  width:110px;
+  height:110px;
   border-radius:50%;
   border:6px solid #fff;
-  box-shadow:0 12px 32px rgba(0,0,0,.5);
+  box-shadow:0 12px 30px rgba(0,0,0,.4);
 }
 
-/* =================================================
- STYLE 7 – CONTENT AREA
+/* ==================================================
+STYLE 7 – CONTENT AREA
 ================================================== */
 .content{
-  padding:78px 18px 26px;
+  padding:75px 16px 24px;
   text-align:center;
 }
 
-/* =================================================
- STYLE 8 – BRAND NAME (GLOW ANIMATION)
+/* ==================================================
+STYLE 8 – BRAND NAME
 ================================================== */
 .brand{
   font-family:'ErasDemi';
   font-size:26px;
   color:var(--gold-dark);
   letter-spacing:1px;
-  text-shadow:0 0 12px rgba(212,175,55,.6);
-  animation:glow 2.5s infinite alternate;
-}
-@keyframes glow{
-  from{text-shadow:0 0 6px var(--gold);}
-  to{text-shadow:0 0 18px var(--gold);}
 }
 
-/* =================================================
- STYLE 9 – TOGGLES (LANGUAGE / THEME)
+/* ==================================================
+STYLE 9 – TOGGLES
 ================================================== */
 .toggles{
   display:flex;
@@ -129,113 +122,66 @@ body{
 .toggle{
   background:#000;
   color:var(--gold);
-  border-radius:18px;
   padding:6px 14px;
+  border-radius:18px;
   font-size:13px;
   font-weight:700;
 }
 
-/* =================================================
- STYLE 10 – TAGLINE
+/* ==================================================
+STYLE 10 – TAGLINE
 ================================================== */
 .tag{
   font-style:italic;
   font-weight:600;
-  color:#444;
-  margin:10px 0 14px;
-  animation:fade 3s infinite;
-}
-@keyframes fade{
-  0%,100%{opacity:1;}
-  50%{opacity:.65;}
+  color:#555;
+  margin:10px 0 16px;
 }
 
-/* =================================================
- STYLE 11 – RATINGS TITLE
+/* ==================================================
+STYLE 11 – RATINGS TITLE
 ================================================== */
 .rating-title{
   font-family:'ErasDemi';
-  color:#000;
   margin:12px 0;
 }
 
-/* =================================================
- STYLE 12 – GOOGLE RATING CARDS (IMPORTANT)
-================================================== */
-/* ===============================
+/* ==================================================
 STYLE 12 – GOOGLE RATING CARDS
-=============================== */
-
+================================================== */
 .ratings{
   display:flex;
-  gap:14px;
-  margin:14px 0;
+  gap:12px;
 }
-
 .rate{
   flex:1;
-  background:#fff6cf;
-  border:3px solid #d4af37;
+  background:var(--gold-light);
+  border:3px solid var(--gold);
   border-radius:18px;
-  padding:14px 10px;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0 10px 26px rgba(212,175,55,.35);
-  transition:all .3s ease;
-}
-
-/* Tap text */
-.map-text{
-  font-size:13px;
-  color:#666;
-  margin-bottom:6px;
-}
-
-/* Stars – glossy gold */
-.stars{
-  font-size:18px;
-  letter-spacing:3px;
-  color:#d4af37;
-  text-shadow:
-    0 0 6px rgba(212,175,55,.7),
-    0 0 12px rgba(255,215,0,.5);
-  margin-bottom:6px;
-}
-
-/* Rating number */
-.rating-number{
-  font-size:22px;
-  font-weight:900;
-  color:#b8962e;
-  margin-bottom:4px;
-}
-
-/* Location */
-.location{
-  font-size:18px;
-  font-weight:900;
-  color:#000;
-}
-
-/* Reviews */
-.reviews{
+  padding:12px;
   font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+.rate .stars{
+  color:var(--gold-dark);
+  font-size:16px;
+}
+.rate .score{
+  font-size:18px;
+  font-weight:900;
+}
+.rate .place{
+  font-size:16px;
+  font-weight:900;
+}
+.rate .reviews{
   font-style:italic;
-  color:#333;
-  margin-top:2px;
+  font-weight:400;
 }
 
-/* Hover glow */
-.rate:hover{
-  box-shadow:
-    0 0 0 3px rgba(212,175,55,.45),
-    0 14px 30px rgba(212,175,55,.55);
-  transform:translateY(-2px);
-}
-
-
- /* =================================================
- STYLE 13 – CALL / WHATSAPP BUTTONS
+/* ==================================================
+STYLE 13 – CALL / WHATSAPP
 ================================================== */
 .actions{
   display:flex;
@@ -244,56 +190,40 @@ STYLE 12 – GOOGLE RATING CARDS
 }
 .action{
   flex:1;
-  background:var(--green);
-  color:#000;
   padding:14px;
+  background:var(--green);
   border-radius:16px;
   font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
 }
 
-/* =================================================
- STYLE 14 – WEBSITE BUTTON
+/* ==================================================
+STYLE 14 – WEBSITE BUTTON
 ================================================== */
 .website-btn{
   background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-  color:#000;
   padding:14px;
-  border-radius:18px;
+  border-radius:16px;
   font-weight:900;
   margin-bottom:14px;
 }
 
-/* =================================================
- STYLE 15 – SOCIAL MEDIA GRID
+/* ==================================================
+STYLE 15 – SOCIAL MEDIA GRID
 ================================================== */
-.heading{
-  font-family:'ErasDemi';
-  color:var(--gold-dark);
-  margin:12px 0;
-}
 .social{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
 }
 .social a{
   padding:10px;
-  border-radius:14px;
+  border-radius:12px;
   border:2px solid var(--gold);
   font-weight:700;
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
 }
 
-/* =================================================
- STYLE 16 – ADDRESS BOX
+/* ==================================================
+STYLE 16 – ADDRESS BOX
 ================================================== */
 .address{
   background:#fff4c2;
@@ -302,110 +232,77 @@ STYLE 12 – GOOGLE RATING CARDS
   padding:12px;
   font-size:13px;
   margin-top:14px;
-  text-align:left;
 }
 
-/* =================================================
- STYLE 17 – QR SCANNER (GLOSSY GOLD)
+/* ==================================================
+STYLE 17 – QR SCANNER
 ================================================== */
 .qr{
   margin-top:18px;
   background:#000;
   border:4px solid var(--gold);
-  border-radius:20px;
-  padding:14px;
+  border-radius:18px;
+  padding:12px;
 }
 .qr img{
   width:100%;
-  border-radius:12px;
 }
 .qr p{
-  font-family:'ErasDemi';
   color:var(--gold);
+  font-family:'ErasDemi';
   font-size:12px;
-  margin-top:6px;
-  text-align:center;
 }
 
-/* =========================
-   Style 18 – Floating Buttons
-========================= */
-
+/* ==================================================
+STYLE 18 – FLOATING BUTTONS
+================================================== */
 .floating{
   position:fixed;
-  bottom:12px;
+  bottom:10px;
   left:50%;
   transform:translateX(-50%);
-  width:92%;
-  max-width:430px;
   display:flex;
-  gap:12px;
+  gap:10px;
+  width:90%;
+  max-width:420px;
   z-index:9999;
 }
-
 .float-btn{
   flex:1;
-  background:linear-gradient(135deg,#6b4500,#3e2600);
+  background:#5b3a00;
   color:#ffd700;
-  padding:16px 18px;
-  border-radius:20px;
-  font-family:'ErasDemi', Arial, sans-serif;
-  font-size:15px;
+  padding:14px;
+  border-radius:18px;
+  font-family:'ErasDemi';
   font-weight:900;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  box-shadow:
-    inset 0 0 10px rgba(255,215,150,.45),
-    0 10px 25px rgba(0,0,0,.45);
-  transition:all .3s ease;
-  text-decoration:none;
 }
+</style>
+</head>
 
-.float-btn img{
-  width:20px;
-  height:20px;
-}
+<body>
 
-.float-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    inset 0 0 14px rgba(255,215,150,.9),
-    0 14px 35px rgba(0,0,0,.6);
-}
-
-}
-
-
-<!-- ===============================
- SECTION 1 – SCROLLER
-================================ -->
-<!-- Section 1: Top Scroller -->
+<!-- ==================================================
+SECTION 1 – SCROLLER
+================================================== -->
 <div class="scroller">
-  <span>
-    ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙Get  916•22K 6 Dight HUID Hallmark Gold| 💎 Diamond | 🪙 Silver at Wholesale Rate.
-   ◆ For Regular Gold Updates Join Our WhatsApp Group.◆ For More Details Visit our official website below ◆
-  </span>
+  <span>916 • 22K Hallmark Gold • Silver • Diamonds • Join Our WhatsApp Group</span>
 </div>
 
-<!-- ===============================
- SECTION 2 – WRAPPER START
-================================ -->
+<!-- ==================================================
+SECTION 2 – WRAPPER START
+================================================== -->
 <div class="wrapper">
 
-<!-- ===============================
- SECTION 3 – BANNER & DP
-================================ -->
+<!-- ==================================================
+SECTION 3 – BANNER & DP
+================================================== -->
 <div class="banner">
-  <div class="dp">
-    <img src="dpimage.png" alt="Kshine Jewellers">
-  </div>
+  <div class="dp"><img src="dpimage.png"></div>
 </div>
 
-<!-- ===============================
- SECTION 4 – CONTENT
-================================ -->
+<!-- ==================================================
+SECTION 4 – CONTENT
+================================================== -->
 <div class="content">
 
 <div class="brand">KSHINE JEWELLERS</div>
@@ -416,107 +313,80 @@ STYLE 12 – GOOGLE RATING CARDS
   <div class="toggle">🌙 / ☀️</div>
 </div>
 
-<div class="tag">
-Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.
-</div>
+<div class="tag">Your trusted Jewellery Brand for Gold, Diamond & Silver Jewellery in Jammu.</div>
 
 <div class="rating-title">5 Star Customer Ratings</div>
 
-<!-- ===============================
- SECTION 5 – GOOGLE RATINGS
-================================ -->
+<!-- ==================================================
+SECTION 5 – GOOGLE RATINGS
+================================================== -->
 <div class="ratings">
-
-  <!-- Gandhi Nagar -->
   <div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
-    <div class="map-text">Tap to open Google Maps</div>
     <div class="stars">★★★★★</div>
-    <div class="rating-number">4.9</div>
-    <div class="location">Gandhi Nagar</div>
+    <div class="score">4.9</div>
+    <div class="place">Gandhi Nagar</div>
     <div class="reviews">1000+ Reviews</div>
   </div>
-
-  <!-- Janipur -->
   <div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
-    <div class="map-text">Tap to open Google Maps</div>
     <div class="stars">★★★★★</div>
-    <div class="rating-number">5.0</div>
-    <div class="location">Janipur</div>
+    <div class="score">5.0</div>
+    <div class="place">Janipur</div>
     <div class="reviews">1260+ Reviews</div>
   </div>
-
 </div>
 
-
-
-
-<!-- ===============================
- SECTION 6 – ACTION BUTTONS
-================================ -->
+<!-- ==================================================
+SECTION 6 – ACTION BUTTONS
+================================================== -->
 <div class="actions">
-  <div class="action">
-    <img src="icon-phone.svg" width="20"> Call Us
-  </div>
-  <div class="action">
-    <img src="icon-whatsapp.svg" width="20"> WhatsApp Us
-  </div>
+  <div class="action">Call Us</div>
+  <div class="action">WhatsApp Us</div>
 </div>
 
-<div class="website-btn">
-  <img src="icon-website.svg" width="18"> Official Website
-</div>
+<div class="website-btn">Official Website</div>
 
-<!-- ===============================
- SECTION 7 – SOCIAL MEDIA
-================================ -->
-<div class="heading">JOIN SOCIAL MEDIA</div>
-
+<!-- ==================================================
+SECTION 7 – SOCIAL MEDIA
+================================================== -->
 <div class="social">
-  <a><img src="icon-whatsappgroup.svg" width="18"> Group</a>
-  <a><img src="icon-instagram.svg" width="18"> Insta</a>
-  <a><img src="icon-facebookgroup.svg" width="18"> Group</a>
-  <a><img src="icon-facebook.svg" width="18"> Page</a>
-  <a><img src="icon-youtube.svg" width="18"> YouTube</a>
-  <a><img src="icon-linktree.svg" width="18"> Linktree</a>
+  <a>WhatsApp Group</a>
+  <a>Instagram</a>
+  <a>Facebook Group</a>
+  <a>Facebook Page</a>
+  <a>YouTube</a>
+  <a>Linktree</a>
 </div>
 
-<!-- ===============================
- SECTION 8 – ADDRESS
-================================ -->
+<!-- ==================================================
+SECTION 8 – ADDRESS
+================================================== -->
 <div class="address">
-📍 <b>Gandhi Nagar Branch</b><br>
-27-B Auqaf Market, Opp SBI Bank, Gandhi Nagar Jammu – 180004<br>
+<b>Gandhi Nagar</b><br>
+27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
 📞 9419362775<br><br>
-
-📍 <b>Janipur Branch</b><br>
-Disco Road, Near Dreamland School,Janipur Jammu – 180007<br>
+<b>Janipur</b><br>
+Disco Road, Near Dreamland School, Jammu – 180007<br>
 📞 9622212879
 </div>
 
-<!-- ===============================
- SECTION 9 – QR SCANNER
-================================ -->
+<!-- ==================================================
+SECTION 9 – QR SCANNER
+================================================== -->
 <div class="qr">
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
-  <p>Scan to join Kshine Jewellers digitally</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
+<p>Scan to join Kshine Jewellers digitally</p>
 </div>
 
 </div>
 </div>
 
-<!-- =========================
-     SECTION 10 – FLOATING BUTTONS
-========================= -->
+<!-- ==================================================
+SECTION 10 – FLOATING BUTTONS
+================================================== -->
 <div class="floating">
-
-  <a href="https://kshinejewellers.com/" class="float-btn">
-    <img src="icon-website.svg" alt="Website">
-    Website
-  </a>
-
-  <a href="contact.vcf" class="float-btn">
-    <img src="icon-save-contact.svg" alt="Save Contact">
-    Save Contact
-  </a>
-
+  <div class="float-btn">Website</div>
+  <div class="float-btn">Save Contact</div>
 </div>
+
+</body>
+</html>
