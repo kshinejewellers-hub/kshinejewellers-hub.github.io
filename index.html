@@ -10,14 +10,8 @@
 STYLE 1 – FONTS
 ================================================== -->
 <style>
-@font-face{
-  font-family:'ErasDemi';
-  src:url('eras-demi-itc.ttf');
-}
-@font-face{
-  font-family:'FuturaBold';
-  src:url('futuraboldbt.ttf');
-}
+@font-face{font-family:'ErasDemi';src:url('eras-demi-itc.ttf');}
+@font-face{font-family:'FuturaBold';src:url('futuraboldbt.ttf');}
 
 /* ==================================================
 STYLE 2 – COLOUR SYSTEM
@@ -187,9 +181,7 @@ STYLE 12 – FIXED BUTTONS
   border:3px solid var(--gold);
   transition:.2s;
 }
-.btn:hover{
-  box-shadow:0 0 12px rgba(212,175,55,.9);
-}
+.btn:hover{box-shadow:0 0 12px rgba(212,175,55,.9);}
 
 /* ==================================================
 STYLE 13 – CALL / WHATSAPP
@@ -237,7 +229,15 @@ STYLE 16 – ADDRESS
   border-radius:16px;
   padding:14px;
   margin-top:14px;
+  font-size:14px;
+}
+.address strong{
   font-family:'FuturaBold';
+}
+.address a{
+  font-weight:900;
+  color:#000;
+  text-decoration:none;
 }
 
 /* ==================================================
@@ -287,9 +287,7 @@ STYLE 18 – FLOATING BUTTONS
   border:3px solid var(--gold);
   text-decoration:none;
 }
-.float-btn:hover{
-  box-shadow:0 0 14px rgba(212,175,55,.9);
-}
+.float-btn:hover{box-shadow:0 0 14px rgba(212,175,55,.9);}
 </style>
 </head>
 
@@ -348,10 +346,10 @@ SECTION 5 – GOOGLE RATINGS
 <!-- ==================================================
 SECTION 6 – BUTTONS
 ================================================== -->
-<a href="tel:+919419362775" class="btn">💾 Save Contact</a>
+<a href="kshine-jewellers.vcf" download class="btn">💾 Save Contact</a>
 
 <div class="actions">
-<a href="tel:+919419362775" class="btn action">📞 Call Us</a>
+<a href="tel:+919622212879" class="btn action">📞 Call Us</a>
 <a href="https://wa.me/919419362775" class="btn action">💬 WhatsApp Us</a>
 </div>
 
@@ -373,13 +371,13 @@ SECTION 7 – SOCIAL MEDIA
 SECTION 8 – ADDRESS
 ================================================== -->
 <div class="address">
-<b>Gandhi Nagar Branch</b><br>
-27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-📞 9419362775<br><br>
+<strong>Gandhi Nagar Branch</strong><br>
+27-B Auqaf Market, Opp SBI Bank, Gandhi Nagar, Jammu – 180004<br>
+📞 <a href="tel:+919419362775">9419362775</a><br><br>
 
-<b>Janipur Branch</b><br>
-Disco Road, Near Dreamland School, Jammu – 180007<br>
-📞 9622212879
+<strong>Janipur Branch</strong><br>
+Disco Road, Near Dreamland School, Janipur, Jammu – 180007<br>
+📞 <a href="tel:+919622212879">9622212879</a>
 </div>
 
 <!-- ==================================================
@@ -398,7 +396,7 @@ SECTION 10 – FLOATING BUTTONS
 ================================================== -->
 <div class="floating">
 <a href="https://kshinejewellers.com" class="float-btn">🌐 Website</a>
-<a href="tel:+919419362775" class="float-btn">💾 Save Contact</a>
+<a href="kshine-jewellers.vcf" download class="float-btn">💾 Save Contact</a>
 </div>
 
 </body>
