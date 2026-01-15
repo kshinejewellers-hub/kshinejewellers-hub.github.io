@@ -120,11 +120,6 @@ STYLE 9 – TAGLINE
   font-style:italic;
   color:#666;
   margin:10px 0 16px;
-  animation:fadeText 3s infinite;
-}
-@keyframes fadeText{
-  0%,100%{opacity:.7}
-  50%{opacity:1}
 }
 
 /* ==================================================
@@ -136,7 +131,7 @@ STYLE 10 – RATINGS TITLE
 }
 
 /* ==================================================
-STYLE 11 – GOOGLE RATING CARDS
+STYLE 11 – GOOGLE RATINGS
 ================================================== */
 .ratings{
   display:flex;
@@ -156,18 +151,13 @@ STYLE 11 – GOOGLE RATING CARDS
   background:linear-gradient(120deg,#7a5c00,#ffd700,#fff2a8);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:starPulse 2s infinite;
-}
-@keyframes starPulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.12)}
 }
 .rate .score{font-size:18px;font-weight:900;}
 .rate .place{font-family:'FuturaBold';}
 .rate .reviews{font-style:italic;font-size:13px;}
 
 /* ==================================================
-STYLE 12 – COMMON BUTTON STYLE
+STYLE 12 – COMMON BUTTONS
 ================================================== */
 .btn{
   display:block;
@@ -182,7 +172,7 @@ STYLE 12 – COMMON BUTTON STYLE
 }
 
 /* ==================================================
-STYLE 13 – CALL / WHATSAPP BUTTONS
+STYLE 13 – CALL / WHATSAPP
 ================================================== */
 .actions{
   display:flex;
@@ -219,7 +209,7 @@ STYLE 15 – SOCIAL MEDIA GRID
 }
 
 /* ==================================================
-STYLE 16 – ADDRESS BOX
+STYLE 16 – ADDRESS
 ================================================== */
 .address{
   background:#fff4c2;
@@ -232,7 +222,7 @@ STYLE 16 – ADDRESS BOX
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17 – QR SECTION
+STYLE 17 – QR
 ================================================== */
 .qr{
   background:#000;
@@ -281,28 +271,41 @@ STYLE 18 – FLOATING BUTTONS
 </style>
 
 <!-- ==================================================
-SCRIPT – SAVE CONTACT (INLINE VCF, NO FILE NEEDED)
+SCRIPT – SAVE CONTACT (ANDROID SAFE)
 ================================================== -->
 <script>
 function saveContact(){
-  const vcf =
+const vcf =
 `BEGIN:VCARD
 VERSION:3.0
 N:Jewellers;Kshine;;;
 FN:KSHINE JEWELLERS
 ORG:KSHINE JEWELLERS
+
 TEL;TYPE=WORK:+919622212879
 TEL;TYPE=WORK:+919419362775
-URL:https://kshinejewellers.com
+
+ADR;TYPE=WORK:;;27-B Auqaf Market, Opp SBI Bank, Gandhi Nagar;Jammu;J&K;180004;India
+ADR;TYPE=WORK:;;Disco Road, Near Dreamland School, Janipur;Jammu;J&K;180007;India
+
+URL:https://kshinejewellers-hub.github.io
+
+NOTE:WhatsApp Group https://chat.whatsapp.com/YOURGROUPLINK
+Instagram https://instagram.com/kshinejewellers
+Facebook Page https://facebook.com/kshinejewellers
+Facebook Group https://facebook.com/groups/kshinejewellers
+YouTube https://youtube.com/@kshinejewellers
+Linktree https://linktr.ee/Kshinejewellers
+
 END:VCARD`;
 
-  const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8;' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'KSHINE-JEWELLERS.vcf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+const blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = 'KSHINE-JEWELLERS.vcf';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
 }
 </script>
 
@@ -318,7 +321,7 @@ SECTION 1 – SCROLLER
 </div>
 
 <!-- ==================================================
-SECTION 2 – WRAPPER START
+SECTION 2 – WRAPPER
 ================================================== -->
 <div class="wrapper">
 
@@ -326,7 +329,7 @@ SECTION 2 – WRAPPER START
 SECTION 3 – BANNER & DP
 ================================================== -->
 <div class="banner">
-  <div class="dp"><img src="dpimage.png"></div>
+<div class="dp"><img src="dpimage.png"></div>
 </div>
 
 <!-- ==================================================
@@ -369,8 +372,8 @@ SECTION 6 – SAVE CONTACT
 SECTION 7 – CALL / WHATSAPP
 ================================================== -->
 <div class="actions">
-  <a href="tel:+919622212879" class="btn action">📞 Call Us</a>
-  <a href="https://wa.me/919622212879" target="_blank" class="btn action">💬 WhatsApp Us</a>
+<a href="tel:+919622212879" class="btn action">📞 Call Us</a>
+<a href="https://wa.me/919622212879" target="_blank" class="btn action">💬 WhatsApp Us</a>
 </div>
 
 <a href="https://kshinejewellers.com" target="_blank" class="btn website-btn">🌐 Official Website</a>
@@ -379,12 +382,12 @@ SECTION 7 – CALL / WHATSAPP
 SECTION 8 – SOCIAL MEDIA
 ================================================== -->
 <div class="social">
-  <a href="https://chat.whatsapp.com/YOURGROUPLINK" target="_blank">WhatsApp Group</a>
-  <a href="https://instagram.com/kshinejewellers" target="_blank">Instagram</a>
-  <a href="https://facebook.com/groups/kshinejewellers" target="_blank">Facebook Group</a>
-  <a href="https://facebook.com/kshinejewellers" target="_blank">Facebook Page</a>
-  <a href="https://youtube.com/@kshinejewellers" target="_blank">YouTube</a>
-  <a href="https://linktr.ee/Kshinejewellers" target="_blank">Linktree</a>
+<a href="https://chat.whatsapp.com/YOURGROUPLINK" target="_blank">WhatsApp Group</a>
+<a href="https://instagram.com/kshinejewellers" target="_blank">Instagram</a>
+<a href="https://facebook.com/groups/kshinejewellers" target="_blank">Facebook Group</a>
+<a href="https://facebook.com/kshinejewellers" target="_blank">Facebook Page</a>
+<a href="https://youtube.com/@kshinejewellers" target="_blank">YouTube</a>
+<a href="https://linktr.ee/Kshinejewellers" target="_blank">Linktree</a>
 </div>
 
 <!-- ==================================================
@@ -415,8 +418,8 @@ SECTION 10 – QR
 SECTION 11 – FLOATING BUTTONS
 ================================================== -->
 <div class="floating">
-  <a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
-  <a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
+<a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
+<a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
 </div>
 
 </body>
