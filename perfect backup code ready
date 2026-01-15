@@ -117,11 +117,33 @@ STYLE 8 – BRAND NAME
 /* ==================================================
 STYLE 9 – TAGLINE
 ================================================== */
+/* ==================================================
+STYLE 9 – TAGLINE
+================================================== */
+
 .tag{
   font-style:italic;
+  font-weight:600;
   color:#666;
   margin:10px 0 16px;
+  animation:tagGlowPulse 3.2s ease-in-out infinite;
 }
+
+@keyframes tagGlowPulse{
+  0%{
+    opacity:0.6;
+    text-shadow:none;
+  }
+  50%{
+    opacity:1;
+    text-shadow:0 0 8px rgba(212,175,55,0.35);
+  }
+  100%{
+    opacity:0.6;
+    text-shadow:none;
+  }
+}
+
 
 /* ==================================================
 STYLE 10 – RATINGS TITLE
@@ -405,7 +427,7 @@ SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
 <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Get 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver 
-    ◆ for more details Visit our official website below ◆</span>
+    For regular Gold Updates Join Our Whats app Groups◆ for more details Visit our official website below ◆</span>
 </div>
 
 <!-- ==================================================
