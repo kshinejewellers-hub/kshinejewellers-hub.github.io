@@ -117,6 +117,9 @@ STYLE 8 – BRAND NAME
 /* ==================================================
 STYLE 9 – TAGLINE
 ================================================== */
+/* ==================================================
+STYLE 9 – TAGLINE
+================================================== */
 
 .tag{
   font-style:italic;
@@ -150,9 +153,6 @@ STYLE 10 – RATINGS TITLE
   margin:14px 0;
 }
 
-/* ==================================================
-STYLE 11 – GOOGLE RATINGS
-================================================== */
 /* ==================================================
 STYLE 11 – GOOGLE RATINGS (IMPORTANT)
 ================================================== */
@@ -424,7 +424,7 @@ SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
 <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Get 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver 
-    For regular Gold Updates Join Our Whats app Groups◆ for more details Visit our official website below ◆</span>
+    ◆ for more details Visit our official website below ◆</span>
 </div>
 
 <!-- ==================================================
@@ -479,8 +479,14 @@ SECTION 6 – SAVE CONTACT
 SECTION 7 – CALL / WHATSAPP
 ================================================== -->
 <div class="actions">
-<a href="tel:+919622212879" class="btn action">📞 Call Us</a>
-<a href="https://wa.me/919622212879" target="_blank" class="btn action">💬 WhatsApp Us</a>
+  <a href="tel:9622212879" class="action btn">📞 Call Us</a>
+
+  <a href="https://wa.me/919622212879?text=%E2%9C%A8%20Hello%20*K-SHINE%20JEWELLERS*%20%E2%9C%A8%0A%0A%F0%9F%92%8E%20I%20just%20went%20through%20your%20*Digital%20Business%20Card*%20and%20I%E2%80%99m%20interested%20in%20exploring%20your%20*Gold,%20Diamond%20%26%20Silver%20Jewellery%20Collections.*%0A%0A%F0%9F%99%8F%20Kindly%20guide%20me%20further."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="action btn">
+     💬 WhatsApp Us
+  </a>
 </div>
 
 <a href="https://kshinejewellers.com" target="_blank" class="btn website-btn">🌐 Official Website</a>
