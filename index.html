@@ -43,7 +43,7 @@ STYLE 4 – MAIN WRAPPER
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
   overflow:hidden;
-}
+} 
 
 /* ==================================================
 STYLE 5 – TOP SCROLLER
@@ -52,7 +52,7 @@ STYLE 5 – TOP SCROLLER
   background:#000;
   color:#ffd700;
   font-size:13px;
-  font-style:italic;
+  font-style:italilc;
   padding:6px 0;
   white-space:nowrap;
   overflow:hidden;
@@ -117,6 +117,7 @@ STYLE 8 – BRAND NAME
 /* ==================================================
 STYLE 9 – TAGLINE
 ================================================== */
+
 .tag{
   font-style:italic;
   font-weight:600;
@@ -124,10 +125,20 @@ STYLE 9 – TAGLINE
   margin:10px 0 16px;
   animation:tagGlowPulse 3.2s ease-in-out infinite;
 }
+
 @keyframes tagGlowPulse{
-  0%{opacity:.6}
-  50%{opacity:1;text-shadow:0 0 8px rgba(212,175,55,.35)}
-  100%{opacity:.6}
+  0%{
+    opacity:0.6;
+    text-shadow:none;
+  }
+  50%{
+    opacity:1;
+    text-shadow:0 0 8px rgba(212,175,55,0.35);
+  }
+  100%{
+    opacity:0.6;
+    text-shadow:none;
+  }
 }
 
 /* ==================================================
@@ -139,39 +150,111 @@ STYLE 10 – RATINGS TITLE
 }
 
 /* ==================================================
-STYLE 11 – GOOGLE RATINGS
+STYLE 11 – GOOGLE RATINGS (IMPORTANT)
 ================================================== */
+
 .ratings{
   display:flex;
   gap:12px;
+  margin-top:12px;
 }
+
+/* Rating Card */
 .rate{
   flex:1;
   background:var(--gold-light);
   border:3px solid var(--gold);
   border-radius:18px;
   padding:10px;
+  text-align:center;
   cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.rate small{font-size:11px;font-style:italic;}
+
+.rate:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 22px rgba(212,175,55,.45);
+}
+
+/* Tap to open maps */
+.rate small{
+  display:block;
+  font-size:11px;
+  color:#555;
+  margin-bottom:4px;
+  font-style:italic;
+}
+
+/* ⭐ Premium Dual-Shade Glossy Animated Stars */
 .rate .stars{
   font-size:18px;
-  background:linear-gradient(120deg,#5e4300,#ffd700,#fff3b0,#ffd700,#5e4300);
+  letter-spacing:2px;
+
+  background:linear-gradient(
+    120deg,
+    #5e4300,
+    #cfa32d,
+    #fff3b0,
+    #cfa32d,
+    #5e4300
+  );
+  background-size:220%;
+
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:starZoom 2.4s infinite;
+
+  text-shadow:
+    0 1px 2px rgba(0,0,0,.35),
+    0 0 8px rgba(212,175,55,.65);
+
+  animation:starZoomGlow 2.4s ease-in-out infinite;
+  transform-origin:center;
 }
-@keyframes starZoom{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.18)}
-  100%{transform:scale(1)}
+
+/* Star animation */
+@keyframes starZoomGlow{
+  0%{
+    transform:scale(1);
+    background-position:0%;
+    filter:brightness(1);
+  }
+  50%{
+    transform:scale(1.18);
+    background-position:100%;
+    filter:brightness(1.5);
+  }
+  100%{
+    transform:scale(1);
+    background-position:0%;
+    filter:brightness(1);
+  }
 }
-.rate .score,
+
+/* Rating number (4.9 / 5.0) – BOLD + FUTURA */
+.rate .score{
+  font-family:'FuturaBold';
+  font-size:18px;
+  font-weight:900;
+  color:#000;
+  margin-top:4px;
+}
+
+/* Branch name – BOLD + FUTURA */
 .rate .place{
   font-family:'FuturaBold';
+  font-size:15px;
   font-weight:900;
+  color:#000;
+  margin-top:2px;
 }
-.rate .reviews{font-style:italic;}
+
+/* Reviews text – ITALIC, NOT BOLD */
+.rate .reviews{
+  font-size:13px;
+  font-style:italic;
+  font-weight:400;
+  color:#444;
+}
 
 /* ==================================================
 STYLE 12 – COMMON BUTTONS
@@ -195,7 +278,10 @@ STYLE 13 – CALL / WHATSAPP
   display:flex;
   gap:10px;
 }
-.action{flex:1;background:var(--green);}
+.action{
+  flex:1;
+  background:var(--green);
+}
 
 /* ==================================================
 STYLE 14 – WEBSITE BUTTON
@@ -209,7 +295,7 @@ STYLE 15 – SOCIAL MEDIA GRID
 ================================================== */
 .social{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1fr 1fr 1fr;
   gap:10px;
 }
 .social a{
@@ -230,7 +316,10 @@ STYLE 16 – ADDRESS
   border:2px solid var(--gold);
   border-radius:16px;
   padding:14px;
+  margin-top:14px;
 }
+.address strong{font-family:'FuturaBold';}
+.address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
 STYLE 17 – QR
@@ -240,9 +329,18 @@ STYLE 17 – QR
   border:4px solid var(--gold);
   border-radius:18px;
   padding:10px;
+  margin-top:14px;
 }
-.qr img{width:65%;margin:auto;display:block;}
-.qr p{color:var(--gold);font-size:11px;}
+.qr img{
+  width:65%;
+  max-width:220px;
+  margin:auto;
+  display:block;
+}
+.qr p{
+  color:var(--gold);
+  font-size:11px;
+}
 
 /* ==================================================
 STYLE 18 – FLOATING BUTTONS
@@ -265,67 +363,50 @@ STYLE 18 – FLOATING BUTTONS
   padding:14px;
   border-radius:18px;
   font-family:'FuturaBold';
+  font-weight:900;
+  text-align:center;
   border:3px solid var(--gold);
   text-decoration:none;
 }
-
-/* ==================================================
-STYLE 18A – FLOATING SHARE BUTTON (FIXED)
-================================================== */
-.share-float{
-  position:fixed;
-  bottom:90px;
-  right:16px;
-  z-index:10001;
-  padding:12px 20px;
-  border-radius:28px;
-  background:linear-gradient(135deg,#fff6cf,#ffd700,#8a6a10);
-  border:3px solid var(--gold);
-  font-family:'FuturaBold';
-  font-size:14px;
-  font-weight:900;
-  color:#000;
-  box-shadow:0 10px 28px rgba(0,0,0,.45);
-}
-.share-float:active{transform:scale(.95);}
 </style>
 
 <!-- ==================================================
-SCRIPT – SAVE CONTACT
+SCRIPT – SAVE CONTACT (ANDROID SAFE)
 ================================================== -->
 <script>
 function saveContact(){
-const vcf=`BEGIN:VCARD
+const vcf =
+`BEGIN:VCARD
 VERSION:3.0
+N:Jewellers;Kshine;;;
 FN:KSHINE JEWELLERS
 ORG:KSHINE JEWELLERS
-TEL:+919622212879
+
+TEL;TYPE=WORK:+919622212879
+
+ADR;TYPE=WORK:;;27-B Auqaf Market, Opp SBI Bank, Gandhi Nagar;Jammu;J&K;180004;Call 9419362775;India
+ADR;TYPE=WORK:;;Disco Road, Near Dreamland School, Janipur;Jammu;J&K;180007;Call 9622212879;India
+
+URL:https://kshinejewellers-hub.github.io
 URL:https://kshinejewellers.com
+URL:https://linktr.ee/Kshinejewellers
+
+NOTE:WhatsApp Group https://chat.whatsapp.com/YOURGROUPLINK
+Instagram https://instagram.com/kshinejewellers
+Facebook Page https://facebook.com/kshinejewellers
+Facebook Group https://facebook.com/groups/kshinejewellers
+YouTube https://youtube.com/@kshinejewellers
+Linktree https://linktr.ee/Kshinejewellers
+
 END:VCARD`;
-const blob=new Blob([vcf],{type:'text/vcard'});
-const link=document.createElement('a');
-link.href=URL.createObjectURL(blob);
-link.download='KSHINE-JEWELLERS.vcf';
+
+const blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = 'KSHINE-JEWELLERS.vcf';
 document.body.appendChild(link);
 link.click();
 document.body.removeChild(link);
-}
-</script>
-
-<!-- ==================================================
-SCRIPT – SHARE
-================================================== -->
-<script>
-function shareCard(){
-if(navigator.share){
-navigator.share({
-title:'KSHINE JEWELLERS',
-text:'✨ KSHINE JEWELLERS – Premium Gold, Diamond & Silver Jewellery',
-url:window.location.href
-});
-}else{
-alert('Sharing not supported');
-}
 }
 </script>
 
@@ -333,34 +414,153 @@ alert('Sharing not supported');
 
 <body>
 
-<div class="scroller"><span>◆ K-Shine Jewellers ◆ Premium Gold • Diamond • Silver ◆</span></div>
+<!-- ==================================================
+SECTION 1 – SCROLLER
+================================================== -->
+<div class="scroller">
+<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Get 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver 
+    Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
+</div>
 
+<!-- ==================================================
+SECTION 2 – WRAPPER
+================================================== -->
 <div class="wrapper">
-<div class="banner"><div class="dp"><img src="dpimage.png"></div></div>
+
+<!-- ==================================================
+SECTION 3 – BANNER & DP
+================================================== -->
+<div class="banner">
+<div class="dp"><img src="dpimage.png"></div>
+</div>
+
+<!-- ==================================================
+SECTION 4 – CONTENT
+================================================== -->
 <div class="content">
 
 <div class="brand">KSHINE JEWELLERS</div>
-<div class="tag">Your trusted Jewellery Brand in Jammu.</div>
+<div class="tag">Your trusted Jewellery Brand in Jammu for more details scroll down 👇.</div>
 
 <div class="rating-title">5 Star Customer Ratings</div>
 
+<!-- ==================================================
+SECTION 5 – GOOGLE RATINGS
+================================================== -->
 <div class="ratings">
-<div class="rate"><small>Tap to open Google Maps</small><div class="stars">★★★★★</div><div class="score">4.9</div><div class="place">Gandhi Nagar</div><div class="reviews">1000+ Reviews</div></div>
-<div class="rate"><small>Tap to open Google Maps</small><div class="stars">★★★★★</div><div class="score">5.0</div><div class="place">Janipur</div><div class="reviews">1260+ Reviews</div></div>
+  <div class="rate" onclick="window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
+    <small>Tap to open Google Maps</small>
+    <div class="stars">★★★★★</div>
+    <div class="score">4.9</div>
+    <div class="place">Gandhi Nagar</div>
+    <div class="reviews">1000+ Reviews</div>
+  </div>
+
+  <div class="rate" onclick="window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
+    <small>Tap to open Google Maps</small>
+    <div class="stars">★★★★★</div>
+    <div class="score">5.0</div>
+    <div class="place">Janipur</div>
+    <div class="reviews">1260+ Reviews</div>
+  </div>
 </div>
 
+<!-- ==================================================
+SECTION 6 – SAVE CONTACT
+================================================== -->
 <a href="javascript:void(0)" onclick="saveContact()" class="btn">💾 Save Contact</a>
 
+<!-- ==================================================
+SECTION 7 – CALL / WHATSAPP
+================================================== -->
+<div class="actions">
+  <a href="tel:9622212879" class="action btn">📞 Call Us</a>
+
+  <a href="https://wa.me/919622212879?text=%E2%9C%A8%20Hello%20*K-SHINE%20JEWELLERS*%20%E2%9C%A8%0A%0A%F0%9F%92%8E%20I%20just%20went%20through%20your%20*Digital%20Business%20Card*%20and%20I%E2%80%99m%20interested%20in%20exploring%20your%20*Gold,%20Diamond%20%26%20Silver%20Jewellery%20Collections.*%0A%0A%F0%9F%99%8F%20Kindly%20guide%20me%20further."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="action btn">
+     💬 WhatsApp Us
+  </a>
+</div>
+
+<a href="https://kshinejewellers.com" target="_blank" class="btn website-btn">🌐 Official Website</a>
+
+<!-- ==================================================
+SECTION 8 – SOCIAL MEDIA
+================================================== -->
+<div class="social">
+
+  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+     target="_blank"
+     rel="noopener noreferrer">
+     WhatsApp Group
+  </a>
+
+  <a href="https://www.instagram.com/kshine_jewellers?igsh=MW1ocGlwbGdqZHVxbA=="
+     target="_blank"
+     rel="noopener noreferrer">
+     Instagram
+  </a>
+
+  <a href="https://facebook.com/groups/1233168123948595/"
+     target="_blank"
+     rel="noopener noreferrer">
+     Facebook Group
+  </a>
+
+  <a href="https://www.facebook.com/kshinejewelers"
+     target="_blank"
+     rel="noopener noreferrer">
+     Facebook Page
+  </a>
+
+  <a href="https://youtube.com/@k-shinejewellers1365?si=C3lcJXsQsqUicFse"
+     target="_blank"
+     rel="noopener noreferrer">
+     YouTube
+  </a>
+
+  <a href="https://linktr.ee/Kshinejewellers"
+     target="_blank"
+     rel="noopener noreferrer">
+     Linktree
+  </a>
+
+</div>
+
+
+<!-- ==================================================
+SECTION 9 – ADDRESS
+================================================== -->
+<div class="address">
+<strong>Gandhi Nagar Branch</strong><br>
+27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
+📞 <a href="tel:+919419362775">9419362775</a><br><br>
+
+<strong>Janipur Branch</strong><br>
+Disco Road, Near Dreamland School, Jammu – 180007<br>
+📞 <a href="tel:+919622212879">9622212879</a>
+</div>
+
+<!-- ==================================================
+SECTION 10 – QR
+================================================== -->
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
+<p>Scan to join Kshine Jewellers digitally</p>
+</div>
+
 </div>
 </div>
 
+<!-- ==================================================
+SECTION 11 – FLOATING BUTTONS
+================================================== -->
 <div class="floating">
-<a href="https://kshinejewellers.com" class="float-btn">🌐 Website</a>
+<a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
 <a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
 </div>
-
-<!-- FLOATING SHARE BUTTON -->
-<button class="share-float" onclick="shareCard()">🔗 Share</button>
 
 </body>
 </html>
