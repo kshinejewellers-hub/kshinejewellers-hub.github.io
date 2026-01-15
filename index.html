@@ -369,7 +369,28 @@ STYLE 18 – FLOATING BUTTONS
   text-decoration:none;
 }
 </style>
-
+/* ==================================================
+STYLE 19 – FLOATING SHARE BUTTON
+================================================== */
+.share-float{
+  position: fixed;
+  right: 16px;
+  bottom: 95px; /* above existing floating buttons */
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  border: 3px solid var(--gold);
+  font-family: 'FuturaBold';
+  font-size: 14px;
+  font-weight: 900;
+  color: #000;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  z-index: 99999;
+  cursor: pointer;
+}
+.share-float:active{
+  transform: scale(0.95);
+}
 <!-- ==================================================
 SCRIPT – SAVE CONTACT (ANDROID SAFE)
 ================================================== -->
@@ -561,6 +582,25 @@ SECTION 11 – FLOATING BUTTONS
 <a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
 <a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
 </div>
-
+<!-- ==================================================
+SECTION 12 – FLOATING SHARE BUTTON
+================================================== -->
+<button class="share-float" onclick="shareCard()">🔗 Share</button>
+  <!-- ==================================================
+SCRIPT 2 – SHARE DIGITAL CARD
+================================================== -->
+<script>
+function shareCard(){
+  if (navigator.share) {
+    navigator.share({
+      title: 'KSHINE JEWELLERS',
+      text: '✨ KSHINE JEWELLERS – Premium Gold, Diamond & Silver Jewellery in Jammu',
+      url: window.location.href
+    });
+  } else {
+    alert('Sharing not supported on this device');
+  }
+}
+</script>
 </body>
 </html>
