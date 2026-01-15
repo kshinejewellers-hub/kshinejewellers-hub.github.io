@@ -10,13 +10,13 @@
 STYLE 1 – FONTS
 ================================================== -->
 <style>
-@font-face {
-  font-family: 'ErasDemi';
-  src: url('eras-demi-itc.ttf');
+@font-face{
+  font-family:'ErasDemi';
+  src:url('eras-demi-itc.ttf');
 }
-@font-face {
-  font-family: 'FuturaBold';
-  src: url('futuraboldbt.ttf');
+@font-face{
+  font-family:'FuturaBold';
+  src:url('futuraboldbt.ttf');
 }
 
 /* ==================================================
@@ -24,10 +24,10 @@ STYLE 2 – COLOUR SYSTEM
 ================================================== */
 :root{
   --gold:#d4af37;
-  --gold-dark:#9c7a19;
+  --gold-dark:#8a6a10;
   --gold-light:#fff3c4;
   --green:#8fd19e;
-  --green-dark:#6fcf97;
+  --brown:#5b3a00;
   --text:#222;
 }
 
@@ -36,7 +36,7 @@ STYLE 3 – BODY & BACKGROUND
 ================================================== */
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
@@ -45,10 +45,10 @@ STYLE 4 – MAIN WRAPPER
 ================================================== */
 .wrapper{
   max-width:430px;
-  margin:10px auto 140px;
+  margin:10px auto 130px;
   background:#fff;
   border-radius:24px;
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
   overflow:hidden;
 }
 
@@ -59,7 +59,6 @@ STYLE 5 – TOP SCROLLER
   background:#000;
   color:#ffd700;
   font-size:13px;
-  font-style:italic;
   padding:6px 0;
   white-space:nowrap;
   overflow:hidden;
@@ -106,45 +105,34 @@ STYLE 7 – CONTENT AREA
 }
 
 /* ==================================================
-STYLE 8 – BRAND NAME (SHIMMER)
+STYLE 8 – BRAND NAME (FLOWING GOLD)
 ================================================== */
 .brand{
   font-family:'ErasDemi';
   font-size:26px;
-  color:var(--gold-dark);
-  letter-spacing:1px;
-  position:relative;
-  overflow:hidden;
+  background:linear-gradient(90deg,#7a5c00,#ffd700,#fff6c0,#ffd700,#7a5c00);
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:goldFlow 4s linear infinite;
 }
-.brand::after{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,215,120,.9),transparent);
-  animation:shine 3s infinite;
-}
-@keyframes shine{
-  0%{left:-100%}
-  50%{left:100%}
-  100%{left:100%}
+@keyframes goldFlow{
+  0%{background-position:0%}
+  100%{background-position:300%}
 }
 
 /* ==================================================
-STYLE 9 – TAGLINE (PULSE)
+STYLE 9 – TAGLINE ANIMATION
 ================================================== */
 .tag{
   font-style:italic;
-  font-weight:600;
-  color:#555;
+  color:#666;
   margin:10px 0 16px;
-  animation:pulse 3s infinite;
+  animation:fadeText 3s ease-in-out infinite;
 }
-@keyframes pulse{
-  0%,100%{opacity:.9}
-  50%{opacity:.55}
+@keyframes fadeText{
+  0%,100%{opacity:.7}
+  50%{opacity:1}
 }
 
 /* ==================================================
@@ -152,7 +140,7 @@ STYLE 10 – RATINGS TITLE
 ================================================== */
 .rating-title{
   font-family:'ErasDemi';
-  margin:12px 0;
+  margin:14px 0;
 }
 
 /* ==================================================
@@ -167,47 +155,51 @@ STYLE 11 – GOOGLE RATING CARDS
   background:var(--gold-light);
   border:3px solid var(--gold);
   border-radius:18px;
-  padding:12px;
+  padding:10px;
   cursor:pointer;
-  box-shadow:0 8px 18px rgba(0,0,0,.25);
-  transition:transform .2s ease;
 }
-.rate:active{
-  transform:scale(.97);
-}
-.rate .tap{
-  font-size:12px;
-  opacity:.7;
+.rate small{
+  font-size:11px;
+  color:#666;
 }
 .rate .stars{
-  color:var(--gold-dark);
   font-size:18px;
+  letter-spacing:2px;
+  background:linear-gradient(120deg,#7a5c00,#ffd700,#fff2a8,#ffd700,#7a5c00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:starPulse 2.2s ease-in-out infinite;
+}
+@keyframes starPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.12)}
+  100%{transform:scale(1)}
 }
 .rate .score{
-  font-size:20px;
+  font-size:18px;
   font-weight:900;
 }
 .rate .place{
   font-family:'FuturaBold';
-  font-size:18px;
+  font-size:16px;
+  margin-top:4px;
 }
 .rate .reviews{
   font-style:italic;
-  font-size:14px;
+  font-size:13px;
 }
 
 /* ==================================================
 STYLE 12 – SAVE CONTACT BUTTON
 ================================================== */
-.save-btn{
-  background:linear-gradient(135deg,#6b4b00,#3e2a00);
-  color:#ffd700;
+.save-main{
+  background:linear-gradient(135deg,#6b4500,#b08d1a);
+  color:#000;
   padding:14px;
-  border-radius:16px;
+  border-radius:18px;
   font-family:'FuturaBold';
   font-weight:900;
-  border:2px solid var(--gold);
-  margin:14px 0;
+  margin:12px 0;
 }
 
 /* ==================================================
@@ -216,15 +208,15 @@ STYLE 13 – CALL / WHATSAPP
 .actions{
   display:flex;
   gap:10px;
+  margin-bottom:12px;
 }
 .action{
   flex:1;
-  padding:14px;
   background:var(--green);
-  border-radius:16px;
+  padding:14px;
+  border-radius:18px;
   font-family:'FuturaBold';
-  font-weight:800;
-  color:#000;
+  font-weight:900;
 }
 
 /* ==================================================
@@ -233,10 +225,10 @@ STYLE 14 – WEBSITE BUTTON
 .website-btn{
   background:linear-gradient(135deg,var(--gold),var(--gold-dark));
   padding:14px;
-  border-radius:16px;
+  border-radius:18px;
   font-family:'FuturaBold';
   font-weight:900;
-  margin:14px 0;
+  margin-bottom:14px;
 }
 
 /* ==================================================
@@ -244,29 +236,29 @@ STYLE 15 – SOCIAL MEDIA GRID
 ================================================== */
 .social{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1fr 1fr 1fr;
   gap:10px;
 }
 .social a{
-  padding:10px;
   background:var(--gold-light);
   border:2px solid var(--gold);
-  border-radius:12px;
+  padding:10px;
+  border-radius:14px;
   font-family:'FuturaBold';
   color:#000;
   text-decoration:none;
 }
 
 /* ==================================================
-STYLE 16 – ADDRESS
+STYLE 16 – ADDRESS BOX
 ================================================== */
 .address{
-  background:var(--gold-light);
+  background:#fff4c2;
   border:2px solid var(--gold);
   border-radius:16px;
-  padding:12px;
-  font-family:'FuturaBold';
+  padding:14px;
   margin-top:14px;
+  font-family:'FuturaBold';
 }
 .address a{
   color:#000;
@@ -277,19 +269,22 @@ STYLE 16 – ADDRESS
 STYLE 17 – QR SCANNER
 ================================================== */
 .qr{
-  margin-top:16px;
   background:#000;
-  border:3px solid var(--gold);
-  border-radius:16px;
-  padding:14px;
+  border:4px solid var(--gold);
+  border-radius:18px;
+  padding:10px;
+  margin-top:14px;
 }
 .qr img{
-  width:160px;
+  width:65%;
+  max-width:220px;
+  display:block;
+  margin:0 auto;
 }
 .qr p{
   color:var(--gold);
-  font-family:'ErasDemi';
-  font-size:12px;
+  font-size:11px;
+  margin-top:6px;
 }
 
 /* ==================================================
@@ -302,18 +297,19 @@ STYLE 18 – FLOATING BUTTONS
   transform:translateX(-50%);
   display:flex;
   gap:10px;
-  width:90%;
+  width:92%;
   max-width:420px;
   z-index:9999;
 }
 .float-btn{
   flex:1;
-  background:#5b3a00;
+  background:linear-gradient(135deg,#5b3a00,#b08d1a);
   color:#ffd700;
   padding:14px;
   border-radius:18px;
   font-family:'FuturaBold';
-  border:2px solid var(--gold);
+  font-weight:900;
+  text-align:center;
 }
 </style>
 </head>
@@ -324,11 +320,11 @@ STYLE 18 – FLOATING BUTTONS
 SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
-  <span>Get 916 • 22K 6 Digit HUID Hallmark Gold, Diamond & Silver at Wholesale Rate • Join Our WhatsApp Group</span>
+<span>Get 916 • 22K 6 Digit HUID Hallmark Gold, Diamond & Silver at Wholesale Rate • Join Our WhatsApp Group</span>
 </div>
 
 <!-- ==================================================
-SECTION 2 – WRAPPER
+SECTION 2 – WRAPPER START
 ================================================== -->
 <div class="wrapper">
 
@@ -336,7 +332,7 @@ SECTION 2 – WRAPPER
 SECTION 3 – BANNER & DP
 ================================================== -->
 <div class="banner">
-  <div class="dp"><img src="dpimage.png"></div>
+<div class="dp"><img src="dpimage.png"></div>
 </div>
 
 <!-- ==================================================
@@ -353,76 +349,80 @@ SECTION 4 – CONTENT
 SECTION 5 – GOOGLE RATINGS
 ================================================== -->
 <div class="ratings">
-  <div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
-    <div class="tap">Tap to open Google Maps</div>
-    <div class="stars">★★★★★</div>
-    <div class="score">4.9</div>
-    <div class="place">Gandhi Nagar</div>
-    <div class="reviews">1000+ Reviews</div>
-  </div>
-  <div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
-    <div class="tap">Tap to open Google Maps</div>
-    <div class="stars">★★★★★</div>
-    <div class="score">5.0</div>
-    <div class="place">Janipur</div>
-    <div class="reviews">1260+ Reviews</div>
-  </div>
+<div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
+<small>Tap to open Google Maps</small>
+<div class="stars">★★★★★</div>
+<div class="score">4.9</div>
+<div class="place">Gandhi Nagar</div>
+<div class="reviews">1000+ Reviews</div>
+</div>
+
+<div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
+<small>Tap to open Google Maps</small>
+<div class="stars">★★★★★</div>
+<div class="score">5.0</div>
+<div class="place">Janipur</div>
+<div class="reviews">1260+ Reviews</div>
+</div>
 </div>
 
 <!-- ==================================================
-SECTION 6 – SAVE / CALL / WHATSAPP
+SECTION 6 – SAVE CONTACT
 ================================================== -->
-<a href="contact.vcf" class="save-btn">💾 Save Contact</a>
-
-<div class="actions">
-  <a href="tel:+919419362775" class="action">📞 Call Us</a>
-  <a href="https://wa.me/919622212879" class="action">💬 WhatsApp Us</a>
-</div>
-
-<a href="https://kshinejewellers.com" class="website-btn">🌐 Official Website</a>
+<div class="save-main">💾 Save Contact</div>
 
 <!-- ==================================================
-SECTION 7 – SOCIAL MEDIA
+SECTION 7 – CALL / WHATSAPP
+================================================== -->
+<div class="actions">
+<div class="action">📞 Call Us</div>
+<div class="action">💬 WhatsApp Us</div>
+</div>
+
+<div class="website-btn">🌐 Official Website</div>
+
+<!-- ==================================================
+SECTION 8 – SOCIAL MEDIA
 ================================================== -->
 <div class="social">
-  <a href="#">WhatsApp Group</a>
-  <a href="#">Instagram</a>
-  <a href="#">Facebook Group</a>
-  <a href="#">Facebook Page</a>
-  <a href="#">YouTube</a>
-  <a href="#">Linktree</a>
+<a>WhatsApp Group</a>
+<a>Instagram</a>
+<a>Facebook Group</a>
+<a>Facebook Page</a>
+<a>YouTube</a>
+<a>Linktree</a>
 </div>
 
 <!-- ==================================================
-SECTION 8 – ADDRESS
+SECTION 9 – ADDRESS
 ================================================== -->
 <div class="address">
 <b>Gandhi Nagar Branch</b><br>
 27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-<a href="tel:+919419362775">📞 9419362775</a><br><br>
+<a href="tel:9419362775">📞 9419362775</a><br><br>
 
 <b>Janipur Branch</b><br>
 Disco Road, Near Dreamland School, Jammu – 180007<br>
-<a href="tel:+919622212879">📞 9622212879</a>
+<a href="tel:9622212879">📞 9622212879</a>
 </div>
 
 <!-- ==================================================
-SECTION 9 – QR SCANNER
+SECTION 10 – QR SCANNER
 ================================================== -->
 <div class="qr">
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://kshinejewellers-hub.github.io">
-  <p>Scan to join Kshine Jewellers digitally</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
+<p>Scan to join Kshine Jewellers digitally</p>
 </div>
 
 </div>
 </div>
 
 <!-- ==================================================
-SECTION 10 – FLOATING BUTTONS
+FLOATING BUTTONS
 ================================================== -->
 <div class="floating">
-  <a href="https://kshinejewellers.com" class="float-btn">🌐 Website</a>
-  <a href="contact.vcf" class="float-btn">💾 Save Contact</a>
+<div class="float-btn">🌐 Website</div>
+<div class="float-btn">💾 Save Contact</div>
 </div>
 
 </body>
