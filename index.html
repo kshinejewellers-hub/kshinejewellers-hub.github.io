@@ -6,13 +6,18 @@
 <title>KSHINE JEWELLERS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ==================================================
-STYLE 1 – FONT
-================================================== -->
 <style>
-@font-face {
-  font-family: 'ErasDemi';
-  src: url('eras-demi-itc.ttf');
+
+/* ==================================================
+STYLE 1 – FONTS
+================================================== */
+@font-face{
+  font-family:'ErasDemi';
+  src:url('eras-demi-itc.ttf');
+}
+@font-face{
+  font-family:'FuturaBold';
+  src:url('futuraboldbt.ttf');
 }
 
 /* ==================================================
@@ -23,7 +28,6 @@ STYLE 2 – COLOUR SYSTEM
   --gold-dark:#9c7a19;
   --gold-light:#fff3c4;
   --green:#8fd19e;
-  --green-dark:#5cbf7a;
   --text:#222;
 }
 
@@ -32,7 +36,7 @@ STYLE 3 – BODY & BACKGROUND
 ================================================== */
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
 }
 
@@ -63,7 +67,7 @@ STYLE 5 – TOP SCROLLER
 .scroller span{
   display:inline-block;
   padding-left:100%;
-  animation:scroll 09s linear infinite;
+  animation:scroll 9s linear infinite;
 }
 @keyframes scroll{
   0%{transform:translateX(0);}
@@ -160,8 +164,6 @@ STYLE 12 – GOOGLE RATING CARDS
   border:3px solid var(--gold);
   border-radius:18px;
   padding:12px;
-  font-size:14px;
-  font-weight:700;
   cursor:pointer;
 }
 .rate .stars{
@@ -169,20 +171,23 @@ STYLE 12 – GOOGLE RATING CARDS
   font-size:16px;
 }
 .rate .score{
+  font-family:'FuturaBold';
   font-size:18px;
   font-weight:900;
 }
 .rate .place{
+  font-family:'FuturaBold';
   font-size:16px;
   font-weight:900;
 }
 .rate .reviews{
+  font-family:'FuturaBold';
   font-style:italic;
   font-weight:400;
 }
 
 /* ==================================================
-STYLE 13 – CALL / WHATSAPP
+STYLE 13 – CALL / WHATSAPP BUTTONS
 ================================================== */
 .actions{
   display:flex;
@@ -195,6 +200,7 @@ STYLE 13 – CALL / WHATSAPP
   background:var(--green);
   border-radius:16px;
   font-weight:800;
+  font-family:'FuturaBold';
 }
 
 /* ==================================================
@@ -205,6 +211,7 @@ STYLE 14 – WEBSITE BUTTON
   padding:14px;
   border-radius:16px;
   font-weight:900;
+  font-family:'FuturaBold';
   margin-bottom:14px;
 }
 
@@ -221,6 +228,7 @@ STYLE 15 – SOCIAL MEDIA GRID
   border-radius:12px;
   border:2px solid var(--gold);
   font-weight:700;
+  font-family:'FuturaBold';
 }
 
 /* ==================================================
@@ -233,6 +241,12 @@ STYLE 16 – ADDRESS BOX
   padding:12px;
   font-size:13px;
   margin-top:14px;
+}
+.address b,
+.address a{
+  font-family:'FuturaBold';
+  color:inherit;
+  text-decoration:none;
 }
 
 /* ==================================================
@@ -274,9 +288,10 @@ STYLE 18 – FLOATING BUTTONS
   color:#ffd700;
   padding:14px;
   border-radius:18px;
-  font-family:'ErasDemi';
+  font-family:'FuturaBold';
   font-weight:900;
 }
+
 </style>
 </head>
 
@@ -286,8 +301,7 @@ STYLE 18 – FLOATING BUTTONS
 SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
-  <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Get 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver 
-    ◆ for more details Visit our official website below ◆ </span>
+  <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted Jewellery Brand ◆ 916 • 22K • HUID Hallmark Gold ◆</span>
 </div>
 
 <!-- ==================================================
@@ -364,11 +378,12 @@ SECTION 8 – ADDRESS
 ================================================== -->
 <div class="address">
 <b>Gandhi Nagar</b><br>
-27-B Auqaf Market, Opp SBI Bank,Gandhi Nagar Jammu – 180004<br>
-📞 9419362775<br><br>
+27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
+📞 <a href="tel:+919419362775">9419362775</a><br><br>
+
 <b>Janipur</b><br>
-Disco Road, Near Dreamland School,Janipur Jammu – 180007<br>
-📞 9622212879
+Disco Road, Near Dreamland School, Jammu – 180007<br>
+📞 <a href="tel:+919622212879">9622212879</a>
 </div>
 
 <!-- ==================================================
