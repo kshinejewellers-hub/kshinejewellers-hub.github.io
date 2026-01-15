@@ -43,7 +43,7 @@ STYLE 4 – MAIN WRAPPER
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
   overflow:hidden;
-}
+} 
 
 /* ==================================================
 STYLE 5 – TOP SCROLLER
@@ -134,28 +134,113 @@ STYLE 10 – RATINGS TITLE
 /* ==================================================
 STYLE 11 – GOOGLE RATINGS
 ================================================== */
+/* ==================================================
+STYLE 11 – GOOGLE RATINGS (IMPORTANT)
+================================================== */
+
 .ratings{
   display:flex;
   gap:12px;
+  margin-top:12px;
 }
+
+/* Rating Card */
 .rate{
   flex:1;
   background:var(--gold-light);
   border:3px solid var(--gold);
   border-radius:18px;
   padding:10px;
+  text-align:center;
   cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.rate small{font-size:11px;}
+
+.rate:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 22px rgba(212,175,55,.45);
+}
+
+/* Tap to open maps */
+.rate small{
+  display:block;
+  font-size:11px;
+  color:#555;
+  margin-bottom:4px;
+  font-style:italic;
+}
+
+/* ⭐ Premium Dual-Shade Glossy Animated Stars */
 .rate .stars{
   font-size:18px;
-  background:linear-gradient(120deg,#7a5c00,#ffd700,#fff2a8);
+  letter-spacing:2px;
+
+  background:linear-gradient(
+    120deg,
+    #5e4300,
+    #cfa32d,
+    #fff3b0,
+    #cfa32d,
+    #5e4300
+  );
+  background-size:220%;
+
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+
+  text-shadow:
+    0 1px 2px rgba(0,0,0,.35),
+    0 0 8px rgba(212,175,55,.65);
+
+  animation:starZoomGlow 2.4s ease-in-out infinite;
+  transform-origin:center;
 }
-.rate .score{font-size:18px;font-weight:900;}
-.rate .place{font-family:'FuturaBold';}
-.rate .reviews{font-style:italic;font-size:13px;}
+
+/* Star animation */
+@keyframes starZoomGlow{
+  0%{
+    transform:scale(1);
+    background-position:0%;
+    filter:brightness(1);
+  }
+  50%{
+    transform:scale(1.18);
+    background-position:100%;
+    filter:brightness(1.5);
+  }
+  100%{
+    transform:scale(1);
+    background-position:0%;
+    filter:brightness(1);
+  }
+}
+
+/* Rating number (4.9 / 5.0) – BOLD + FUTURA */
+.rate .score{
+  font-family:'FuturaBold';
+  font-size:18px;
+  font-weight:900;
+  color:#000;
+  margin-top:4px;
+}
+
+/* Branch name – BOLD + FUTURA */
+.rate .place{
+  font-family:'FuturaBold';
+  font-size:15px;
+  font-weight:900;
+  color:#000;
+  margin-top:2px;
+}
+
+/* Reviews text – ITALIC, NOT BOLD */
+.rate .reviews{
+  font-size:13px;
+  font-style:italic;
+  font-weight:400;
+  color:#444;
+}
+
 
 /* ==================================================
 STYLE 12 – COMMON BUTTONS
