@@ -43,7 +43,7 @@ STYLE 4 – MAIN WRAPPER
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
   overflow:hidden;
-} 
+}
 
 /* ==================================================
 STYLE 5 – TOP SCROLLER
@@ -144,7 +144,6 @@ STYLE 11 – GOOGLE RATINGS
 .ratings{
   display:flex;
   gap:12px;
-  margin-top:12px;
 }
 .rate{
   flex:1;
@@ -154,35 +153,25 @@ STYLE 11 – GOOGLE RATINGS
   padding:10px;
   cursor:pointer;
 }
-.rate small{
-  font-size:11px;
-  font-style:italic;
-}
+.rate small{font-size:11px;font-style:italic;}
 .rate .stars{
   font-size:18px;
   background:linear-gradient(120deg,#5e4300,#ffd700,#fff3b0,#ffd700,#5e4300);
-  background-size:220%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:starZoomGlow 2.4s ease-in-out infinite;
+  animation:starZoom 2.4s infinite;
 }
-@keyframes starZoomGlow{
+@keyframes starZoom{
   0%{transform:scale(1)}
   50%{transform:scale(1.18)}
   100%{transform:scale(1)}
 }
-.rate .score{
-  font-family:'FuturaBold';
-  font-size:18px;
-  font-weight:900;
-}
+.rate .score,
 .rate .place{
   font-family:'FuturaBold';
   font-weight:900;
 }
-.rate .reviews{
-  font-style:italic;
-}
+.rate .reviews{font-style:italic;}
 
 /* ==================================================
 STYLE 12 – COMMON BUTTONS
@@ -206,10 +195,7 @@ STYLE 13 – CALL / WHATSAPP
   display:flex;
   gap:10px;
 }
-.action{
-  flex:1;
-  background:var(--green);
-}
+.action{flex:1;background:var(--green);}
 
 /* ==================================================
 STYLE 14 – WEBSITE BUTTON
@@ -244,7 +230,6 @@ STYLE 16 – ADDRESS
   border:2px solid var(--gold);
   border-radius:16px;
   padding:14px;
-  margin-top:14px;
 }
 
 /* ==================================================
@@ -255,17 +240,9 @@ STYLE 17 – QR
   border:4px solid var(--gold);
   border-radius:18px;
   padding:10px;
-  margin-top:14px;
 }
-.qr img{
-  width:65%;
-  display:block;
-  margin:auto;
-}
-.qr p{
-  color:var(--gold);
-  font-size:11px;
-}
+.qr img{width:65%;margin:auto;display:block;}
+.qr p{color:var(--gold);font-size:11px;}
 
 /* ==================================================
 STYLE 18 – FLOATING BUTTONS
@@ -288,30 +265,29 @@ STYLE 18 – FLOATING BUTTONS
   padding:14px;
   border-radius:18px;
   font-family:'FuturaBold';
-  font-weight:900;
-  text-align:center;
   border:3px solid var(--gold);
   text-decoration:none;
 }
 
 /* ==================================================
-STYLE 18A – FLOATING SHARE BUTTON (NEW – SAFE)
+STYLE 18A – FLOATING SHARE BUTTON (FIXED)
 ================================================== */
 .share-float{
   position:fixed;
-  right:14px;
-  top:175px;
-  z-index:10000;
-  padding:10px 22px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#fff6cf,#d4af37,#8a6a10);
-  border:2px solid #d4af37;
+  bottom:90px;
+  right:16px;
+  z-index:10001;
+  padding:12px 20px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#fff6cf,#ffd700,#8a6a10);
+  border:3px solid var(--gold);
   font-family:'FuturaBold';
   font-size:14px;
   font-weight:900;
   color:#000;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  box-shadow:0 10px 28px rgba(0,0,0,.45);
 }
+.share-float:active{transform:scale(.95);}
 </style>
 
 <!-- ==================================================
@@ -337,19 +313,18 @@ document.body.removeChild(link);
 </script>
 
 <!-- ==================================================
-SCRIPT – SHARE CARD (NEW – SAFE)
+SCRIPT – SHARE
 ================================================== -->
 <script>
 function shareCard(){
-const data={
+if(navigator.share){
+navigator.share({
 title:'KSHINE JEWELLERS',
 text:'✨ KSHINE JEWELLERS – Premium Gold, Diamond & Silver Jewellery',
 url:window.location.href
-};
-if(navigator.share){
-navigator.share(data);
+});
 }else{
-alert('Sharing not supported on this device');
+alert('Sharing not supported');
 }
 }
 </script>
@@ -358,7 +333,7 @@ alert('Sharing not supported on this device');
 
 <body>
 
-<div class="scroller"><span>◆ K-Shine Jewellers ◆ Premium Gold | Diamond | Silver ◆</span></div>
+<div class="scroller"><span>◆ K-Shine Jewellers ◆ Premium Gold • Diamond • Silver ◆</span></div>
 
 <div class="wrapper">
 <div class="banner"><div class="dp"><img src="dpimage.png"></div></div>
@@ -384,8 +359,8 @@ alert('Sharing not supported on this device');
 <a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
 </div>
 
-<!-- 🔘 FLOATING SHARE BUTTON -->
-<button class="share-float" onclick="shareCard()">Share</button>
+<!-- FLOATING SHARE BUTTON -->
+<button class="share-float" onclick="shareCard()">🔗 Share</button>
 
 </body>
 </html>
