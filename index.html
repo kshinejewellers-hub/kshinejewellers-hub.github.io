@@ -28,7 +28,6 @@ STYLE 2 – COLOUR SYSTEM
   --gold-light:#fff3c4;
   --green:#8fd19e;
   --brown:#5b3a00;
-  --text:#222;
 }
 
 /* ==================================================
@@ -45,7 +44,7 @@ STYLE 4 – MAIN WRAPPER
 ================================================== */
 .wrapper{
   max-width:430px;
-  margin:10px auto 130px;
+  margin:10px auto 140px;
   background:#fff;
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
@@ -93,7 +92,6 @@ STYLE 6 – BANNER & DP
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
-  box-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 
 /* ==================================================
@@ -105,7 +103,7 @@ STYLE 7 – CONTENT AREA
 }
 
 /* ==================================================
-STYLE 8 – BRAND NAME (FLOWING GOLD)
+STYLE 8 – BRAND NAME
 ================================================== */
 .brand{
   font-family:'ErasDemi';
@@ -122,13 +120,13 @@ STYLE 8 – BRAND NAME (FLOWING GOLD)
 }
 
 /* ==================================================
-STYLE 9 – TAGLINE ANIMATION
+STYLE 9 – TAGLINE
 ================================================== */
 .tag{
   font-style:italic;
   color:#666;
   margin:10px 0 16px;
-  animation:fadeText 3s ease-in-out infinite;
+  animation:fadeText 3s infinite;
 }
 @keyframes fadeText{
   0%,100%{opacity:.7}
@@ -144,7 +142,7 @@ STYLE 10 – RATINGS TITLE
 }
 
 /* ==================================================
-STYLE 11 – GOOGLE RATING CARDS
+STYLE 11 – GOOGLE RATINGS
 ================================================== */
 .ratings{
   display:flex;
@@ -158,48 +156,39 @@ STYLE 11 – GOOGLE RATING CARDS
   padding:10px;
   cursor:pointer;
 }
-.rate small{
-  font-size:11px;
-  color:#666;
-}
+.rate small{font-size:11px;}
 .rate .stars{
   font-size:18px;
-  letter-spacing:2px;
-  background:linear-gradient(120deg,#7a5c00,#ffd700,#fff2a8,#ffd700,#7a5c00);
+  background:linear-gradient(120deg,#7a5c00,#ffd700,#fff2a8);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:starPulse 2.2s ease-in-out infinite;
+  animation:starPulse 2s infinite;
 }
 @keyframes starPulse{
-  0%{transform:scale(1)}
+  0%,100%{transform:scale(1)}
   50%{transform:scale(1.12)}
-  100%{transform:scale(1)}
 }
-.rate .score{
-  font-size:18px;
-  font-weight:900;
-}
-.rate .place{
-  font-family:'FuturaBold';
-  font-size:16px;
-  margin-top:4px;
-}
-.rate .reviews{
-  font-style:italic;
-  font-size:13px;
-}
+.rate .score{font-size:18px;font-weight:900;}
+.rate .place{font-family:'FuturaBold';}
+.rate .reviews{font-style:italic;font-size:13px;}
 
 /* ==================================================
-STYLE 12 – SAVE CONTACT BUTTON
+STYLE 12 – FIXED BUTTONS
 ================================================== */
-.save-main{
-  background:linear-gradient(135deg,#6b4500,#b08d1a);
-  color:#000;
+.btn{
+  display:block;
+  margin:10px 0;
   padding:14px;
   border-radius:18px;
   font-family:'FuturaBold';
   font-weight:900;
-  margin:12px 0;
+  color:#000;
+  text-decoration:none;
+  border:3px solid var(--gold);
+  transition:.2s;
+}
+.btn:hover{
+  box-shadow:0 0 12px rgba(212,175,55,.9);
 }
 
 /* ==================================================
@@ -208,15 +197,10 @@ STYLE 13 – CALL / WHATSAPP
 .actions{
   display:flex;
   gap:10px;
-  margin-bottom:12px;
 }
 .action{
   flex:1;
   background:var(--green);
-  padding:14px;
-  border-radius:18px;
-  font-family:'FuturaBold';
-  font-weight:900;
 }
 
 /* ==================================================
@@ -224,15 +208,10 @@ STYLE 14 – WEBSITE BUTTON
 ================================================== */
 .website-btn{
   background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-  padding:14px;
-  border-radius:18px;
-  font-family:'FuturaBold';
-  font-weight:900;
-  margin-bottom:14px;
 }
 
 /* ==================================================
-STYLE 15 – SOCIAL MEDIA GRID
+STYLE 15 – SOCIAL MEDIA
 ================================================== */
 .social{
   display:grid;
@@ -242,15 +221,15 @@ STYLE 15 – SOCIAL MEDIA GRID
 .social a{
   background:var(--gold-light);
   border:2px solid var(--gold);
-  padding:10px;
   border-radius:14px;
+  padding:10px;
   font-family:'FuturaBold';
   color:#000;
   text-decoration:none;
 }
 
 /* ==================================================
-STYLE 16 – ADDRESS BOX
+STYLE 16 – ADDRESS
 ================================================== */
 .address{
   background:#fff4c2;
@@ -260,13 +239,9 @@ STYLE 16 – ADDRESS BOX
   margin-top:14px;
   font-family:'FuturaBold';
 }
-.address a{
-  color:#000;
-  text-decoration:none;
-}
 
 /* ==================================================
-STYLE 17 – QR SCANNER
+STYLE 17 – QR
 ================================================== */
 .qr{
   background:#000;
@@ -278,13 +253,12 @@ STYLE 17 – QR SCANNER
 .qr img{
   width:65%;
   max-width:220px;
+  margin:auto;
   display:block;
-  margin:0 auto;
 }
 .qr p{
   color:var(--gold);
   font-size:11px;
-  margin-top:6px;
 }
 
 /* ==================================================
@@ -310,6 +284,11 @@ STYLE 18 – FLOATING BUTTONS
   font-family:'FuturaBold';
   font-weight:900;
   text-align:center;
+  border:3px solid var(--gold);
+  text-decoration:none;
+}
+.float-btn:hover{
+  box-shadow:0 0 14px rgba(212,175,55,.9);
 }
 </style>
 </head>
@@ -324,12 +303,12 @@ SECTION 1 – SCROLLER
 </div>
 
 <!-- ==================================================
-SECTION 2 – WRAPPER START
+SECTION 2 – WRAPPER
 ================================================== -->
 <div class="wrapper">
 
 <!-- ==================================================
-SECTION 3 – BANNER & DP
+SECTION 3 – BANNER
 ================================================== -->
 <div class="banner">
 <div class="dp"><img src="dpimage.png"></div>
@@ -349,7 +328,7 @@ SECTION 4 – CONTENT
 SECTION 5 – GOOGLE RATINGS
 ================================================== -->
 <div class="ratings">
-<div class="rate" onclick="location.href='https://maps.app.goo.gl/DAF2cTd81weVF29N8'">
+<div class="rate" onclick="window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8')">
 <small>Tap to open Google Maps</small>
 <div class="stars">★★★★★</div>
 <div class="score">4.9</div>
@@ -357,7 +336,7 @@ SECTION 5 – GOOGLE RATINGS
 <div class="reviews">1000+ Reviews</div>
 </div>
 
-<div class="rate" onclick="location.href='https://maps.app.goo.gl/d3bKbByUosgEnWJV8'">
+<div class="rate" onclick="window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8')">
 <small>Tap to open Google Maps</small>
 <div class="stars">★★★★★</div>
 <div class="score">5.0</div>
@@ -367,47 +346,44 @@ SECTION 5 – GOOGLE RATINGS
 </div>
 
 <!-- ==================================================
-SECTION 6 – SAVE CONTACT
+SECTION 6 – BUTTONS
 ================================================== -->
-<div class="save-main">💾 Save Contact</div>
+<a href="tel:+919419362775" class="btn">💾 Save Contact</a>
 
-<!-- ==================================================
-SECTION 7 – CALL / WHATSAPP
-================================================== -->
 <div class="actions">
-<div class="action">📞 Call Us</div>
-<div class="action">💬 WhatsApp Us</div>
+<a href="tel:+919419362775" class="btn action">📞 Call Us</a>
+<a href="https://wa.me/919419362775" class="btn action">💬 WhatsApp Us</a>
 </div>
 
-<div class="website-btn">🌐 Official Website</div>
+<a href="https://kshinejewellers.com" class="btn website-btn">🌐 Official Website</a>
 
 <!-- ==================================================
-SECTION 8 – SOCIAL MEDIA
+SECTION 7 – SOCIAL MEDIA
 ================================================== -->
 <div class="social">
-<a>WhatsApp Group</a>
-<a>Instagram</a>
-<a>Facebook Group</a>
-<a>Facebook Page</a>
-<a>YouTube</a>
-<a>Linktree</a>
+<a href="https://chat.whatsapp.com/XXXXXXXX">WhatsApp Group</a>
+<a href="https://instagram.com/kshinejewellers">Instagram</a>
+<a href="https://facebook.com/groups/kshinejewellers">Facebook Group</a>
+<a href="https://facebook.com/kshinejewellers">Facebook Page</a>
+<a href="https://youtube.com/@kshinejewellers">YouTube</a>
+<a href="https://linktr.ee/Kshinejewellers">Linktree</a>
 </div>
 
 <!-- ==================================================
-SECTION 9 – ADDRESS
+SECTION 8 – ADDRESS
 ================================================== -->
 <div class="address">
 <b>Gandhi Nagar Branch</b><br>
 27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-<a href="tel:9419362775">📞 9419362775</a><br><br>
+📞 9419362775<br><br>
 
 <b>Janipur Branch</b><br>
 Disco Road, Near Dreamland School, Jammu – 180007<br>
-<a href="tel:9622212879">📞 9622212879</a>
+📞 9622212879
 </div>
 
 <!-- ==================================================
-SECTION 10 – QR SCANNER
+SECTION 9 – QR
 ================================================== -->
 <div class="qr">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
@@ -418,11 +394,11 @@ SECTION 10 – QR SCANNER
 </div>
 
 <!-- ==================================================
-FLOATING BUTTONS
+SECTION 10 – FLOATING BUTTONS
 ================================================== -->
 <div class="floating">
-<div class="float-btn">🌐 Website</div>
-<div class="float-btn">💾 Save Contact</div>
+<a href="https://kshinejewellers.com" class="float-btn">🌐 Website</a>
+<a href="tel:+919419362775" class="float-btn">💾 Save Contact</a>
 </div>
 
 </body>
