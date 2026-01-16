@@ -390,6 +390,38 @@ STYLE 19 – FLOATING SHARE BUTTON
 .share-float:active{
   transform: scale(0.95);
 }
+  /* ==================================================
+STYLE 20 – FLOATING WHATSAPP GROUP BUTTON (LEFT)
+================================================== */
+.whatsapp-group-float{
+  position: fixed;
+  left: 16px;
+  bottom: 95px; /* same vertical level as Share button */
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  /* SAME COLOUR AS SHARE BUTTON */
+  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  border: 3px solid var(--gold);
+
+  font-family: 'FuturaBold';
+  font-size: 13px;   /* slightly smaller text */
+  font-weight: 900;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  z-index: 99999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.whatsapp-group-float:active{
+  transform: scale(0.95);
+}
 </style>
 
 <!-- ==================================================
@@ -586,7 +618,15 @@ SECTION 11 – FLOATING BUTTONS
 <!-- ==================================================
 SECTION 12 – FLOATING SHARE BUTTON
 ================================================== -->
+<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-group-float">
+   💬 Join Group
+</a>
+
 <button class="share-float" onclick="shareCard()">🔗 Share</button>
+
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
 ================================================== -->
