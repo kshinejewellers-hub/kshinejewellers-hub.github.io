@@ -405,56 +405,69 @@ STYLE 17 – REVIEW SHOWCASE BOX (REPLACES QR)
 STYLE 17A – TRUSTED CUSTOMERS SLIDER
 ================================================== */
 
+/* ==================================================
+STYLE 17A – TRUSTED CUSTOMER SLIDER
+================================================== */
+
+/* Outer Black Box */
 .trusted-box{
   background:#000;
-  border:4px solid var(--gold);
-  border-radius:24px;
-  padding:16px 12px 20px;
-  margin:20px 0;
+  border-radius:22px;
+  padding:18px 14px 22px;
+  margin:25px auto;
+  max-width:92%;
+  box-shadow:0 12px 35px rgba(0,0,0,.45);
 }
 
+/* Title */
 .trusted-title{
   color:#fff;
   font-family:'FuturaBold';
   font-size:18px;
   text-align:center;
   margin-bottom:14px;
+  letter-spacing:.5px;
 }
 
-/* slider wrapper */
+/* Slider Window */
 .trusted-slider{
   overflow:hidden;
   width:100%;
 }
 
-/* moving strip */
+/* Moving Track */
 .trusted-track{
   display:flex;
-  gap:12px;
-  animation:scroll-left 40s linear infinite;
+  gap:14px;
+  width:max-content;
+  animation: trustedScroll 35s linear infinite;
 }
 
-/* image cards */
+/* Card (NO BORDER HERE) */
 .trusted-card{
-  min-width:110px;
-  height:110px;
-  border-radius:14px;
-  border:3px solid var(--gold);
-  overflow:hidden;
+  flex:0 0 auto;
+  width:140px;
+}
+
+/* IMAGE – ONLY PLACE WITH BORDER */
+.trusted-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:18px;
+  border:3px solid #d4af37;
+  display:block;
   background:#111;
 }
 
-.trusted-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* animation */
-@keyframes scroll-left{
-  0%{ transform:translateX(0); }
-  100%{ transform:translateX(-50%); }
+/* Smooth Infinite Scroll */
+@keyframes trustedScroll{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-50%);
+  }
 }
 
 /* ==================================================
@@ -523,40 +536,44 @@ STYLE 17C – REVIEW ACTION BAR
   color:#000;
 }
 
-
 /* ==================================================
-STYLE 18 – FLOATING BUTTONS
+STYLE 18 – FLOATING BUTTONS (BOTTOM CENTER)
 ================================================== */
+
 .floating{
-  position:fixed;
-  bottom:10px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;
-  width:92%;
-  max-width:420px;
-  z-index:9999;
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  width: 92%;
+  max-width: 420px;
+  z-index: 99999;
 }
+
+/* Common Floating Button */
 .float-btn{
-  flex:1;
-  background:linear-gradient(135deg,#5b3a00,#b08d1a);
-  color:#ffd700;
-  padding:14px;
-  border-radius:18px;
-  font-family:'FuturaBold';
-  font-weight:900;
-  text-align:center;
-  border:3px solid var(--gold);
-  text-decoration:none;
+  flex: 1;
+  padding: 14px 12px;
+  border-radius: 22px;
+  font-family: 'FuturaBold';
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  border: 3px solid var(--gold);
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  cursor: pointer;
 }
+
   /* ==================================================
 STYLE 19 – FLOATING SHARE BUTTON
 ================================================== */
 .share-float{
   position: fixed;
   right: 16px;
-  bottom: 70px; /* above existing floating buttons */
+  bottom: 78px;
   padding: 12px 22px;
   border-radius: 30px;
   background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
@@ -567,44 +584,29 @@ STYLE 19 – FLOATING SHARE BUTTON
   color: #000;
   box-shadow: 0 10px 28px rgba(0,0,0,.35);
   z-index: 99999;
-  cursor: pointer;
 }
-.share-float:active{
-  transform: scale(0.95);
-}
+
   /* ==================================================
 STYLE 20 – FLOATING WHATSAPP GROUP BUTTON (LEFT)
+/* ==================================================
+STYLE 20 – FLOATING WHATSAPP GROUP (LEFT)
 ================================================== */
+
 .whatsapp-group-float{
   position: fixed;
   left: 16px;
-  bottom: 70px; /* same vertical level as Share button */
-  padding: 12px 22px;
+  bottom: 78px;
+  padding: 12px 18px;
   border-radius: 30px;
-
-  /* SAME COLOUR AS SHARE BUTTON */
   background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
   border: 3px solid var(--gold);
-
   font-family: 'FuturaBold';
-  font-size: 13px;   /* slightly smaller text */
+  font-size: 13px;
   font-weight: 900;
   color: #000;
-
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
   box-shadow: 0 10px 28px rgba(0,0,0,.35);
   z-index: 99999;
-  text-decoration: none;
-  cursor: pointer;
 }
-
-.whatsapp-group-float:active{
-  transform: scale(0.95);
-}
-</style>
 
 <!-- ==================================================
 SCRIPT – SAVE CONTACT (ANDROID SAFE)
@@ -782,9 +784,6 @@ SECTION 9 – ADDRESS
 Disco Road, Near Dreamland School, Jammu – 180007<br>
 📞 <a href="tel:+919622212879">9622212879</a>
 </div>
-<!-- ==================================================
-SECTION 10 – TRUSTED CUSTOMERS SLIDER
-================================================== -->
 
 <!-- SECTION 10 – TRUSTED CUSTOMERS SLIDER -->
 
@@ -797,25 +796,35 @@ SECTION 10 – TRUSTED CUSTOMERS SLIDER
   <div class="trusted-slider">
     <div class="trusted-track">
 
-      <div class="trusted-card">
-        <img src="/trusted-customers/trusted-customers-01.jpg" loading="lazy">
-      </div>
+      <!-- SET 1 -->
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-01.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-02.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-03.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-04.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-05.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-06.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-07.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-08.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-09.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-10.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-11.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-12.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-13.jpg"></div>
 
-      <div class="trusted-card">
-        <img src="/trusted-customers/trusted-customers-02.jpg" loading="lazy">
-      </div>
-
-      <div class="trusted-card">
-        <img src="/trusted-customers/trusted-customers-03.jpg" loading="lazy">
-      </div>
-
-      <div class="trusted-card">
-        <img src="/trusted-customers/trusted-customers-04.jpg" loading="lazy">
-      </div>
-
-      <div class="trusted-card">
-        <img src="/trusted-customers/trusted-customers-05.jpg" loading="lazy">
-      </div>
+      <!-- SET 2 (DUPLICATE – REQUIRED) -->
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-01.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-02.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-03.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-04.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-05.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-06.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-07.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-08.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-09.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-10.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-11.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-12.jpg"></div>
+      <div class="trusted-card"><img src="trusted-customers/trusted-customers-13.jpg"></div>
 
     </div>
   </div>
