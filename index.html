@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <title>KSHINE JEWELLERS</title>
@@ -21,7 +20,6 @@ STYLE 2 – COLOUR SYSTEM
   --gold-dark:#8a6a10;
   --gold-light:#fff3c4;
   --green:#8fd19e;
-  --brown:#5b3a00;
 }
 
 /* ==================================================
@@ -38,12 +36,12 @@ STYLE 4 – MAIN WRAPPER
 ================================================== */
 .wrapper{
   max-width:430px;
-  margin:10px auto 140px;
+  margin:10px auto 160px;
   background:#fff;
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
   overflow:hidden;
-} 
+}
 
 /* ==================================================
 STYLE 5 – TOP SCROLLER
@@ -52,7 +50,7 @@ STYLE 5 – TOP SCROLLER
   background:#000;
   color:#ffd700;
   font-size:13px;
-  font-style:italilc;
+  font-style:italic;
   padding:6px 0;
   white-space:nowrap;
   overflow:hidden;
@@ -60,11 +58,10 @@ STYLE 5 – TOP SCROLLER
 .scroller span{
   display:inline-block;
   padding-left:100%;
-  animation:scroll 10s linear infinite;
+  animation:scroll 12s linear infinite;
 }
 @keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
+  to{transform:translateX(-100%);}
 }
 
 /* ==================================================
@@ -90,7 +87,7 @@ STYLE 6 – BANNER & DP
 }
 
 /* ==================================================
-STYLE 7 – CONTENT AREA
+STYLE 7 – CONTENT
 ================================================== */
 .content{
   padding:75px 16px 24px;
@@ -109,213 +106,46 @@ STYLE 8 – BRAND NAME
   -webkit-text-fill-color:transparent;
   animation:goldFlow 4s linear infinite;
 }
-@keyframes goldFlow{
-  0%{background-position:0%}
-  100%{background-position:300%}
-}
+@keyframes goldFlow{to{background-position:300%;}}
 
 /* ==================================================
 STYLE 9 – TAGLINE
 ================================================== */
-
 .tag{
   font-style:italic;
-  font-weight:600;
   color:#666;
-  margin:10px 0 16px;
-  animation:tagGlowPulse 3.2s ease-in-out infinite;
+  animation:tagGlowPulse 3s ease-in-out infinite;
 }
-
 @keyframes tagGlowPulse{
-  0%{
-    opacity:0.6;
-    text-shadow:none;
-  }
-  50%{
-    opacity:1;
-    text-shadow:0 0 8px rgba(212,175,55,0.35);
-  }
-  100%{
-    opacity:0.6;
-    text-shadow:none;
-  }
+  50%{opacity:1;text-shadow:0 0 8px rgba(212,175,55,.4);}
 }
 
 /* ==================================================
-STYLE 10 – RATINGS TITLE
+STYLE 10 – GOOGLE RATINGS
 ================================================== */
-.rating-title{
-  font-family:'ErasDemi';
-  margin:14px 0;
-}
-/* ==================================================
-STYLE 10A – TRUSTED CUSTOMERS SCROLLER (BOTTOM)
-================================================== */
-
-.trusted-card{
-  background:#fff6c9;
-  border:3px solid var(--gold);
-  border-radius:22px;
-  padding:16px 12px 18px;
-  text-align:center;
-}
-
-.trusted-title{
-  font-family:'FuturaBold';
-  font-size:16px;
-  font-weight:900;
-  margin-bottom:12px;
-}
-
-.trusted-wrapper{
-  overflow:hidden;
-  margin-bottom:16px;
-}
-
-.trusted-track{
-  display:flex;
-  width:calc(140px * 34);
-  animation:trustedScroll 38s linear infinite;
-}
-
-.trusted-track img{
-  width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:14px;
-  margin:0 6px;
-  border:3px solid var(--gold);
-  background:#fff;
-}
-
-.trusted-qr img{
-  width:260px;
-  max-width:100%;
-  background:#000;
-  padding:10px;
-  border-radius:14px;
-}
-
-.trusted-qr p{
-  margin-top:6px;
-  font-size:12px;
-  color:#caa84a;
-}
-
-@keyframes trustedScroll{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
-}
-
-/* ==================================================
-STYLE 11 – GOOGLE RATINGS (IMPORTANT)
-================================================== */
-
-.ratings{
-  display:flex;
-  gap:12px;
-  margin-top:12px;
-}
-
-/* Rating Card */
+.ratings{display:flex;gap:12px;margin-top:12px;}
 .rate{
   flex:1;
   background:var(--gold-light);
   border:3px solid var(--gold);
   border-radius:18px;
   padding:10px;
-  text-align:center;
-  cursor:pointer;
-  transition:transform .2s ease, box-shadow .2s ease;
 }
-
-.rate:hover{
-  transform:scale(1.03);
-  box-shadow:0 8px 22px rgba(212,175,55,.45);
-}
-
-/* Tap to open maps */
-.rate small{
-  display:block;
-  font-size:11px;
-  color:#555;
-  margin-bottom:4px;
-  font-style:italic;
-}
-
-/* ⭐ Premium Dual-Shade Glossy Animated Stars */
 .rate .stars{
   font-size:18px;
-  letter-spacing:2px;
-
-  background:linear-gradient(
-    120deg,
-    #5e4300,
-    #cfa32d,
-    #fff3b0,
-    #cfa32d,
-    #5e4300
-  );
-  background-size:220%;
-
+  background:linear-gradient(120deg,#5e4300,#ffd700,#fff3b0);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-
-  text-shadow:
-    0 1px 2px rgba(0,0,0,.35),
-    0 0 8px rgba(212,175,55,.65);
-
-  animation:starZoomGlow 2.4s ease-in-out infinite;
-  transform-origin:center;
+  animation:starZoom 2.4s infinite;
 }
-
-/* Star animation */
-@keyframes starZoomGlow{
-  0%{
-    transform:scale(1);
-    background-position:0%;
-    filter:brightness(1);
-  }
-  50%{
-    transform:scale(1.18);
-    background-position:100%;
-    filter:brightness(1.5);
-  }
-  100%{
-    transform:scale(1);
-    background-position:0%;
-    filter:brightness(1);
-  }
-}
-
-/* Rating number (4.9 / 5.0) – BOLD + FUTURA */
-.rate .score{
+@keyframes starZoom{50%{transform:scale(1.18);}}
+.rate .score,.rate .place{
   font-family:'FuturaBold';
-  font-size:18px;
   font-weight:900;
-  color:#000;
-  margin-top:4px;
-}
-
-/* Branch name – BOLD + FUTURA */
-.rate .place{
-  font-family:'FuturaBold';
-  font-size:15px;
-  font-weight:900;
-  color:#000;
-  margin-top:2px;
-}
-
-/* Reviews text – ITALIC, NOT BOLD */
-.rate .reviews{
-  font-size:13px;
-  font-style:italic;
-  font-weight:400;
-  color:#444;
 }
 
 /* ==================================================
-STYLE 12 – COMMON BUTTONS
+STYLE 11 – BUTTONS
 ================================================== */
 .btn{
   display:block;
@@ -323,534 +153,154 @@ STYLE 12 – COMMON BUTTONS
   padding:14px;
   border-radius:18px;
   font-family:'FuturaBold';
-  font-weight:900;
+  border:3px solid var(--gold);
   color:#000;
   text-decoration:none;
-  border:3px solid var(--gold);
-}
-/* ==================================================
-STYLE 12A – FIXED PRIMARY GOLD BUTTONS
-(ONLY Save Contact & Official Website)
-================================================== */
-.fixed-gold{
-  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
-  box-shadow:0 10px 28px rgba(0,0,0,.35);
 }
 
 /* ==================================================
-STYLE 13 – CALL / WHATSAPP
+STYLE 12 – ACTIONS
 ================================================== */
-.actions{
-  display:flex;
-  gap:10px;
-}
-.action{
-  flex:1;
-  background:var(--green);
-}
+.actions{display:flex;gap:10px;}
+.action{flex:1;background:var(--green);}
 
 /* ==================================================
-STYLE 14 – WEBSITE BUTTON
-================================================== */
-.website-btn{
-  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-}
-
-/* ==================================================
-STYLE 15 – SOCIAL MEDIA GRID
+STYLE 13 – SOCIAL GRID
 ================================================== */
 .social{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 .social a{
   background:var(--gold-light);
   border:2px solid var(--gold);
-  border-radius:14px;
   padding:10px;
+  border-radius:14px;
   font-family:'FuturaBold';
-  color:#000;
-  text-decoration:none;
 }
 
 /* ==================================================
-STYLE 16 – ADDRESS
+STYLE 14 – TRUSTED CUSTOMER SLIDER
 ================================================== */
-.address{
-  background:#fff4c2;
-  border:2px solid var(--gold);
-  border-radius:16px;
-  padding:14px;
-  margin-top:14px;
-}
-.address strong{font-family:'FuturaBold';}
-.address a{font-weight:900;color:#000;text-decoration:none;}
-
-/* ==================================================
-STYLE 17 – REVIEW SHOWCASE BOX (REPLACES QR)
-================================================== */
-.qr{
-  background:#000;
-  border:4px solid var(--gold);
-  border-radius:18px;
-  padding:16px 12px;
-  margin-top:14px;
-
-  min-height:260px;              /* IMPORTANT */
-  display:flex;
-  flex-direction:column;
-}
-/* ==================================================
-STYLE 17A – TRUSTED CUSTOMER SLIDER
-================================================== */
-
-/* Outer Black Box */
 .trusted-box{
   background:#000;
   border-radius:22px;
-  padding:18px 14px 22px;
-  margin:25px auto;
-  max-width:92%;
-  box-shadow:0 12px 35px rgba(0,0,0,.45);
+  padding:18px;
+  margin:24px auto;
 }
-
-/* Title */
 .trusted-title{
   color:#fff;
   font-family:'FuturaBold';
-  font-size:18px;
-  text-align:center;
   margin-bottom:14px;
-  letter-spacing:.5px;
 }
-
-/* Slider Window */
-.trusted-slider{
-  overflow:hidden;
-  width:100%;
-}
-
-/* Moving Track */
+.trusted-slider{overflow:hidden;}
 .trusted-track{
   display:flex;
   gap:14px;
-  width:max-content;
-  animation: trustedScroll 35s linear infinite;
+  animation:trustedScroll 40s linear infinite;
 }
-
-/* Card (NO BORDER HERE) */
-.trusted-card{
-  flex:0 0 auto;
-  width:140px;
-}
-
-/* IMAGE – ONLY PLACE WITH BORDER */
+.trusted-card{width:140px;}
 .trusted-card img{
   width:100%;
   height:160px;
   object-fit:cover;
   border-radius:18px;
-  border:3px solid #d4af37;
-  display:block;
-  background:#111;
+  border:3px solid var(--gold);
 }
-
-/* Smooth Infinite Scroll */
 @keyframes trustedScroll{
-  0%{
-    transform:translateX(0);
-  }
-  100%{
-    transform:translateX(-50%);
-  }
+  to{transform:translateX(-50%);}
 }
 
 /* ==================================================
-STYLE 17B – REVIEW ACTION BAR
+STYLE 15 – FLOATING BUTTONS
 ================================================== */
-
-.review-bar{
+.floating{
+  position:fixed;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
   gap:12px;
-  justify-content:space-between;
-  margin-top:16px;
+  width:92%;
+  max-width:420px;
+  z-index:99999;
 }
-
-.review-btn{
-  flex:1;
-  padding:12px;
-  border-radius:22px;
-  font-family:'FuturaBold';
-  font-size:14px;
-  border:3px solid var(--gold);
-  cursor:pointer;
-}
-
-/* left & right review buttons */
-.review-gold{
-  background:linear-gradient(135deg,#8a6a10,#ffd700);
-  color:#fff;
-}
-
-/* center QR button */
-.review-qr{
-  background:#fff;
-  color:#000;
-}
-
-/* ==================================================
-STYLE 17C – REVIEW ACTION BAR
-================================================== */
-.review-actions{
-  display:flex;
-  gap:10px;
-  justify-content:space-between;
-  margin-top:auto;               /* PUSHES TO BOTTOM */
-}
-
-.review-btn{
-  flex:1;
-  padding:10px 12px;
-  border-radius:22px;
-  font-family:'FuturaBold';
-  font-size:13px;
-  text-align:center;
-  text-decoration:none;
-  border:3px solid var(--gold);
-  cursor:pointer;
-}
-
-.review-left,
-.review-right{
-  background:linear-gradient(135deg,#5b3a00,#b08d1a);
-  color:#ffd700;
-}
-
-.review-qr{
-  background:#ffffff;
-  color:#000;
-}
-
-/* ==================================================
-STYLE 18 – FLOATING BUTTONS (BOTTOM CENTER)
-================================================== */
-
-.floating{
-  position: fixed;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  width: 92%;
-  max-width: 420px;
-  z-index: 99999;
-}
-
 .float-btn{
-  flex: 1;
-  padding: 14px;
-  border-radius: 22px;
-  font-family: 'FuturaBold';
-  font-weight: 900;
-  text-align: center;
-  text-decoration: none;
-  border: 3px solid var(--gold);
-  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
-  color: #000;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  flex:1;
+  padding:14px;
+  border-radius:22px;
+  font-family:'FuturaBold';
+  border:3px solid var(--gold);
+  background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
 }
-
-
-  /* ==================================================
-STYLE 19 – FLOATING SHARE BUTTON
-================================================== */
 .share-float{
-  position: fixed;
-  right: 16px;
-  bottom: 78px;
-  padding: 12px 22px;
-  border-radius: 30px;
-  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
-  border: 3px solid var(--gold);
-  font-family: 'FuturaBold';
-  font-size: 14px;
-  font-weight: 900;
-  color: #000;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
-  z-index: 99999;
+  position:fixed;
+  right:16px;
+  bottom:90px;
+  padding:12px 20px;
+  border-radius:30px;
+  font-family:'FuturaBold';
+  border:3px solid var(--gold);
+  background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  z-index:99999;
 }
-
-  /* ==================================================
-STYLE 20 – FLOATING WHATSAPP GROUP BUTTON (LEFT)
-/* ==================================================
-STYLE 20 – FLOATING WHATSAPP GROUP (LEFT)
-================================================== */
-
 .whatsapp-group-float{
-  position: fixed;
-  left: 16px;
-  bottom: 78px;
-  padding: 12px 18px;
-  border-radius: 30px;
-  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
-  border: 3px solid var(--gold);
-  font-family: 'FuturaBold';
-  font-size: 13px;
-  font-weight: 900;
-  color: #000;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
-  z-index: 99999;
+  position:fixed;
+  left:16px;
+  bottom:90px;
+  padding:12px 18px;
+  border-radius:30px;
+  font-family:'FuturaBold';
+  border:3px solid var(--gold);
+  background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  z-index:99999;
 }
-
-<!-- ==================================================
-SCRIPT – SAVE CONTACT (ANDROID SAFE)
-================================================== -->
-<script>
-function saveContact(){
-const vcf =
-`BEGIN:VCARD
-VERSION:3.0
-N:Jewellers;Kshine;;;
-FN:KSHINE JEWELLERS
-ORG:KSHINE JEWELLERS
-
-TEL;TYPE=WORK:+919622212879
-
-ADR;TYPE=WORK:;;27-B Auqaf Market, Opp SBI Bank, Gandhi Nagar;Jammu;J&K;180004;Call 9419362775;India
-ADR;TYPE=WORK:;;Disco Road, Near Dreamland School, Janipur;Jammu;J&K;180007;Call 9622212879;India
-
-URL:https://kshinejewellers-hub.github.io
-URL:https://kshinejewellers.com
-URL:https://linktr.ee/Kshinejewellers
-
-NOTE:WhatsApp Group https://chat.whatsapp.com/YOURGROUPLINK
-Instagram https://instagram.com/kshinejewellers
-Facebook Page https://facebook.com/kshinejewellers
-Facebook Group https://facebook.com/groups/kshinejewellers
-YouTube https://youtube.com/@kshinejewellers
-Linktree https://linktr.ee/Kshinejewellers
-
-END:VCARD`;
-
-const blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});
-const link = document.createElement('a');
-link.href = URL.createObjectURL(blob);
-link.download = 'KSHINE-JEWELLERS.vcf';
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
-}
-</script>
-
+</style>
 </head>
 
 <body>
 
-<!-- ==================================================
-SECTION 1 – SCROLLER
-================================================== -->
-<div class="scroller">
-<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
-    Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
-</div>
+<div class="scroller"><span>◆ K-Shine Jewellers ◆ Trusted Jewellery Brand of J&K ◆</span></div>
 
-<!-- ==================================================
-SECTION 2 – WRAPPER
-================================================== -->
 <div class="wrapper">
+<div class="banner"><div class="dp"><img src="dpimage.png"></div></div>
 
-<!-- ==================================================
-SECTION 3 – BANNER & DP
-================================================== -->
-<div class="banner">
-<div class="dp"><img src="dpimage.png"></div>
-</div>
-
-<!-- ==================================================
-SECTION 4 – CONTENT
-================================================== -->
 <div class="content">
-
 <div class="brand">KSHINE JEWELLERS</div>
-<div class="tag">Your trusted Jewellery Brand in Jammu for more details scroll down 👇.</div>
+<div class="tag">Your trusted Jewellery Brand in Jammu</div>
 
-<div class="rating-title">5 Star Customer Ratings</div>
-
-<!-- ==================================================
-SECTION 5 – GOOGLE RATINGS
-================================================== -->
 <div class="ratings">
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
-    <small>Tap to open Google Maps</small>
-    <div class="stars">★★★★★</div>
-    <div class="score">4.9</div>
-    <div class="place">Gandhi Nagar</div>
-    <div class="reviews">1000+ Reviews</div>
-  </div>
-
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
-    <small>Tap to open Google Maps</small>
-    <div class="stars">★★★★★</div>
-    <div class="score">5.0</div>
-    <div class="place">Janipur</div>
-    <div class="reviews">1160+ Reviews</div>
-  </div>
+<div class="rate"><div class="stars">★★★★★</div><div class="score">4.9</div><div class="place">Gandhi Nagar</div></div>
+<div class="rate"><div class="stars">★★★★★</div><div class="score">5.0</div><div class="place">Janipur</div></div>
 </div>
-
-<!-- ==================================================
-SECTION 6 – SAVE CONTACT
-================================================== -->
-<a href="javascript:void(0)" onclick="saveContact()" class="btn fixed-gold">💾 Save Contact</a>
-
-
-<!-- ==================================================
-SECTION 7 – CALL / WHATSAPP
-================================================== -->
-<div class="actions">
-  <a href="tel:9622212879" class="action btn">📞 Call Us</a>
-
-  <a href="https://wa.me/919622212879?text=%E2%9C%A8%20Hello%20*K-SHINE%20JEWELLERS*%20%E2%9C%A8%0A%0A%F0%9F%92%8E%20I%20just%20went%20through%20your%20*Digital%20Business%20Card*%20and%20I%E2%80%99m%20interested%20in%20exploring%20your%20*Gold,%20Diamond%20%26%20Silver%20Jewellery%20Collections.*%0A%0A%F0%9F%99%8F%20Kindly%20guide%20me%20further."
-     target="_blank"
-     rel="noopener noreferrer"
-     class="action btn">
-     💬 WhatsApp Us
-  </a>
-</div>
-
-<a href="https://kshinejewellers.com" target="_blank" class="btn fixed-gold">
-🌐 Official Website
-</a>
-
-
-<!-- ==================================================
-SECTION 8 – SOCIAL MEDIA
-================================================== -->
-<div class="social">
-
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
-     target="_blank"
-     rel="noopener noreferrer">
-     WhatsApp Group
-  </a>
-
-  <a href="https://www.instagram.com/kshine_jewellers?igsh=MW1ocGlwbGdqZHVxbA=="
-     target="_blank"
-     rel="noopener noreferrer">
-     Instagram
-  </a>
-
-  <a href="https://facebook.com/groups/1233168123948595/"
-     target="_blank"
-     rel="noopener noreferrer">
-     Facebook Group
-  </a>
-
-  <a href="https://www.facebook.com/kshinejewelers"
-     target="_blank"
-     rel="noopener noreferrer">
-     Facebook Page
-  </a>
-
-  <a href="https://youtube.com/@k-shinejewellers1365?si=C3lcJXsQsqUicFse"
-     target="_blank"
-     rel="noopener noreferrer">
-     YouTube
-  </a>
-
-  <a href="https://linktr.ee/Kshinejewellers"
-     target="_blank"
-     rel="noopener noreferrer">
-     Linktree
-  </a>
-
-</div>
-
-
-<!-- ==================================================
-SECTION 9 – ADDRESS
-================================================== -->
-<div class="address">
-<strong>Gandhi Nagar Branch</strong><br>
-27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-📞 <a href="tel:+919419362775">9419362775</a><br><br>
-
-<strong>Janipur Branch</strong><br>
-Disco Road, Near Dreamland School, Jammu – 180007<br>
-📞 <a href="tel:+919622212879">9622212879</a>
-</div>
-
-<!-- SECTION 10 – TRUSTED CUSTOMERS SLIDER -->
 
 <div class="trusted-box">
-
-  <div class="trusted-title">
-    “Trusted by 90,000+ Happy Customers”
-  </div>
-
-  <div class="trusted-slider">
-    <div class="trusted-track">
-
-      <!-- SET 1 -->
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-01.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-02.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-03.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-04.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-05.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-06.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-07.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-08.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-09.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-10.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-11.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-12.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-13.jpg"></div>
-
-      <!-- SET 2 (DUPLICATE – REQUIRED) -->
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-01.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-02.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-03.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-04.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-05.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-06.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-07.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-08.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-09.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-10.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-11.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-12.jpg"></div>
-      <div class="trusted-card"><img src="trusted-customers/trusted-customers-13.jpg"></div>
-
-    </div>
-  </div>
-
+<div class="trusted-title">Trusted by 90,000+ Happy Customers</div>
+<div class="trusted-slider">
+<div class="trusted-track">
+<!-- duplicate images OK -->
+<img src="trusted-customers/trusted-customers-01.jpg">
+<img src="trusted-customers/trusted-customers-02.jpg">
+<img src="trusted-customers/trusted-customers-03.jpg">
+<img src="trusted-customers/trusted-customers-04.jpg">
+<img src="trusted-customers/trusted-customers-05.jpg">
+<img src="trusted-customers/trusted-customers-01.jpg">
+<img src="trusted-customers/trusted-customers-02.jpg">
+</div>
+</div>
 </div>
 
-  <!-- ==================================================
-SCRIPT 2 – SHARE DIGITAL CARD
-================================================== -->
-<script>
-function shareCard(){
-  if (navigator.share) {
-    navigator.share({
-      title: 'KSHINE JEWELLERS',
-      text: '✨ KSHINE JEWELLERS – Premium Gold, Diamond & Silver Jewellery in Jammu',
-      url: window.location.href
-    });
-  } else {
-    alert('Sharing not supported on this device');
-  }
-}
-</script>
-  <script>
-function openQR(){
-  document.getElementById('qrPopup').style.display='flex';
-}
-function closeQR(){
-  document.getElementById('qrPopup').style.display='none';
-}
-</script>
+</div>
+</div>
+
+<div class="floating">
+<a class="float-btn">🌐 Website</a>
+<a class="float-btn">💾 Save Contact</a>
+</div>
+
+<button class="share-float" onclick="navigator.share({title:'KSHINE JEWELLERS',url:location.href})">🔗 Share</button>
+<a class="whatsapp-group-float" href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS">Join Group</a>
 
 </body>
 </html>
