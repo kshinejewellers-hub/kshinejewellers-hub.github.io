@@ -60,7 +60,7 @@ STYLE 5 – TOP SCROLLER
 .scroller span{
   display:inline-block;
   padding-left:100%;
-  animation:scroll 9s linear infinite;
+  animation:scroll 10s linear infinite;
 }
 @keyframes scroll{
   0%{transform:translateX(0);}
@@ -270,6 +270,14 @@ STYLE 12 – COMMON BUTTONS
   text-decoration:none;
   border:3px solid var(--gold);
 }
+/* ==================================================
+STYLE 12A – FIXED PRIMARY GOLD BUTTONS
+(ONLY Save Contact & Official Website)
+================================================== */
+.fixed-gold{
+  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  box-shadow:0 10px 28px rgba(0,0,0,.35);
+}
 
 /* ==================================================
 STYLE 13 – CALL / WHATSAPP
@@ -368,6 +376,60 @@ STYLE 18 – FLOATING BUTTONS
   border:3px solid var(--gold);
   text-decoration:none;
 }
+  /* ==================================================
+STYLE 19 – FLOATING SHARE BUTTON
+================================================== */
+.share-float{
+  position: fixed;
+  right: 16px;
+  bottom: 70px; /* above existing floating buttons */
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  border: 3px solid var(--gold);
+  font-family: 'FuturaBold';
+  font-size: 14px;
+  font-weight: 900;
+  color: #000;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  z-index: 99999;
+  cursor: pointer;
+}
+.share-float:active{
+  transform: scale(0.95);
+}
+  /* ==================================================
+STYLE 20 – FLOATING WHATSAPP GROUP BUTTON (LEFT)
+================================================== */
+.whatsapp-group-float{
+  position: fixed;
+  left: 16px;
+  bottom: 70px; /* same vertical level as Share button */
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  /* SAME COLOUR AS SHARE BUTTON */
+  background: linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  border: 3px solid var(--gold);
+
+  font-family: 'FuturaBold';
+  font-size: 13px;   /* slightly smaller text */
+  font-weight: 900;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  z-index: 99999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.whatsapp-group-float:active{
+  transform: scale(0.95);
+}
 </style>
 
 <!-- ==================================================
@@ -418,7 +480,7 @@ document.body.removeChild(link);
 SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
-<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Get 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver 
+<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
     Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
 </div>
 
@@ -461,14 +523,15 @@ SECTION 5 – GOOGLE RATINGS
     <div class="stars">★★★★★</div>
     <div class="score">5.0</div>
     <div class="place">Janipur</div>
-    <div class="reviews">1260+ Reviews</div>
+    <div class="reviews">1160+ Reviews</div>
   </div>
 </div>
 
 <!-- ==================================================
 SECTION 6 – SAVE CONTACT
 ================================================== -->
-<a href="javascript:void(0)" onclick="saveContact()" class="btn">💾 Save Contact</a>
+<a href="javascript:void(0)" onclick="saveContact()" class="btn fixed-gold">💾 Save Contact</a>
+
 
 <!-- ==================================================
 SECTION 7 – CALL / WHATSAPP
@@ -484,7 +547,10 @@ SECTION 7 – CALL / WHATSAPP
   </a>
 </div>
 
-<a href="https://kshinejewellers.com" target="_blank" class="btn website-btn">🌐 Official Website</a>
+<a href="https://kshinejewellers.com" target="_blank" class="btn fixed-gold">
+🌐 Official Website
+</a>
+
 
 <!-- ==================================================
 SECTION 8 – SOCIAL MEDIA
@@ -561,6 +627,33 @@ SECTION 11 – FLOATING BUTTONS
 <a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
 <a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
 </div>
+<!-- ==================================================
+SECTION 12 – FLOATING SHARE BUTTON
+================================================== -->
+<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-group-float">
+   💬 Join Group
+</a>
 
+<button class="share-float" onclick="shareCard()">🔗 Share</button>
+
+  <!-- ==================================================
+SCRIPT 2 – SHARE DIGITAL CARD
+================================================== -->
+<script>
+function shareCard(){
+  if (navigator.share) {
+    navigator.share({
+      title: 'KSHINE JEWELLERS',
+      text: '✨ KSHINE JEWELLERS – Premium Gold, Diamond & Silver Jewellery in Jammu',
+      url: window.location.href
+    });
+  } else {
+    alert('Sharing not supported on this device');
+  }
+}
+</script>
 </body>
 </html>
