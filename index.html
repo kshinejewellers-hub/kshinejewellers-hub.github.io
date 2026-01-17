@@ -388,108 +388,88 @@ STYLE 16 – ADDRESS
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17 – QR (REDUCED & SHARP)
+STYLE 17 – REVIEW SHOWCASE BOX (REPLACES QR)
 ================================================== */
 .qr{
   background:#000;
   border:4px solid var(--gold);
   border-radius:18px;
-  padding:10px;          /* ⬅ reduced sharply */
+  padding:16px 12px;
   margin-top:14px;
-  text-align:center;
-}
 
-.qr img{
-  width:42%;             /* ⬅ QR reduced clearly */
-  max-width:140px;       /* ⬅ hard limit */
-  height:auto;
-  display:block;
-  margin:0 auto 6px;     /* ⬅ tighter spacing */
-}
-
-.qr p{
-  font-size:11px;        /* ⬅ smaller text */
-  margin:0;
-  color:var(--gold);
-}
-  /* ==================================================
-STYLE 17A – REVIEW ACTION BAR (BOTTOM)
-================================================== */
-.review-bar{
+  min-height:260px;              /* IMPORTANT */
   display:flex;
-  justify-content:space-between;
+  flex-direction:column;
+}
+/* ==================================================
+STYLE 17A – TRUSTED TEXT
+================================================== */
+.trusted-title{
+  color:#ffffff;
+  font-family:'FuturaBold';
+  font-size:16px;
+  text-align:center;
+  margin-bottom:10px;
+}
+/* ==================================================
+STYLE 17B – CUSTOMER IMAGE SLIDER
+================================================== */
+.customer-strip{
+  overflow:hidden;
+  width:100%;
+  margin-bottom:14px;
+}
+
+.customer-track{
+  display:flex;
+  gap:12px;
+  animation:scrollCustomers 22s linear infinite;
+}
+
+.customer-track img{
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  border-radius:14px;
+  border:2px solid var(--gold);
+  background:#111;
+}
+
+@keyframes scrollCustomers{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+/* ==================================================
+STYLE 17C – REVIEW ACTION BAR
+================================================== */
+.review-actions{
+  display:flex;
   gap:10px;
-  margin:14px auto 6px;
-  max-width:420px;
-  padding:0 10px;
+  justify-content:space-between;
+  margin-top:auto;               /* PUSHES TO BOTTOM */
 }
 
 .review-btn{
   flex:1;
-  height:42px;
+  padding:10px 12px;
   border-radius:22px;
   font-family:'FuturaBold';
-  font-weight:900;
   font-size:13px;
   text-align:center;
-  line-height:42px;
-  border:3px solid var(--gold);
   text-decoration:none;
+  border:3px solid var(--gold);
   cursor:pointer;
 }
 
-/* Brown buttons */
-.review-btn.brown{
+.review-left,
+.review-right{
   background:linear-gradient(135deg,#5b3a00,#b08d1a);
   color:#ffd700;
 }
 
-/* White QR button */
-.review-btn.white{
-  background:#fff;
+.review-qr{
+  background:#ffffff;
   color:#000;
-}
-
-/* ==================================================
-QR POPUP (SMALL, NO BODY IMPACT)
-================================================== */
-.qr-popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-}
-
-.qr-box{
-  background:#000;
-  border:4px solid var(--gold);
-  border-radius:16px;
-  padding:12px;
-  width:240px;
-  text-align:center;
-  position:relative;
-}
-
-.qr-box img{
-  width:160px;
-  height:160px;
-}
-
-.qr-box p{
-  color:#fff;
-  font-size:11px;
-  margin-top:6px;
-}
-
-.qr-close{
-  position:absolute;
-  top:4px;
-  right:8px;
-  color:#fff;
-  cursor:pointer;
 }
 
 
@@ -755,36 +735,54 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 
 SECTION 10 – REVIEW ACTION BAR (REPLACES QR)
 ================================================== -->
-<div class="review-bar">
+<!-- ==================================================
+SECTION 10 – REVIEW SHOWCASE (REPLACES QR)
+================================================== -->
+<div class="qr">
 
-  <!-- Gandhi Nagar Review -->
-  <a href="https://g.page/r/CYoCa4xAGy8bEBE/review"
-     target="_blank"
-     class="review-btn brown">
-     ⭐ Review
-  </a>
-
-  <!-- QR Popup Button -->
-  <button class="review-btn white" onclick="openQR()">
-    QR
-  </button>
-
-  <!-- Janipur Review -->
-  <a href="https://g.page/r/CZAzRfFKkP41EBE/review"
-     target="_blank"
-     class="review-btn brown">
-     ⭐ Review
-  </a>
-
-</div>
-
-<!-- QR POPUP -->
-<div class="qr-popup" id="qrPopup">
-  <div class="qr-box">
-    <span class="qr-close" onclick="closeQR()">✕</span>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://kshinejewellers-hub.github.io">
-    <p>Scan to connect with K-Shine Jewellers</p>
+  <div class="trusted-title">
+    “Trusted by 90,000+ Happy Customers”
   </div>
+
+  <div class="customer-strip">
+    <div class="customer-track">
+      <!-- ADD YOUR 12–17 IMAGES HERE -->
+      <img src="cust1.jpg">
+      <img src="cust2.jpg">
+      <img src="cust3.jpg">
+      <img src="cust4.jpg">
+      <img src="cust5.jpg">
+      <img src="cust6.jpg">
+
+      <!-- duplicate for smooth loop -->
+      <img src="cust1.jpg">
+      <img src="cust2.jpg">
+      <img src="cust3.jpg">
+      <img src="cust4.jpg">
+      <img src="cust5.jpg">
+      <img src="cust6.jpg">
+    </div>
+  </div>
+
+  <div class="review-actions">
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review"
+       target="_blank"
+       class="review-btn review-left">
+       ⭐ Review
+    </a>
+
+    <button class="review-btn review-qr"
+            onclick="alert('QR Scanner will open here')">
+            QR
+    </button>
+
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review"
+       target="_blank"
+       class="review-btn review-right">
+       ⭐ Review
+    </a>
+  </div>
+
 </div>
 
   <!-- ==================================================
