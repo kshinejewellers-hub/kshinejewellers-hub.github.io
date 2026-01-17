@@ -388,24 +388,29 @@ STYLE 16 – ADDRESS
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17 – QR
+STYLE 17 – QR (REDUCED & SHARP)
 ================================================== */
 .qr{
   background:#000;
   border:4px solid var(--gold);
   border-radius:18px;
-  padding:10px;
+  padding:10px;          /* ⬅ reduced sharply */
   margin-top:14px;
+  text-align:center;
 }
+
 .qr img{
-  width:50%;
-  max-width:160px;
-  margin:auto;
+  width:42%;             /* ⬅ QR reduced clearly */
+  max-width:140px;       /* ⬅ hard limit */
+  height:auto;
   display:block;
+  margin:0 auto 6px;     /* ⬅ tighter spacing */
 }
+
 .qr p{
+  font-size:11px;        /* ⬅ smaller text */
+  margin:0;
   color:var(--gold);
-  font-size:11px;
 }
 
 /* ==================================================
