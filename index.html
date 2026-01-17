@@ -402,43 +402,94 @@ STYLE 17 – REVIEW SHOWCASE BOX (REPLACES QR)
   flex-direction:column;
 }
 /* ==================================================
-STYLE 17A – TRUSTED TEXT
+STYLE 17A – TRUSTED CUSTOMERS SLIDER
 ================================================== */
-.trusted-title{
-  color:#ffffff;
-  font-family:'FuturaBold';
-  font-size:16px;
-  text-align:center;
-  margin-bottom:10px;
+
+.trusted-box{
+  background:#000;
+  border:4px solid var(--gold);
+  border-radius:24px;
+  padding:16px 12px 20px;
+  margin:20px 0;
 }
-/* ==================================================
-STYLE 17B – CUSTOMER IMAGE SLIDER
-================================================== */
-.customer-strip{
-  overflow:hidden;
-  width:100%;
+
+.trusted-title{
+  color:#fff;
+  font-family:'FuturaBold';
+  font-size:18px;
+  text-align:center;
   margin-bottom:14px;
 }
 
-.customer-track{
-  display:flex;
-  gap:12px;
-  animation:scrollCustomers 22s linear infinite;
+/* slider wrapper */
+.trusted-slider{
+  overflow:hidden;
+  width:100%;
 }
 
-.customer-track img{
-  width:90px;
-  height:90px;
-  object-fit:cover;
+/* moving strip */
+.trusted-track{
+  display:flex;
+  gap:12px;
+  animation:scroll-left 40s linear infinite;
+}
+
+/* image cards */
+.trusted-card{
+  min-width:110px;
+  height:110px;
   border-radius:14px;
-  border:2px solid var(--gold);
+  border:3px solid var(--gold);
+  overflow:hidden;
   background:#111;
 }
 
-@keyframes scrollCustomers{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
+.trusted-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
+
+/* animation */
+@keyframes scroll-left{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+/* ==================================================
+STYLE 17B – REVIEW ACTION BAR
+================================================== */
+
+.review-bar{
+  display:flex;
+  gap:12px;
+  justify-content:space-between;
+  margin-top:16px;
+}
+
+.review-btn{
+  flex:1;
+  padding:12px;
+  border-radius:22px;
+  font-family:'FuturaBold';
+  font-size:14px;
+  border:3px solid var(--gold);
+  cursor:pointer;
+}
+
+/* left & right review buttons */
+.review-gold{
+  background:linear-gradient(135deg,#8a6a10,#ffd700);
+  color:#fff;
+}
+
+/* center QR button */
+.review-qr{
+  background:#fff;
+  color:#000;
+}
+
 /* ==================================================
 STYLE 17C – REVIEW ACTION BAR
 ================================================== */
@@ -735,50 +786,81 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 <!-- ==================================================
 SECTION 10 – REVIEW SHOWCASE (REPLACES QR)
 ================================================== -->
-<div class="qr">
+<!-- ==================================================
+SECTION 10 – TRUSTED CUSTOMERS SLIDER
+================================================== -->
+
+<div class="trusted-box">
 
   <div class="trusted-title">
     “Trusted by 90,000+ Happy Customers”
   </div>
 
-  <div class="customer-strip">
-  <div class="customer-track">
+  <div class="trusted-slider">
+    <div class="trusted-track">
 
-    <img src="scroller1.jpg">
-    <img src="scroller2.jpg">
-    <img src="scroller3.jpg">
-    <img src="scroller4.jpg">
+      <!-- FIRST SET -->
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-02.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-03.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-04.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-05.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-06.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-07.jpg" loading="lazy">
+      </div>
 
-    <!-- duplicate for smooth loop -->
-    <img src="scroller1.jpg">
-    <img src="scroller2.jpg">
-    <img src="scroller3.jpg">
-    <img src="scroller4.jpg">
+      <!-- DUPLICATE FOR LOOP -->
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-02.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-03.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-04.jpg" loading="lazy">
+      </div>
+      <div class="trusted-card">
+        <img src="assets/trusted-customers/trusted-customers-05.jpg" loading="lazy">
+      </div>
 
+    </div>
   </div>
-</div>
 
+  <!-- REVIEW ACTION BAR -->
+  <div class="review-bar">
 
-  <div class="review-actions">
-    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review"
-       target="_blank"
-       class="review-btn review-left">
-       ⭐ Review
+    <a 
+      href="https://g.page/r/CYoCa4xAGy8bEBE/review"
+      target="_blank"
+      class="review-btn review-gold">
+      ⭐ Review
     </a>
 
-    <button class="review-btn review-qr"
-            onclick="alert('QR Scanner will open here')">
-            QR
+    <button class="review-btn review-qr">
+      QR
     </button>
 
-    <a href="https://g.page/r/CZAzRfFKkP41EBE/review"
-       target="_blank"
-       class="review-btn review-right">
-       ⭐ Review
+    <a 
+      href="https://g.page/r/CZAzRfFKkP41EBE/review"
+      target="_blank"
+      class="review-btn review-gold">
+      ⭐ Review
     </a>
+
   </div>
 
 </div>
+
 
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
