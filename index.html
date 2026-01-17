@@ -148,6 +148,64 @@ STYLE 10 – RATINGS TITLE
   font-family:'ErasDemi';
   margin:14px 0;
 }
+/* ==================================================
+STYLE 10A – TRUSTED CUSTOMERS SCROLLER (BOTTOM)
+================================================== */
+
+.trusted-card{
+  background:#fff6c9;
+  border:3px solid var(--gold);
+  border-radius:22px;
+  padding:16px 12px 18px;
+  text-align:center;
+}
+
+.trusted-title{
+  font-family:'FuturaBold';
+  font-size:16px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.trusted-wrapper{
+  overflow:hidden;
+  margin-bottom:16px;
+}
+
+.trusted-track{
+  display:flex;
+  width:calc(140px * 34);
+  animation:trustedScroll 38s linear infinite;
+}
+
+.trusted-track img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:14px;
+  margin:0 6px;
+  border:3px solid var(--gold);
+  background:#fff;
+}
+
+.trusted-qr img{
+  width:260px;
+  max-width:100%;
+  background:#000;
+  padding:10px;
+  border-radius:14px;
+}
+
+.trusted-qr p{
+  margin-top:6px;
+  font-size:12px;
+  color:#caa84a;
+}
+
+@keyframes trustedScroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
 
 /* ==================================================
 STYLE 11 – GOOGLE RATINGS (IMPORTANT)
@@ -612,32 +670,57 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 <!-- ==================================================
 SECTION 10 – QR
 ================================================== -->
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
-<p>Scan to join Kshine Jewellers digitally</p>
-</div>
-
-</div>
-</div>
-
 <!-- ==================================================
-SECTION 11 – FLOATING BUTTONS
+SECTION 10 – TRUSTED CUSTOMERS + QR (BOTTOM CARD)
 ================================================== -->
-<div class="floating">
-<a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
-<a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
-</div>
-<!-- ==================================================
-SECTION 12 – FLOATING SHARE BUTTON
-================================================== -->
-<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-group-float">
-   💬 Join Group
-</a>
+<div class="qr trusted-card">
 
-<button class="share-float" onclick="shareCard()">🔗 Share</button>
+  <div class="trusted-title">
+    “Trusted by 90,000+ Happy Customers”
+  </div>
+
+  <!-- IMAGE SCROLLER -->
+  <div class="trusted-wrapper">
+    <div class="trusted-track">
+
+      <!-- JPG images -->
+      <img src="scroller/scroller1.jpg">
+      <img src="scroller/scroller2.jpg">
+      <img src="scroller/scroller3.jpg">
+      <img src="scroller/scroller4.jpg">
+      <img src="scroller/scroller5.jpg">
+      <img src="scroller/scroller6.jpg">
+      <img src="scroller/scroller7.jpg">
+      <img src="scroller/scroller8.jpg">
+      <img src="scroller/scroller9.jpg">
+      <img src="scroller/scroller10.jpg">
+      <img src="scroller/scroller11.jpg">
+      <img src="scroller/scroller12.jpg">
+      <img src="scroller/scroller13.jpg">
+      <img src="scroller/scroller14.jpg">
+      <img src="scroller/scroller15.jpg">
+      <img src="scroller/scroller16.jpg">
+      <img src="scroller/scroller17.jpg">
+
+      <!-- duplicates for smooth infinite scroll -->
+      <img src="scroller/scroller1.jpg">
+      <img src="scroller/scroller2.jpg">
+      <img src="scroller/scroller3.jpg">
+      <img src="scroller/scroller4.jpg">
+      <img src="scroller/scroller5.jpg">
+      <img src="scroller/scroller6.jpg">
+      <img src="scroller/scroller7.jpg">
+
+    </div>
+  </div>
+
+  <!-- QR CODE -->
+  <div class="trusted-qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
+    <p>Scan QR to Join us Digitally</p>
+  </div>
+
+</div>
 
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
