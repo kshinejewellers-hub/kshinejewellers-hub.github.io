@@ -332,6 +332,7 @@ STYLE 16 – ADDRESS
 /* ==================================================
 STYLE 17B – TRUSTED CUSTOMERS SLIDER
 ================================================== */
+
 .trusted-box{
   background:#000;
   border-radius:18px;
@@ -354,7 +355,7 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
 .trusted-track{
   display:flex;
   gap:12px;
-  animation:trustedScroll 18s linear infinite;
+  animation: trustedScroll 18s linear infinite;
 }
 
 .trusted-track img{
@@ -366,16 +367,17 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   flex-shrink:0;
 }
 
+/* smooth loop */
 @keyframes trustedScroll{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
 
-/* Bottom buttons */
+/* Bottom Review Action Bar */
 .trusted-actions{
   display:flex;
-  gap:8px;
-  margin-top:10px;
+  gap:10px;
+  margin-top:12px;
 }
 
 .trusted-btn{
