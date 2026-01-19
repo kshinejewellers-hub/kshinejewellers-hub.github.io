@@ -330,7 +330,7 @@ STYLE 16 – ADDRESS
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17B – TRUSTED CUSTOMERS SLIDER
+STYLE 17B – TRUSTED CUSTOMERS SLIDER (FINAL FIX)
 ================================================== */
 
 .trusted-box{
@@ -338,6 +338,7 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   border-radius:18px;
   padding:14px;
   margin-top:16px;
+  overflow:hidden;
 }
 
 .trusted-title{
@@ -348,15 +349,17 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   margin-bottom:10px;
 }
 
-/* Slider container */
+/* Slider */
 .trusted-slider{
   overflow:hidden;
+  width:100%;
 }
 
-/* Moving track */
+/* Track MUST be very wide */
 .trusted-track{
   display:flex;
   gap:12px;
+  width:max-content;
   animation: trustedScroll 10s linear infinite;
 }
 
@@ -370,10 +373,14 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   flex-shrink:0;
 }
 
-/* Animation */
+/* REAL continuous animation */
 @keyframes trustedScroll{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 /* Bottom buttons */
@@ -403,6 +410,7 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   background:#fff;
   color:#000;
 }
+
 
 /* ==================================================
 STYLE 18 – FLOATING BUTTONS
@@ -673,7 +681,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   <div class="trusted-slider">
     <div class="trusted-track">
 
-      <!-- ===== SET 1 (16 images) ===== -->
+      <!-- ORIGINAL 16 -->
       <img src="trusted-customers/trusted-customers-01.jpg">
       <img src="trusted-customers/trusted-customers-02.jpg">
       <img src="trusted-customers/trusted-customers-03.jpg">
@@ -691,7 +699,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
       <img src="trusted-customers/trusted-customers-15.jpg">
       <img src="trusted-customers/trusted-customers-16.jpg">
 
-      <!-- ===== SET 2 (DUPLICATE – REQUIRED) ===== -->
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
       <img src="trusted-customers/trusted-customers-01.jpg">
       <img src="trusted-customers/trusted-customers-02.jpg">
       <img src="trusted-customers/trusted-customers-03.jpg">
@@ -713,11 +721,11 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   </div>
 
   <div class="trusted-actions">
-    <a href="YOUR_GANDHI_REVIEW_LINK" target="_blank" class="trusted-btn gold">GAN</a>
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
 
-    <button class="trusted-btn white" onclick="toggleQR()">QR</button>
+    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
 
-    <a href="YOUR_JANIPUR_REVIEW_LINK" target="_blank" class="trusted-btn gold">JAN</a>
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
   </div>
 
 </div>
