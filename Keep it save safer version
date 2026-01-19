@@ -330,25 +330,87 @@ STYLE 16 – ADDRESS
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17 – QR
+STYLE 17B – TRUSTED CUSTOMERS SLIDER (FINAL FIX)
 ================================================== */
-.qr{
+
+.trusted-box{
   background:#000;
-  border:4px solid var(--gold);
   border-radius:18px;
-  padding:10px;
-  margin-top:14px;
+  padding:14px;
+  margin-top:16px;
+  overflow:hidden;
 }
-.qr img{
-  width:65%;
-  max-width:220px;
-  margin:auto;
-  display:block;
+
+.trusted-title{
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:10px;
 }
-.qr p{
-  color:var(--gold);
-  font-size:11px;
+
+/* Slider */
+.trusted-slider{
+  overflow:hidden;
+  width:100%;
 }
+
+/* Track MUST be very wide */
+.trusted-track{
+  display:flex;
+  gap:12px;
+  width:max-content;
+  animation: trustedScroll 14s linear infinite;
+}
+
+/* Images */
+.trusted-track img{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  border:3px solid var(--gold);
+  flex-shrink:0;
+}
+
+/* REAL continuous animation */
+@keyframes trustedScroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* Bottom buttons */
+.trusted-actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+
+.trusted-btn{
+  flex:1;
+  padding:6px 0;
+  font-size:12px;
+  font-weight:800;
+  border-radius:20px;
+  border:2px solid var(--gold);
+  text-align:center;
+  text-decoration:none;
+}
+
+.trusted-btn.gold{
+  background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
+  color:#000;
+}
+
+.trusted-btn.white{
+  background:#fff;
+  color:#000;
+}
+
 
 /* ==================================================
 STYLE 18 – FLOATING BUTTONS
@@ -609,16 +671,66 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 📞 <a href="tel:+919622212879">9622212879</a>
 </div>
 
-<!-- ==================================================
-SECTION 10 – QR
-================================================== -->
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io">
-<p>Scan to join Kshine Jewellers digitally</p>
-</div>
+<!-- SECTION 10 – TRUSTED CUSTOMERS -->
+<div class="trusted-box">
+
+  <div class="trusted-title">
+    Trusted by 90,000+ Happy Customers
+  </div>
+
+  <div class="trusted-slider">
+    <div class="trusted-track">
+
+      <!-- ORIGINAL 16 -->
+      <img src="trusted-customers/trusted-customers-01.jpg">
+      <img src="trusted-customers/trusted-customers-02.jpg">
+      <img src="trusted-customers/trusted-customers-03.jpg">
+      <img src="trusted-customers/trusted-customers-04.jpg">
+      <img src="trusted-customers/trusted-customers-05.jpg">
+      <img src="trusted-customers/trusted-customers-06.jpg">
+      <img src="trusted-customers/trusted-customers-07.jpg">
+      <img src="trusted-customers/trusted-customers-08.jpg">
+      <img src="trusted-customers/trusted-customers-09.jpg">
+      <img src="trusted-customers/trusted-customers-10.jpg">
+      <img src="trusted-customers/trusted-customers-11.jpg">
+      <img src="trusted-customers/trusted-customers-12.jpg">
+      <img src="trusted-customers/trusted-customers-13.jpg">
+      <img src="trusted-customers/trusted-customers-14.jpg">
+      <img src="trusted-customers/trusted-customers-15.jpg">
+      <img src="trusted-customers/trusted-customers-16.jpg">
+
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+      <img src="trusted-customers/trusted-customers-01.jpg">
+      <img src="trusted-customers/trusted-customers-02.jpg">
+      <img src="trusted-customers/trusted-customers-03.jpg">
+      <img src="trusted-customers/trusted-customers-04.jpg">
+      <img src="trusted-customers/trusted-customers-05.jpg">
+      <img src="trusted-customers/trusted-customers-06.jpg">
+      <img src="trusted-customers/trusted-customers-07.jpg">
+      <img src="trusted-customers/trusted-customers-08.jpg">
+      <img src="trusted-customers/trusted-customers-09.jpg">
+      <img src="trusted-customers/trusted-customers-10.jpg">
+      <img src="trusted-customers/trusted-customers-11.jpg">
+      <img src="trusted-customers/trusted-customers-12.jpg">
+      <img src="trusted-customers/trusted-customers-13.jpg">
+      <img src="trusted-customers/trusted-customers-14.jpg">
+      <img src="trusted-customers/trusted-customers-15.jpg">
+      <img src="trusted-customers/trusted-customers-16.jpg">
+
+    </div>
+  </div>
+
+  <div class="trusted-actions">
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
+
+    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
+
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
+  </div>
 
 </div>
-</div>
+
+
 
 <!-- ==================================================
 SECTION 11 – FLOATING BUTTONS
