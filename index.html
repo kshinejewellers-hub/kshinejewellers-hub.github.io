@@ -336,9 +336,8 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
 .trusted-box{
   background:#000;
   border-radius:18px;
-  padding:12px;
-  margin-top:14px;
-  overflow:hidden; /* IMPORTANT: prevents layout expansion */
+  padding:14px;
+  margin-top:16px;
 }
 
 .trusted-title{
@@ -349,27 +348,29 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   margin-bottom:10px;
 }
 
-/* Slider */
+/* Slider container */
 .trusted-slider{
   overflow:hidden;
 }
 
+/* Moving track */
 .trusted-track{
   display:flex;
   gap:12px;
-  animation: trustedScroll 12s linear infinite;
+  animation: trustedScroll 14s linear infinite;
 }
 
+/* Images */
 .trusted-track img{
-  width:135px;
+  width:140px;
   height:180px;
   object-fit:cover;
   border-radius:14px;
-  border:3px solid var(--gold); /* ONLY border */
+  border:3px solid var(--gold);
   flex-shrink:0;
 }
 
-/* Smooth continuous loop */
+/* Animation */
 @keyframes trustedScroll{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
@@ -378,22 +379,21 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
 /* Bottom buttons */
 .trusted-actions{
   display:flex;
-  gap:8px;
-  margin-top:10px;
+  gap:10px;
+  margin-top:12px;
 }
 
 .trusted-btn{
   flex:1;
-  padding:5px 0;
-  font-size:11px;
+  padding:6px 0;
+  font-size:12px;
   font-weight:800;
-  border-radius:18px;
+  border-radius:20px;
   border:2px solid var(--gold);
   text-align:center;
   text-decoration:none;
 }
 
-/* Button styles */
 .trusted-btn.gold{
   background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
   color:#000;
