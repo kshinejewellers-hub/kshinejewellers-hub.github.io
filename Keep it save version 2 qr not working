@@ -330,15 +330,15 @@ STYLE 16 – ADDRESS
 .address a{font-weight:900;color:#000;text-decoration:none;}
 
 /* ==================================================
-STYLE 17B – TRUSTED CUSTOMERS SLIDER
+STYLE 17B – TRUSTED CUSTOMERS SLIDER (FINAL FIX)
 ================================================== */
 
 .trusted-box{
   background:#000;
   border-radius:18px;
-  padding:12px;
-  margin-top:14px;
-  overflow:hidden; /* IMPORTANT: prevents layout expansion */
+  padding:14px;
+  margin-top:16px;
+  overflow:hidden;
 }
 
 .trusted-title{
@@ -352,48 +352,55 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
 /* Slider */
 .trusted-slider{
   overflow:hidden;
+  width:100%;
 }
 
+/* Track MUST be very wide */
 .trusted-track{
   display:flex;
   gap:12px;
-  animation: trustedScroll 20s linear infinite;
+  width:max-content;
+  animation: trustedScroll 14s linear infinite;
 }
 
+/* Images */
 .trusted-track img{
-  width:135px;
+  width:140px;
   height:180px;
   object-fit:cover;
   border-radius:14px;
-  border:3px solid var(--gold); /* ONLY border */
+  border:3px solid var(--gold);
   flex-shrink:0;
 }
 
-/* Smooth continuous loop */
+/* REAL continuous animation */
 @keyframes trustedScroll{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 /* Bottom buttons */
 .trusted-actions{
   display:flex;
-  gap:8px;
-  margin-top:10px;
+  gap:10px;
+  margin-top:12px;
 }
 
 .trusted-btn{
   flex:1;
-  padding:5px 0;
-  font-size:11px;
+  padding:6px 0;
+  font-size:12px;
   font-weight:800;
-  border-radius:18px;
+  border-radius:20px;
   border:2px solid var(--gold);
   text-align:center;
   text-decoration:none;
 }
 
-/* Button styles */
 .trusted-btn.gold{
   background:linear-gradient(135deg,#fff2a8,#ffd700,#8a6a10);
   color:#000;
@@ -403,6 +410,7 @@ STYLE 17B – TRUSTED CUSTOMERS SLIDER
   background:#fff;
   color:#000;
 }
+
 
 /* ==================================================
 STYLE 18 – FLOATING BUTTONS
@@ -663,9 +671,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
 📞 <a href="tel:+919622212879">9622212879</a>
 </div>
 
-<!-- ==================================================
-SECTION 10B – TRUSTED CUSTOMERS
-================================================== -->
+<!-- SECTION 10 – TRUSTED CUSTOMERS -->
 <div class="trusted-box">
 
   <div class="trusted-title">
@@ -675,7 +681,7 @@ SECTION 10B – TRUSTED CUSTOMERS
   <div class="trusted-slider">
     <div class="trusted-track">
 
-      <!-- FIRST SET (1–16) -->
+      <!-- ORIGINAL 16 -->
       <img src="trusted-customers/trusted-customers-01.jpg">
       <img src="trusted-customers/trusted-customers-02.jpg">
       <img src="trusted-customers/trusted-customers-03.jpg">
@@ -693,7 +699,7 @@ SECTION 10B – TRUSTED CUSTOMERS
       <img src="trusted-customers/trusted-customers-15.jpg">
       <img src="trusted-customers/trusted-customers-16.jpg">
 
-      <!-- DUPLICATE SET (for seamless loop) -->
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
       <img src="trusted-customers/trusted-customers-01.jpg">
       <img src="trusted-customers/trusted-customers-02.jpg">
       <img src="trusted-customers/trusted-customers-03.jpg">
@@ -715,12 +721,15 @@ SECTION 10B – TRUSTED CUSTOMERS
   </div>
 
   <div class="trusted-actions">
-    <a href="YOUR_GANDHI_REVIEW_LINK" class="trusted-btn gold">GAN</a>
-    <div class="trusted-btn white">QR</div>
-    <a href="YOUR_JANIPUR_REVIEW_LINK" class="trusted-btn gold">JAN</a>
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
+
+    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
+
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
   </div>
 
 </div>
+
 
 
 <!-- ==================================================
