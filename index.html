@@ -784,8 +784,7 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   <div class="trusted-actions">
     <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
 
-    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
-
+    <button class="trusted-btn white" onclick="openQR()">QR</button>
     <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
   </div>
 
@@ -841,6 +840,16 @@ function shareCard(){
     alert('Sharing not supported on this device');
   }
 }
+  <!-- SCRIPT 3 – QR POPUP CONTROL -->
+<script>
+function openQR(){
+  document.getElementById("goldQR").style.display = "flex";
+}
+
+function closeQR(){
+  document.getElementById("goldQR").style.display = "none";
+}
+</script>
 </script>
 </body>
 </html>
