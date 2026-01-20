@@ -492,69 +492,8 @@ STYLE 20 – FLOATING WHATSAPP GROUP BUTTON (LEFT)
 .whatsapp-group-float:active{
   transform: scale(0.95);
 }
+</style>
 
-/* ==================================================
-STYLE 21 – GOLD GLOWING QR POPUP
-================================================== */
-
-.qr-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.88);
-  z-index:99999;
-  align-items:center;
-  justify-content:center;
-}
-
-.qr-box{
-  background:#000;
-  padding:18px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:
-    0 0 15px #d4af37,
-    0 0 30px #b8962e,
-    0 0 45px rgba(212,175,55,0.6);
-  animation:qrGlow 2s infinite alternate;
-}
-
-.qr-box img{
-  width:220px;
-  max-width:80vw;
-  border-radius:14px;
-  background:#fff;
-  padding:10px;
-}
-
-.qr-box p{
-  color:gold;
-  font-size:12px;
-  margin-top:10px;
-}
-
-.qr-close{
-  margin-top:12px;
-  padding:6px 18px;
-  border-radius:20px;
-  border:2px solid gold;
-  background:#fff;
-  font-weight:800;
-}
-
-@keyframes qrGlow{
-  from{
-    box-shadow:
-      0 0 10px #d4af37,
-      0 0 20px rgba(212,175,55,0.5);
-  }
-  to{
-    box-shadow:
-      0 0 25px #ffd700,
-      0 0 50px rgba(255,215,0,0.9);
-  }
-}
-  </style>
 <!-- ==================================================
 SCRIPT – SAVE CONTACT (ANDROID SAFE)
 ================================================== -->
@@ -784,7 +723,8 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   <div class="trusted-actions">
     <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
 
-    <button class="trusted-btn white" onclick="openQR()">QR</button>
+    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
+
     <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
   </div>
 
@@ -811,20 +751,6 @@ SECTION 12 – FLOATING SHARE BUTTON
 
 <button class="share-float" onclick="shareCard()">🔗 Share</button>
 
-  <!-- GOLD QR POPUP -->
-<div id="goldQR" class="qr-overlay">
-  <div class="qr-box">
-
-    <img
-      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io"
-      alt="K-Shine Jewellers QR"
-    >
-
-    <p>Scan to open K-Shine Jewellers</p>
-
-    <button class="qr-close" onclick="closeQR()">Close</button>
-  </div>
-</div>
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
 ================================================== -->
@@ -840,16 +766,6 @@ function shareCard(){
     alert('Sharing not supported on this device');
   }
 }
-  <!-- SCRIPT 3 – QR POPUP CONTROL -->
-<script>
-function openQR(){
-  document.getElementById("goldQR").style.display = "flex";
-}
-
-function closeQR(){
-  document.getElementById("goldQR").style.display = "none";
-}
-</script>
 </script>
 </body>
 </html>
