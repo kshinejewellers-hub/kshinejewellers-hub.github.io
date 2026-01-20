@@ -767,5 +767,77 @@ function shareCard(){
   }
 }
 </script>
+  <!-- ======================================
+QR POPUP MODAL (DOWNLOADABLE)
+====================================== -->
+<div id="qrPopup"
+     style="
+       display:none;
+       position:fixed;
+       inset:0;
+       background:rgba(0,0,0,0.85);
+       z-index:99999;
+       display:flex;
+       align-items:center;
+       justify-content:center;
+     ">
+
+  <div style="
+       background:#000;
+       padding:16px;
+       border-radius:18px;
+       border:3px solid gold;
+       text-align:center;
+     ">
+
+    <!-- QR IMAGE (DOWNLOADABLE) -->
+    <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io"
+       download="KSHINE-JEWELLERS-QR.png">
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kshinejewellers-hub.github.io"
+        style="
+          width:220px;
+          max-width:80vw;
+          border-radius:12px;
+          cursor:pointer;
+        "
+        alt="K-Shine Jewellers QR Code"
+      >
+    </a>
+
+    <p style="
+         color:gold;
+         font-size:12px;
+         margin-top:8px;
+       ">
+      Tap QR to Download
+    </p>
+
+    <button onclick="closeQR()"
+      style="
+        margin-top:10px;
+        padding:6px 16px;
+        border-radius:16px;
+        border:2px solid gold;
+        background:#fff;
+        font-weight:700;
+        cursor:pointer;
+      ">
+      Close
+    </button>
+
+  </div>
+</div>
+<script>
+function openQR(){
+  document.getElementById("qrPopup").style.display = "flex";
+}
+
+function closeQR(){
+  document.getElementById("qrPopup").style.display = "none";
+}
+</script>
+
 </body>
 </html>
