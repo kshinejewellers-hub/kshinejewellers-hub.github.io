@@ -67,27 +67,57 @@ STYLE 5 – TOP SCROLLER
   100%{transform:translateX(-100%);}
 }
 
-/* ==================================================
-STYLE 6 – BANNER & DP
-================================================== */
+<!-- ==================================================
+STYLE 6 – BANNER & DP (SLIDER + HALF DP FIXED)
+================================================== -->
+<style>
 .banner{
   height:230px;
-  background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
+
+/* Slides container (clips ONLY images, NOT DP) */
+.banner-slides{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+/* Individual banner images */
+.banner-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+
+/* Active slide */
+.banner-slide.active{
+  opacity:1;
+  z-index:1;
+}
+
+/* DP positioning – HALF IN / HALF OUT */
 .dp{
   position:absolute;
   bottom:-55px;
   width:100%;
   display:flex;
   justify-content:center;
+  z-index:5;
 }
+
 .dp img{
   width:110px;
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
 }
+</style>
+
 
 /* ==================================================
 STYLE 7 – CONTENT AREA
@@ -554,9 +584,26 @@ SECTION 2 – WRAPPER
 <!-- ==================================================
 SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner">
-<div class="dp"><img src="dpimage.png"></div>
+<div class="banner" id="bannerSlider">
+
+  <!-- Banner Images -->
+  <div class="banner-slides">
+    <img src="banners/banner1.jpg" class="banner-slide active">
+    <img src="banners/banner2.jpg" class="banner-slide">
+    <img src="banners/banner3.jpg" class="banner-slide">
+    <img src="banners/banner4.jpg" class="banner-slide">
+    <img src="banners/banner5.jpg" class="banner-slide">
+    <img src="banners/banner6.jpg" class="banner-slide">
+    <img src="banners/banner7.jpg" class="banner-slide">
+  </div>
+
+  <!-- DP (Half inside / Half outside – FIXED) -->
+  <div class="dp">
+    <img src="dpimage.png" alt="Kshine Jewellers">
+  </div>
+
 </div>
+
 
 <!-- ==================================================
 SECTION 4 – CONTENT
