@@ -52,7 +52,7 @@ STYLE 5 – TOP SCROLLER
   background:#000;
   color:#ffd700;
   font-size:13px;
-  font-style:italic;
+  font-style:italilc;
   padding:6px 0;
   white-space:nowrap;
   overflow:hidden;
@@ -68,56 +68,26 @@ STYLE 5 – TOP SCROLLER
 }
 
 /* ==================================================
-STYLE 6 – BANNER & DP (SLIDER SAFE)
+STYLE 6 – BANNER & DP
 ================================================== */
 .banner{
   height:230px;
+  background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
-  overflow:visible; /* IMPORTANT: allows DP to come out */
 }
-
-/* Banner image area ONLY */
-.banner-slides{
-  position:absolute;
-  inset:0;
-  overflow:hidden; /* clips images only */
-}
-
-/* Each slide */
-.banner-slide{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 0.6s ease;
-}
-
-/* Active slide */
-.banner-slide.active{
-  opacity:1;
-  z-index:1;
-}
-
-/* DP – HALF INSIDE / HALF OUTSIDE */
 .dp{
   position:absolute;
   bottom:-55px;
   width:100%;
   display:flex;
   justify-content:center;
-  z-index:10;
 }
-
 .dp img{
   width:110px;
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
-  background:#fff;
 }
-</style>
 
 /* ==================================================
 STYLE 7 – CONTENT AREA
@@ -573,7 +543,7 @@ SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
 <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
-    Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
+    Join our WhatsApp Group For Gold Updates◆ for more details Visit our official website below ◆</span>
 </div>
 
 <!-- ==================================================
@@ -584,26 +554,9 @@ SECTION 2 – WRAPPER
 <!-- ==================================================
 SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner" id="bannerSlider">
-
-  <!-- Banner Slides -->
-  <div class="banner-slides">
-    <img src="banners/banner1.jpg" class="banner-slide active">
-    <img src="banners/banner2.jpg" class="banner-slide">
-    <img src="banners/banner3.jpg" class="banner-slide">
-    <img src="banners/banner4.jpg" class="banner-slide">
-    <img src="banners/banner5.jpg" class="banner-slide">
-    <img src="banners/banner6.jpg" class="banner-slide">
-    <img src="banners/banner7.jpg" class="banner-slide">
-  </div>
-
-  <!-- DP -->
-  <div class="dp">
-    <img src="dpimage.png" alt="Kshine Jewellers">
-  </div>
-
+<div class="banner">
+<div class="dp"><img src="dpimage.png"></div>
 </div>
-
 
 <!-- ==================================================
 SECTION 4 – CONTENT
@@ -770,12 +723,14 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   <div class="trusted-actions">
     <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
 
-    <button class="trusted-btn white" onclick="alert('QR popup will be added here')">QR</button>
+   <button class="trusted-btn white" onclick="openQR()">QR</button>
 
     <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
   </div>
 
 </div>
+
+
 
 <!-- ==================================================
 SECTION 11 – FLOATING BUTTONS
@@ -812,41 +767,71 @@ function shareCard(){
   }
 }
 </script>
-  <script>
-(function(){
-  const slides = document.querySelectorAll('.banner-slide');
-  let index = 0;
-  let interval;
+  <!-- ===============================
+QR POPUP (HIDDEN BY DEFAULT)
+=============================== -->
+<div id="qrPopup" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+">
 
-  function showSlide(i){
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[i].classList.add('active');
+  <div style="
+    background:#000;
+    border:3px solid gold;
+    border-radius:18px;
+    padding:14px;
+    text-align:center;
+    width:280px;
+  ">
+
+    <a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://kshinejewellers-hub.github.io"
+       download="KSHINE-JEWELLERS-QR.png">
+
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://kshinejewellers-hub.github.io"
+           style="
+             width:100%;
+             border-radius:12px;
+             cursor:pointer;
+           "
+           alt="K-Shine Jewellers QR Code">
+    </a>
+
+    <p style="
+      color:gold;
+      font-size:12px;
+      margin-top:8px;
+    ">
+      
+      Tap QR to Download
+    </p>
+
+    <button onclick="closeQR()" style="
+      margin-top:10px;
+      padding:6px 18px;
+      border-radius:16px;
+      border:2px solid gold;
+      background:#fff;
+      font-weight:700;
+      cursor:pointer;
+    ">
+      Close
+    </button>
+
+  </div>
+</div>
+<script>
+  function openQR(){
+    document.getElementById("qrPopup").style.display = "flex";
   }
 
-  function nextSlide(){
-    index = (index + 1) % slides.length;
-    showSlide(index);
+  function closeQR(){
+    document.getElementById("qrPopup").style.display = "none";
   }
-
-  function startSlider(){
-    interval = setInterval(nextSlide, 3000);
-  }
-
-  function stopSlider(){
-    clearInterval(interval);
-  }
-
-  /* Start slider */
-  startSlider();
-
-  /* Pause on touch / click */
-  const banner = document.getElementById('bannerSlider');
-  banner.addEventListener('touchstart', stopSlider);
-  banner.addEventListener('mousedown', stopSlider);
-
-  banner.addEventListener('touchend', startSlider);
-  banner.addEventListener('mouseup', startSlider);
-})();
 </script>
 
 </body>
