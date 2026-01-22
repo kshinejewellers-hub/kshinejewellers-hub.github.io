@@ -68,25 +68,37 @@ STYLE 5 – TOP SCROLLER
 }
 
 /* ==================================================
-STYLE 6 – BANNER & DP
+STYLE 6 – BANNER SLIDER (SAFE & ISOLATED)
 ================================================== */
+
 .banner{
   height:230px;
-  background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
+  overflow:visible; /* DP must come out */
 }
-.dp{
+
+/* slider window */
+.banner-slides{
   position:absolute;
-  bottom:-55px;
-  width:100%;
-  display:flex;
-  justify-content:center;
+  inset:0;
+  overflow:hidden; /* only banner images clipped */
 }
-.dp img{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  border:6px solid #fff;
+
+/* each banner image */
+.banner-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+
+/* visible slide */
+.banner-slide.active{
+  opacity:1;
+  z-index:1;
 }
 
 /* ==================================================
@@ -554,8 +566,23 @@ SECTION 2 – WRAPPER
 <!-- ==================================================
 SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner">
-<div class="dp"><img src="dpimage.png"></div>
+<div class="banner" id="bannerSlider">
+
+  <div class="banner-slides">
+    <img src="banners/banner1.jpg" class="banner-slide active">
+    <img src="banners/banner2.jpg" class="banner-slide">
+    <img src="banners/banner3.jpg" class="banner-slide">
+    <img src="banners/banner4.jpg" class="banner-slide">
+    <img src="banners/banner5.jpg" class="banner-slide">
+    <img src="banners/banner6.jpg" class="banner-slide">
+    <img src="banners/banner7.jpg" class="banner-slide">
+  </div>
+
+  <!-- DP (UNCHANGED) -->
+  <div class="dp">
+    <img src="dpimage.png" alt="Kshine Jewellers">
+  </div>
+
 </div>
 
 <!-- ==================================================
@@ -832,6 +859,39 @@ QR POPUP (HIDDEN BY DEFAULT)
   function closeQR(){
     document.getElementById("qrPopup").style.display = "none";
   }
+</script>
+<script>
+(function(){
+  const slides = document.querySelectorAll('.banner-slide');
+  let index = 0;
+  let timer;
+
+  function showSlide(i){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function start(){
+    timer = setInterval(nextSlide, 3000);
+  }
+
+  function stop(){
+    clearInterval(timer);
+  }
+
+  start();
+
+  const banner = document.getElementById('bannerSlider');
+  banner.addEventListener('touchstart', stop);
+  banner.addEventListener('mousedown', stop);
+  banner.addEventListener('touchend', start);
+  banner.addEventListener('mouseup', start);
+})();
 </script>
 
 </body>
