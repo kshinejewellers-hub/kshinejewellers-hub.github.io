@@ -67,56 +67,27 @@ STYLE 5 – TOP SCROLLER
   100%{transform:translateX(-100%);}
 }
 
-<!-- ==================================================
-STYLE 6 – BANNER & DP (SLIDER + HALF DP FIXED)
-================================================== -->
-<style>
+/* ==================================================
+STYLE 6 – BANNER & DP
+================================================== */
 .banner{
   height:230px;
+  background:url('bannerimage.png') center/cover no-repeat;
   position:relative;
 }
-
-/* Slides container (clips ONLY images, NOT DP) */
-.banner-slides{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-}
-
-/* Individual banner images */
-.banner-slide{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 0.6s ease;
-}
-
-/* Active slide */
-.banner-slide.active{
-  opacity:1;
-  z-index:1;
-}
-
-/* DP positioning – HALF IN / HALF OUT */
 .dp{
   position:absolute;
   bottom:-55px;
   width:100%;
   display:flex;
   justify-content:center;
-  z-index:5;
 }
-
 .dp img{
   width:110px;
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
 }
-</style>
 
 /* ==================================================
 STYLE 7 – CONTENT AREA
@@ -572,38 +543,19 @@ SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
 <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
-    Join our WhatsApp Group For Gold Updates◆ for more details Visit our official website below ◆</span>
+    Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
 </div>
 
 <!-- ==================================================
 SECTION 2 – WRAPPER
 ================================================== -->
-<div class="scroller">
-<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
-    Join our WhatsApp Group For Gold Updates◆ for more details Visit our official website below ◆</span>
-</div>
+<div class="wrapper">
 
 <!-- ==================================================
 SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner" id="bannerSlider">
-
-  <!-- Banner Images -->
-  <div class="banner-slides">
-    <img src="banners/banner1.jpg" class="banner-slide active">
-    <img src="banners/banner2.jpg" class="banner-slide">
-    <img src="banners/banner3.jpg" class="banner-slide">
-    <img src="banners/banner4.jpg" class="banner-slide">
-    <img src="banners/banner5.jpg" class="banner-slide">
-    <img src="banners/banner6.jpg" class="banner-slide">
-    <img src="banners/banner7.jpg" class="banner-slide">
-  </div>
-
-  <!-- DP (Half inside / Half outside – FIXED) -->
-  <div class="dp">
-    <img src="dpimage.png" alt="Kshine Jewellers">
-  </div>
-
+<div class="banner">
+<div class="dp"><img src="dpimage.png"></div>
 </div>
 
 <!-- ==================================================
@@ -880,43 +832,6 @@ QR POPUP (HIDDEN BY DEFAULT)
   function closeQR(){
     document.getElementById("qrPopup").style.display = "none";
   }
-</script>
-<script>
-const slides = document.querySelectorAll('.banner-slide');
-let index = 0;
-let bannerTimer;
-
-/* Change slide with alternating animation */
-function nextSlide(){
-  slides.forEach(s =>
-    s.classList.remove('active','slide-down','slide-left')
-  );
-
-  index = (index + 1) % slides.length;
-  const effect = index % 2 === 0 ? 'slide-left' : 'slide-down';
-
-  slides[index].classList.add('active', effect);
-}
-
-/* Start auto slider */
-function startBanner(){
-  bannerTimer = setInterval(nextSlide, 3500);
-}
-
-/* Stop on user interaction */
-function stopBanner(){
-  clearInterval(bannerTimer);
-}
-
-/* Pause / resume on touch */
-const slider = document.getElementById('bannerSlider');
-slider.addEventListener('touchstart', stopBanner);
-slider.addEventListener('touchend', startBanner);
-slider.addEventListener('mousedown', stopBanner);
-slider.addEventListener('mouseup', startBanner);
-
-/* Init */
-startBanner();
 </script>
 
 </body>
