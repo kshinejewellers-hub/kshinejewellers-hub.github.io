@@ -68,23 +68,24 @@ STYLE 5 – TOP SCROLLER
 }
 
 /* ==================================================
-STYLE 6 – BANNER SLIDER (SAFE & ISOLATED)
+STYLE 6 – BANNER & DP (SLIDER SAFE)
 ================================================== */
 
 .banner{
   height:230px;
   position:relative;
-  overflow:visible; /* DP must come out */
+  overflow:visible; /* allows DP to come out */
 }
 
-/* slider window */
+/* Banner image area ONLY */
 .banner-slides{
   position:absolute;
   inset:0;
-  overflow:hidden; /* only banner images clipped */
+  overflow:hidden; /* clips banner images */
+  border-radius:24px 24px 0 0;
 }
 
-/* each banner image */
+/* Each slide */
 .banner-slide{
   position:absolute;
   inset:0;
@@ -92,15 +93,31 @@ STYLE 6 – BANNER SLIDER (SAFE & ISOLATED)
   height:100%;
   object-fit:cover;
   opacity:0;
-  transition:opacity 0.6s ease;
+  transition:opacity .6s ease;
 }
 
-/* visible slide */
 .banner-slide.active{
   opacity:1;
   z-index:1;
 }
 
+/* DP – half inside / half outside */
+.dp{
+  position:absolute;
+  bottom:-55px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  z-index:10;
+}
+
+.dp img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:6px solid #fff;
+  background:#fff;
+}
 /* ==================================================
 STYLE 7 – CONTENT AREA
 ================================================== */
@@ -559,16 +576,13 @@ SECTION 1 – SCROLLER
 </div>
 
 <!-- ==================================================
-SECTION 2 – WRAPPER
-================================================== -->
-<div class="wrapper">
-
-<!-- ==================================================
 SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner" id="bannerSlider">
+<div class="banner">
 
+  <!-- Banner images ONLY -->
   <div class="banner-slides">
+
     <img src="banners/banner1.jpg" class="banner-slide active">
     <img src="banners/banner2.jpg" class="banner-slide">
     <img src="banners/banner3.jpg" class="banner-slide">
@@ -576,15 +590,15 @@ SECTION 3 – BANNER & DP
     <img src="banners/banner5.jpg" class="banner-slide">
     <img src="banners/banner6.jpg" class="banner-slide">
     <img src="banners/banner7.jpg" class="banner-slide">
+
   </div>
 
-  <!-- DP (UNCHANGED) -->
+  <!-- DP MUST STAY HERE -->
   <div class="dp">
-    <img src="dpimage.png" alt="Kshine Jewellers">
+    <img src="dpimage.png">
   </div>
 
 </div>
-
 <!-- ==================================================
 SECTION 4 – CONTENT
 ================================================== -->
