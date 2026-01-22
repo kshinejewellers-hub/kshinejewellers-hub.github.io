@@ -67,59 +67,40 @@ STYLE 5 – TOP SCROLLER
   100%{transform:translateX(-100%);}
 }
 
-/* ==================================================
-STYLE 6 – BANNER SLIDER (DP UNTOUCHED)
-================================================== */
-
+<!-- ==================================================
+STYLE 6 – BANNER & DP (SLIDER + HALF DP FIXED)
+================================================== -->
+<style>
 .banner{
   height:230px;
   position:relative;
+}
+
+/* Slides container (clips ONLY images, NOT DP) */
+.banner-slides{
+  position:absolute;
+  inset:0;
   overflow:hidden;
 }
 
-/* Slider wrapper */
-.banner-slider{
+/* Individual banner images */
+.banner-slide{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
-  overflow:hidden;
-}
-
-/* Individual slide */
-.banner-slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
+  object-fit:cover;
   opacity:0;
-  transition:opacity .5s ease;
+  transition:opacity 0.6s ease;
 }
 
 /* Active slide */
 .banner-slide.active{
   opacity:1;
+  z-index:1;
 }
 
-/* Slide effects */
-.slide-down{
-  animation:slideDown .5s ease;
-}
-.slide-left{
-  animation:slideLeft .5s ease;
-}
-
-@keyframes slideDown{
-  from{ transform:translateY(-100%); }
-  to{ transform:translateY(0); }
-}
-
-@keyframes slideLeft{
-  from{ transform:translateX(100%); }
-  to{ transform:translateX(0); }
-}
-
-/* DP (LEFT EXACTLY SAME) */
+/* DP positioning – HALF IN / HALF OUT */
 .dp{
   position:absolute;
   bottom:-55px;
@@ -128,12 +109,14 @@ STYLE 6 – BANNER SLIDER (DP UNTOUCHED)
   justify-content:center;
   z-index:5;
 }
+
 .dp img{
   width:110px;
   height:110px;
   border-radius:50%;
   border:6px solid #fff;
 }
+</style>
 
 /* ==================================================
 STYLE 7 – CONTENT AREA
@@ -589,52 +572,39 @@ SECTION 1 – SCROLLER
 ================================================== -->
 <div class="scroller">
 <span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
-    Join our WhatsApp Group For Gold UPdates◆ for more details Visit our official website below ◆</span>
+    Join our WhatsApp Group For Gold Updates◆ for more details Visit our official website below ◆</span>
 </div>
 
 <!-- ==================================================
 SECTION 2 – WRAPPER
 ================================================== -->
-<div class="wrapper">
+<div class="scroller">
+<span>◆ K-Shine Jewellers ◆ J&K’s Most Trusted & Reliable Jewellery Brand ◆ 🪙 Visit for 916•22K 6 digit HUID Hallmark Gold | 💎 Diamond | 🪙 Silver Jewellery.
+    Join our WhatsApp Group For Gold Updates◆ for more details Visit our official website below ◆</span>
+</div>
 
 <!-- ==================================================
-SECTION 3 – BANNER SLIDER & DP
+SECTION 3 – BANNER & DP
 ================================================== -->
-<div class="banner">
+<div class="banner" id="bannerSlider">
 
-  <!-- Banner Slider -->
-  <div class="banner-slider" id="bannerSlider">
-
-    <div class="banner-slide active"
-         style="background-image:url('banners/banner1.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner2.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner3.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner4.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner5.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner6.jpg')"></div>
-
-    <div class="banner-slide"
-         style="background-image:url('banners/banner7.jpg')"></div>
-
+  <!-- Banner Images -->
+  <div class="banner-slides">
+    <img src="banners/banner1.jpg" class="banner-slide active">
+    <img src="banners/banner2.jpg" class="banner-slide">
+    <img src="banners/banner3.jpg" class="banner-slide">
+    <img src="banners/banner4.jpg" class="banner-slide">
+    <img src="banners/banner5.jpg" class="banner-slide">
+    <img src="banners/banner6.jpg" class="banner-slide">
+    <img src="banners/banner7.jpg" class="banner-slide">
   </div>
 
-  <!-- DP (UNCHANGED) -->
+  <!-- DP (Half inside / Half outside – FIXED) -->
   <div class="dp">
-    <img src="dpimage.png">
+    <img src="dpimage.png" alt="Kshine Jewellers">
   </div>
 
 </div>
-
 
 <!-- ==================================================
 SECTION 4 – CONTENT
