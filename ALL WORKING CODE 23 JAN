@@ -31,6 +31,7 @@ body{
   margin:0;
   font-family:Arial,sans-serif;
   background:url('bgimage.jpg') center/cover fixed no-repeat;
+  padding-bottom:160px;
 }
 
 /* ==================================================
@@ -38,7 +39,7 @@ STYLE 4 – MAIN WRAPPER
 ================================================== */
 .wrapper{
   max-width:430px;
-  margin:10px auto 140px;
+  margin:10px auto 240px;
   background:#fff;
   border-radius:24px;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
