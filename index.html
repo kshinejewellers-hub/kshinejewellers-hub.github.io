@@ -638,7 +638,10 @@ SECTION 4 – CONTENT
 SECTION 5 – GOOGLE RATINGS
 ================================================== -->
 <div class="ratings">
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
+  <div class="rate"
+onclick="trackClick('click_maps_gandhi_nagar','Google Maps Gandhi Nagar');
+window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
+
     <small>Tap to open Google Maps</small>
     <div class="stars">★★★★★</div>
     <div class="score">4.9</div>
@@ -646,19 +649,25 @@ SECTION 5 – GOOGLE RATINGS
     <div class="reviews">1000+ Reviews</div>
   </div>
 
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
+  <div class="rate"
+onclick="trackClick('click_maps_janipur','Google Maps Janipur');
+window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
+
     <small>Tap to open Google Maps</small>
     <div class="stars">★★★★★</div>
     <div class="score">5.0</div>
     <div class="place">Janipur</div>
-    <div class="reviews">1160+ Reviews</div>
+    <div class="reviews">1171+ Reviews</div>
   </div>
 </div>
 
 <!-- ==================================================
 SECTION 6 – SAVE CONTACT
 ================================================== -->
-<a href="javascript:void(0)" onclick="saveContact()" class="btn fixed-gold">💾 Save Contact</a>
+  <a href="javascript:void(0)"
+onclick="trackClick('click_save_contact','Save Contact Fixed');💾 saveContact();"
+class="btn fixed-gold">
+
 
 
 <!-- ==================================================
@@ -803,7 +812,9 @@ SECTION 11 – FLOATING BUTTONS
 ================================================== -->
 <div class="floating">
 <a href="https://kshinejewellers.com" target="_blank" class="float-btn">🌐 Website</a>
-<a href="javascript:void(0)" onclick="saveContact()" class="float-btn">💾 Save Contact</a>
+<a href="javascript:void(0)"
+onclick="trackClick('click_save_contact_floating','Save Contact Floating'); saveContact();"
+class="float-btn">💾 Save Contact</a>
 </div>
 <!-- ==================================================
 SECTION 12 – FLOATING SHARE BUTTON
