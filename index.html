@@ -784,7 +784,9 @@ SECTION 9 – ADDRESS
 </div>
 
 
-<!-- SECTION 10 – TRUSTED CUSTOMERS -->
+<!-- ==================================================
+SECTION 10 – TRUSTED CUSTOMERS
+================================================== -->
 <div class="trusted-box">
 
   <div class="trusted-title">
@@ -834,11 +836,29 @@ SECTION 9 – ADDRESS
   </div>
 
   <div class="trusted-actions">
-    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn white">⭐GAN</a>
 
-   <button class="trusted-btn white" onclick="openQR()">QR</button>
+    <!-- ⭐ GAN – Google Review Gandhi Nagar -->
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review"
+       target="_blank"
+       class="trusted-btn white"
+       onclick="trackClick('click_google_review_gan','Google Review Gandhi Nagar')">
+       ⭐ GAN
+    </a>
 
-    <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn white">⭐JAN</a>
+    <!-- QR SCAN -->
+    <button class="trusted-btn white"
+            onclick="trackClick('click_qr','QR Scan'); openQR();">
+      QR
+    </button>
+
+    <!-- ⭐ JAN – Google Review Janipur -->
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review"
+       target="_blank"
+       class="trusted-btn white"
+       onclick="trackClick('click_google_review_jan','Google Review Janipur')">
+       ⭐ JAN
+    </a>
+
   </div>
 
 </div>
