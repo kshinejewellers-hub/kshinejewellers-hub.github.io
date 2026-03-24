@@ -1061,5 +1061,20 @@ QR POPUP (HIDDEN BY DEFAULT)
   banner.addEventListener('mouseup', start);
 })();
 </script>
+<script>
+fetch('group-control.json')
+.then(res => res.json())
+.then(data => {
+
+  const link = data.groups[data.activeGroup];
+
+  const btn = document.getElementById("whatsappGroupFloat");
+  if(btn){
+    btn.href = link;
+  }
+
+})
+.catch(err => console.log(err));
+</script>
 </body>
 </html>
