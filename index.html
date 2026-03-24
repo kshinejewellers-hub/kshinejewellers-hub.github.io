@@ -766,7 +766,8 @@ SECTION 8 – SOCIAL MEDIA
 <div class="social">
 
   <!-- 💬 WhatsApp Group -->
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+  <a href="#"
+id="whatsappGroupBtn"
      target="_blank"
      rel="noopener noreferrer"
      onclick="trackClick('click_whatsapp_group','WhatsApp Group')">
@@ -932,14 +933,18 @@ SECTION 11 – FLOATING BUTTONS
 <!-- ==================================================
 SECTION 12 – FLOATING SHARE BUTTON
 ================================================== -->
-<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-group-float">
-   💬 Join Group
+<a href="#"id="whatsappGroupFloat"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-group-float"
+onclick="trackClick('click_whatsapp_group_floating','Floating WhatsApp Group')">
+💬 Join Group
 </a>
 
-<button class="share-float" onclick="shareCard()">🔗 Share</button>
+<button class="share-float"
+onclick="trackClick('click_share','Share Button'); shareCard()">
+🔗 Share
+</button>
 
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
