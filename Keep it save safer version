@@ -6,6 +6,29 @@
 <title>KSHINE JEWELLERS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- ✅ GOOGLE ANALYTICS (PASTE HERE) -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ9PGKEY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EZ9PGKEY7R');
+</script>
+
+  <!-- ✅ CLICK TRACKING HELPER (PASTE JUST BELOW GA) -->
+<script>
+function trackClick(eventName, label){
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, {
+      event_category: 'Digital Card',
+      event_label: label
+    });
+  }
+}
+</script>
+
 <!-- ==================================================
 STYLE 1 – FONTS
 ================================================== -->
@@ -608,6 +631,63 @@ SECTION 4 – CONTENT
 
 <div class="brand">KSHINE JEWELLERS</div>
 <div class="tag">Your trusted Jewellery Brand in Jammu for more details scroll down 👇.</div>
+  <!-- ==================================================
+SECTION 4A – TRUST STATS (STATIC)
+================================================== -->
+<div style="
+  display:flex;
+  gap:10px;
+  justify-content:space-between;
+  margin:14px 0 18px;
+">
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    🔥 <br>
+    <strong>25,000+</strong><br>
+    Profile Views
+  </div>
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    ⭐ <br>
+    <strong>4,000+</strong><br>
+    Review Clicks
+  </div>
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    💬 <br>
+    <strong>8,000+</strong><br>
+    WhatsApp Enquiries
+  </div>
+
+</div>
+
 
 <div class="rating-title">5 Star Customer Ratings</div>
 
@@ -615,7 +695,10 @@ SECTION 4 – CONTENT
 SECTION 5 – GOOGLE RATINGS
 ================================================== -->
 <div class="ratings">
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
+  <div class="rate"
+     onclick="trackClick('click_maps_gandhi_nagar','Google Maps Gandhi Nagar');
+              window.open('https://maps.app.goo.gl/DAF2cTd81weVF29N8','_blank')">
+
     <small>Tap to open Google Maps</small>
     <div class="stars">★★★★★</div>
     <div class="score">4.9</div>
@@ -623,7 +706,10 @@ SECTION 5 – GOOGLE RATINGS
     <div class="reviews">1000+ Reviews</div>
   </div>
 
-  <div class="rate" onclick="window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
+ <div class="rate"
+onclick="trackClick('click_maps_janipur','Google Maps Janipur');
+window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
+
     <small>Tap to open Google Maps</small>
     <div class="stars">★★★★★</div>
     <div class="score">5.0</div>
@@ -635,24 +721,41 @@ SECTION 5 – GOOGLE RATINGS
 <!-- ==================================================
 SECTION 6 – SAVE CONTACT
 ================================================== -->
-<a href="javascript:void(0)" onclick="saveContact()" class="btn fixed-gold">💾 Save Contact</a>
+<a href="javascript:void(0)"
+   class="btn fixed-gold"
+   onclick="trackClick('click_save_contact_fixed','Save Contact Fixed'); saveContact();">
+   💾 Save Contact
+</a>
 
 
 <!-- ==================================================
 SECTION 7 – CALL / WHATSAPP
 ================================================== -->
 <div class="actions">
-  <a href="tel:9622212879" class="action btn">📞 Call Us</a>
 
+  <!-- 📞 CALL BUTTON (JANIPUR) -->
+  <a href="tel:9622212879"
+     class="action btn"
+     onclick="trackClick('click_call_9622212879','Call Janipur')">
+     📞 Call Us
+  </a>
+
+  <!-- 💬 WHATSAPP CHAT -->
   <a href="https://wa.me/919622212879?text=%E2%9C%A8%20Hello%20*K-SHINE%20JEWELLERS*%20%E2%9C%A8%0A%0A%F0%9F%92%8E%20I%20just%20went%20through%20your%20*Digital%20Business%20Card*%20and%20I%E2%80%99m%20interested%20in%20exploring%20your%20*Gold,%20Diamond%20%26%20Silver%20Jewellery%20Collections.*%0A%0A%F0%9F%99%8F%20Kindly%20guide%20me%20further."
      target="_blank"
      rel="noopener noreferrer"
-     class="action btn">
+     class="action btn"
+     onclick="trackClick('click_whatsapp_chat','WhatsApp Chat')">
      💬 WhatsApp Us
   </a>
+
 </div>
 
-<a href="https://kshinejewellers.com" target="_blank" class="btn fixed-gold">
+<!-- 🌐 OFFICIAL WEBSITE -->
+<a href="https://kshinejewellers.com"
+   target="_blank"
+   class="btn fixed-gold"
+   onclick="trackClick('click_website_fixed','Official Website Fixed')">
 🌐 Official Website
 </a>
 
@@ -662,39 +765,52 @@ SECTION 8 – SOCIAL MEDIA
 ================================================== -->
 <div class="social">
 
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+  <!-- 💬 WhatsApp Group -->
+  <a href="#"
+id="whatsappGroupFixed"
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_whatsapp_group','WhatsApp Group')">
      WhatsApp Group
   </a>
 
+  <!-- 📸 Instagram -->
   <a href="https://www.instagram.com/kshine_jewellers?igsh=MW1ocGlwbGdqZHVxbA=="
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_instagram','Instagram Profile')">
      Instagram
   </a>
 
+  <!-- 👥 Facebook Group -->
   <a href="https://facebook.com/groups/1233168123948595/"
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_facebook_group','Facebook Group')">
      Facebook Group
   </a>
 
+  <!-- 📘 Facebook Page -->
   <a href="https://www.facebook.com/kshinejewelers"
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_facebook_page','Facebook Page')">
      Facebook Page
   </a>
 
+  <!-- ▶️ YouTube -->
   <a href="https://youtube.com/@k-shinejewellers1365?si=C3lcJXsQsqUicFse"
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_youtube','YouTube Channel')">
      YouTube
   </a>
 
+  <!-- 🔗 Linktree -->
   <a href="https://linktr.ee/Kshinejewellers"
      target="_blank"
-     rel="noopener noreferrer">
+     rel="noopener noreferrer"
+     onclick="trackClick('click_linktree','Linktree')">
      Linktree
   </a>
 
@@ -705,16 +821,30 @@ SECTION 8 – SOCIAL MEDIA
 SECTION 9 – ADDRESS
 ================================================== -->
 <div class="address">
-<strong>Gandhi Nagar Branch</strong><br>
-27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
-📞 <a href="tel:+919419362775">9419362775</a><br><br>
 
-<strong>Janipur Branch</strong><br>
-Disco Road, Near Dreamland School, Jammu – 180007<br>
-📞 <a href="tel:+919622212879">9622212879</a>
+  <strong>Gandhi Nagar Branch</strong><br>
+  27-B Auqaf Market, Opp SBI Bank, Jammu – 180004<br>
+  📞 
+  <a href="tel:+919419362775"
+     onclick="trackClick('click_call_9419362775','Call Gandhi Nagar')">
+     9419362775
+  </a>
+  <br><br>
+
+  <strong>Janipur Branch</strong><br>
+  Disco Road, Near Dreamland School, Jammu – 180007<br>
+  📞 
+  <a href="tel:+919622212879"
+     onclick="trackClick('click_call_9622212879','Call Janipur')">
+     9622212879
+  </a>
+
 </div>
 
-<!-- SECTION 10 – TRUSTED CUSTOMERS -->
+
+<!-- ==================================================
+SECTION 10 – TRUSTED CUSTOMERS
+================================================== -->
 <div class="trusted-box">
 
   <div class="trusted-title">
@@ -764,11 +894,29 @@ Disco Road, Near Dreamland School, Jammu – 180007<br>
   </div>
 
   <div class="trusted-actions">
-    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review" target="_blank" class="trusted-btn gold">GAN</a>
 
-   <button class="trusted-btn white" onclick="openQR()">QR</button>
+    <!-- ⭐ GAN – Google Review Gandhi Nagar -->
+    <a href="https://g.page/r/CYoCa4xAGy8bEBE/review"
+       target="_blank"
+       class="trusted-btn white"
+       onclick="trackClick('click_google_review_gan','Google Review Gandhi Nagar')">
+       ⭐ GAN
+    </a>
 
-    <a href="https://g.page/r/CZAzRfFKkP41EBE/review" target="_blank" class="trusted-btn gold">JAN</a>
+    <!-- QR SCAN -->
+    <button class="trusted-btn white"
+            onclick="trackClick('click_qr','QR Scan'); openQR();">
+      QR
+    </button>
+
+    <!-- ⭐ JAN – Google Review Janipur -->
+    <a href="https://g.page/r/CZAzRfFKkP41EBE/review"
+       target="_blank"
+       class="trusted-btn white"
+       onclick="trackClick('click_google_review_jan','Google Review Janipur')">
+       ⭐ JAN
+    </a>
+
   </div>
 
 </div>
@@ -785,14 +933,19 @@ SECTION 11 – FLOATING BUTTONS
 <!-- ==================================================
 SECTION 12 – FLOATING SHARE BUTTON
 ================================================== -->
-<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-group-float">
-   💬 Join Group
+<a
+href="https://chat.whatsapp.com/HL3QVNIsRmd70IgVGztRjv?mode=gi_t" id="whatsappGroupFloat"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-group-float"
+onclick="trackClick('click_whatsapp_group_floating','Floating WhatsApp Group')">
+💬 Join Group
 </a>
 
-<button class="share-float" onclick="shareCard()">🔗 Share</button>
+<button class="share-float"
+onclick="trackClick('click_share','Share Button'); shareCard()">
+🔗 Share
+</button>
 
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
@@ -909,6 +1062,26 @@ QR POPUP (HIDDEN BY DEFAULT)
   banner.addEventListener('mouseup', start);
 })();
 </script>
+<script>
+fetch('group-control.json')
+.then(res => res.json())
+.then(data => {
 
+  const link = data.groups[data.activeGroup];
+
+  const floatBtn = document.getElementById("whatsappGroupFloat");
+const fixedBtn = document.getElementById("whatsappGroupFixed");
+
+if(floatBtn){
+  floatBtn.href = link;
+}
+
+if(fixedBtn){
+  fixedBtn.href = link;
+}
+
+})
+.catch(err => console.log(err));
+</script>
 </body>
 </html>
