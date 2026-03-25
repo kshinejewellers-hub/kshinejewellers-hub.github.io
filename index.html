@@ -767,7 +767,7 @@ SECTION 8 – SOCIAL MEDIA
 
   <!-- 💬 WhatsApp Group -->
   <a href="#"
-id="whatsappGroupBtn"
+id="whatsappGroupFixed"
      target="_blank"
      rel="noopener noreferrer"
      onclick="trackClick('click_whatsapp_group','WhatsApp Group')">
@@ -1069,10 +1069,16 @@ fetch('group-control.json')
 
   const link = data.groups[data.activeGroup];
 
-  const btn = document.getElementById("whatsappGroupFloat");
-  if(btn){
-    btn.href = link;
-  }
+  const floatBtn = document.getElementById("whatsappGroupFloat");
+const fixedBtn = document.getElementById("whatsappGroupFixed");
+
+if(floatBtn){
+  floatBtn.href = link;
+}
+
+if(fixedBtn){
+  fixedBtn.href = link;
+}
 
 })
 .catch(err => console.log(err));
