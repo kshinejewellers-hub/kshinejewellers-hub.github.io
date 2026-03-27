@@ -1089,5 +1089,21 @@ if(fixedBtn){
 })
 .catch(err => console.log(err));
 </script>
+<script>
+document.addEventListener("click", function(e) {
+  let target = e.target.closest("[data-track]");
+  
+  if (target) {
+    let name = target.getAttribute("data-track");
+    
+    gtag('event', 'click', {
+      event_category: 'all_buttons',
+      event_label: name
+    });
+    
+    console.log("Tracked:", name);
+  }
+});
+</script>
 </body>
 </html>
