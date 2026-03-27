@@ -16,7 +16,13 @@
 
   gtag('config', 'G-EZ9PGKEY7R');
 </script>
-
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w1tyy1mzuf");
+</script>
   <!-- ✅ CLICK TRACKING HELPER (PASTE JUST BELOW GA) -->
 <script>
 function trackClick(eventName, label){
@@ -714,7 +720,7 @@ window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
     <div class="stars">★★★★★</div>
     <div class="score">5.0</div>
     <div class="place">Janipur</div>
-    <div class="reviews">1160+ Reviews</div>
+    <div class="reviews">1200+ Reviews</div>
   </div>
 </div>
 
@@ -1082,6 +1088,22 @@ if(fixedBtn){
 
 })
 .catch(err => console.log(err));
+</script>
+<script>
+document.addEventListener("click", function(e) {
+  let target = e.target.closest("[data-track]");
+  
+  if (target) {
+    let name = target.getAttribute("data-track");
+    
+    gtag('event', 'click', {
+      event_category: 'all_buttons',
+      event_label: name
+    });
+    
+    console.log("Tracked:", name);
+  }
+});
 </script>
 </body>
 </html>
