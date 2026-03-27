@@ -16,7 +16,13 @@
 
   gtag('config', 'G-EZ9PGKEY7R');
 </script>
-
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w1tyy1mzuf");
+</script>
   <!-- ✅ CLICK TRACKING HELPER (PASTE JUST BELOW GA) -->
 <script>
 function trackClick(eventName, label){
@@ -631,6 +637,63 @@ SECTION 4 – CONTENT
 
 <div class="brand">KSHINE JEWELLERS</div>
 <div class="tag">Your trusted Jewellery Brand in Jammu for more details scroll down 👇.</div>
+  <!-- ==================================================
+SECTION 4A – TRUST STATS (STATIC)
+================================================== -->
+<div style="
+  display:flex;
+  gap:10px;
+  justify-content:space-between;
+  margin:14px 0 18px;
+">
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    🔥 <br>
+    <strong>25,000+</strong><br>
+    Profile Views
+  </div>
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    ⭐ <br>
+    <strong>4,000+</strong><br>
+    Review Clicks
+  </div>
+
+  <div style="
+    flex:1;
+    background:#fff4c2;
+    border:2px solid #d4af37;
+    border-radius:14px;
+    padding:10px 6px;
+    text-align:center;
+    font-weight:800;
+    font-size:12px;
+  ">
+    💬 <br>
+    <strong>8,000+</strong><br>
+    WhatsApp Enquiries
+  </div>
+
+</div>
+
 
 <div class="rating-title">5 Star Customer Ratings</div>
 
@@ -657,7 +720,7 @@ window.open('https://maps.app.goo.gl/d3bKbByUosgEnWJV8','_blank')">
     <div class="stars">★★★★★</div>
     <div class="score">5.0</div>
     <div class="place">Janipur</div>
-    <div class="reviews">1160+ Reviews</div>
+    <div class="reviews">1200+ Reviews</div>
   </div>
 </div>
 
@@ -709,7 +772,8 @@ SECTION 8 – SOCIAL MEDIA
 <div class="social">
 
   <!-- 💬 WhatsApp Group -->
-  <a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
+  <a href="#"
+id="whatsappGroupFixed"
      target="_blank"
      rel="noopener noreferrer"
      onclick="trackClick('click_whatsapp_group','WhatsApp Group')">
@@ -875,14 +939,19 @@ SECTION 11 – FLOATING BUTTONS
 <!-- ==================================================
 SECTION 12 – FLOATING SHARE BUTTON
 ================================================== -->
-<a href="https://chat.whatsapp.com/Jfk8HhjvAZM1wYqUBK6zCS"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-group-float">
-   💬 Join Group
+<a
+href="https://chat.whatsapp.com/HL3QVNIsRmd70IgVGztRjv?mode=gi_t" id="whatsappGroupFloat"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-group-float"
+onclick="trackClick('click_whatsapp_group_floating','Floating WhatsApp Group')">
+💬 Join Group
 </a>
 
-<button class="share-float" onclick="shareCard()">🔗 Share</button>
+<button class="share-float"
+onclick="trackClick('click_share','Share Button'); shareCard()">
+🔗 Share
+</button>
 
   <!-- ==================================================
 SCRIPT 2 – SHARE DIGITAL CARD
@@ -998,6 +1067,43 @@ QR POPUP (HIDDEN BY DEFAULT)
   banner.addEventListener('touchend', start);
   banner.addEventListener('mouseup', start);
 })();
+</script>
+<script>
+fetch('group-control.json')
+.then(res => res.json())
+.then(data => {
+
+  const link = data.groups[data.activeGroup];
+
+  const floatBtn = document.getElementById("whatsappGroupFloat");
+const fixedBtn = document.getElementById("whatsappGroupFixed");
+
+if(floatBtn){
+  floatBtn.href = link;
+}
+
+if(fixedBtn){
+  fixedBtn.href = link;
+}
+
+})
+.catch(err => console.log(err));
+</script>
+<script>
+document.addEventListener("click", function(e) {
+  let target = e.target.closest("[data-track]");
+  
+  if (target) {
+    let name = target.getAttribute("data-track");
+    
+    gtag('event', 'click', {
+      event_category: 'all_buttons',
+      event_label: name
+    });
+    
+    console.log("Tracked:", name);
+  }
+});
 </script>
 </body>
 </html>
