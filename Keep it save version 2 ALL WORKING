@@ -14,7 +14,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EZ9PGKEY7R');
+gtag('config', 'G-EZ9PGKEY7R', { debug_mode: true });
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -1006,7 +1006,7 @@ QR POPUP (HIDDEN BY DEFAULT)
       font-size:12px;
       margin-top:8px;
     ">
-
+      
       Tap QR to Download
     </p>
 
@@ -1090,15 +1090,15 @@ if(fixedBtn){
 <script>
 document.addEventListener("click", function(e) {
   let target = e.target.closest("[data-track]");
-
+  
   if (target) {
     let name = target.getAttribute("data-track");
-
+    
     gtag('event', 'click', {
       event_category: 'all_buttons',
       event_label: name
     });
-
+    
     console.log("Tracked:", name);
   }
 });
