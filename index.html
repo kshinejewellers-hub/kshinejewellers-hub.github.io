@@ -102,7 +102,7 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
 ================================================== */
 
 .banner{
-  height:300px;
+  height:230px;
   position:relative;
   overflow:visible; /* allows DP to come out */
 }
@@ -137,16 +137,11 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
 
 /* DP – half inside / half outside */
 .dp{
-  position:relative;
-  margin-top:-13px;
-
+  position:absolute;
+  bottom:-55px;
+  width:100%;
   display:flex;
-  align-items:flex-start;
-  justify-content:flex-start; /* LEFT SIDE */
-
-  gap:15px;
-  padding:0 20px;
-
+  justify-content:center;
   z-index:10;
 }
 
@@ -641,13 +636,10 @@ SECTION 3 – BANNER & DP
 
   <!-- DP MUST STAY HERE -->
   <div class="dp">
-  <img src="dpimage.png">
-
-  <div>
-    <div class="brand">KSHINE JEWELLERS</div>
-    <div class="tag">Your trusted Jewellery Brand in Jammu for more details scroll down 👇</div>
+    <img src="dpimage.png">
   </div>
-    
+
+</div>
 <!-- ==================================================
 SECTION 4 – CONTENT
 ================================================== -->
