@@ -104,16 +104,15 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
 .banner{
   height:230px;
   position:relative;
-  overflow:visible;
-  z-index:1;
+  overflow:hidden;
+  border-radius:24px 24px 0 0;
 }
 
-/* Banner image area ONLY */
+/* Banner image area */
 .banner-slides{
   position:absolute;
   inset:0;
-  overflow:hidden; /* clips banner images */
-  border-radius:24px 24px 0 0;
+  overflow:hidden;
 }
 
 /* Each slide */
@@ -130,18 +129,20 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
   transition: opacity 1s ease, transform 3s ease;
 }
 
+/* Active slide */
 .banner-slide.active{
   opacity:1;
   transform:scale(1.08);
   z-index:0;
 }
 
-/* DP – half inside / half outside */
+/* =========================
+DP BELOW BANNER
+========================= */
 .dp{
-  position:relative;
-  margin-top:40px;
   display:flex;
   justify-content:center;
+  margin-top:20px;
 }
 
 .dp img{
@@ -150,8 +151,8 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
   border-radius:50%;
   border:6px solid #fff;
   background:#fff;
-}
-/* ==================================================
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+} ==================================================
 STYLE 7 – CONTENT AREA
 ================================================== */
 .content{
