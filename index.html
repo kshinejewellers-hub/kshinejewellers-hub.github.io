@@ -137,11 +137,16 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
 
 /* DP – half inside / half outside */
 .dp{
-  position:absolute;
-  bottom:-55px;
-  width:100%;
+  position:relative;
+  margin-top:-50px;
+
   display:flex;
-  justify-content:center;
+  align-items:center;
+  justify-content:flex-start; /* LEFT SIDE */
+
+  gap:15px;
+  padding:0 20px;
+
   z-index:10;
 }
 
