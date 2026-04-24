@@ -14,7 +14,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EZ9PGKEY7R');
+gtag('config', 'G-EZ9PGKEY7R', { debug_mode: true });
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -55,7 +55,7 @@ STYLE 2 – COLOUR SYSTEM
 
 /* ==================================================
 STYLE 3 – BODY & BACKGROUND
-================================================== */
+================================================= */
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -122,12 +122,16 @@ STYLE 6 – BANNER & DP (SLIDER SAFE)
   width:100%;
   height:100%;
   object-fit:cover;
+
   opacity:0;
-  transition:opacity .6s ease;
+  transform:scale(1.02);
+
+  transition: opacity 1s ease, transform 3s ease;
 }
 
 .banner-slide.active{
   opacity:1;
+  transform:scale(1.08);
   z-index:1;
 }
 
@@ -623,6 +627,10 @@ SECTION 3 – BANNER & DP
     <img src="banners/banner5.jpg" class="banner-slide">
     <img src="banners/banner6.jpg" class="banner-slide">
     <img src="banners/banner7.jpg" class="banner-slide">
+<img src="banners/banner8.jpg" class="banner-slide">
+<img src="banners/banner9.jpg" class="banner-slide">
+<img src="banners/banner10.jpg" class="banner-slide">
+<img src="banners/banner11.jpg" class="banner-slide">
 
   </div>
 
@@ -927,6 +935,31 @@ SECTION 10A – TRUST STATS (STATIC)
   </div>
 
 </div>
+<!-- CERTIFICATE SECTION -->
+<div style="padding:30px 16px 40px; text-align:center;">
+
+  <img src="kshineaward.jpg" 
+       alt="KShine Award Certificate"
+       style="
+         width:100%;
+         max-width:420px;
+         border-radius:16px;
+         box-shadow:0 8px 25px rgba(0,0,0,0.2);
+       ">
+
+ <p style="
+ margin-top:16px;
+ font-weight:900;
+ color:#b8860b;
+ font-size:18px;
+ letter-spacing:0.5px;
+ text-transform:uppercase;
+ text-shadow:0 2px 6px rgba(0,0,0,0.2);
+">
+ 🏆 AWARDED AS BEST JEWELLERY BRAND OF J&K
+</p>
+
+</div>
 <!-- ==================================================
 SECTION 11 – FLOATING BUTTONS
 ================================================== -->
@@ -1006,7 +1039,7 @@ QR POPUP (HIDDEN BY DEFAULT)
       font-size:12px;
       margin-top:8px;
     ">
-
+      
       Tap QR to Download
     </p>
 
@@ -1090,15 +1123,15 @@ if(fixedBtn){
 <script>
 document.addEventListener("click", function(e) {
   let target = e.target.closest("[data-track]");
-
+  
   if (target) {
     let name = target.getAttribute("data-track");
-
+    
     gtag('event', 'click', {
       event_category: 'all_buttons',
       event_label: name
     });
-
+    
     console.log("Tracked:", name);
   }
 });
